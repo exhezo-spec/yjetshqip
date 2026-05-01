@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gjenero CV profesionale shqip falas. Shkarko si PDF menjëherë. Pa regjistrim.">
+<title>CV Gjenerator Shqip — Falas & Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f1f5f9;
+  --surface:#ffffff;
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+  --accent:#7c3aed;
+  --text:#0f172a;
+  --muted:#64748b;
+  --light:#94a3b8;
+  --border:#e2e8f0;
+  --cv-accent:#2563eb;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── TOPBAR ── */
+.topbar{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 2px 8px rgba(37,99,235,.3)}
+.topbar-text{font-weight:800;font-size:.98rem;color:var(--text);letter-spacing:-.01em}
+.topbar-text span{color:var(--primary)}
+.topbar-back{font-size:.8rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .2s;font-weight:500}
+.topbar-back:hover{color:var(--primary);border-color:var(--primary);background:#eff6ff}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#1e3a5f 100%);padding:52px 24px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(37,99,235,.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(124,58,237,.12) 0%,transparent 50%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:5px 14px;font-size:.75rem;color:#93c5fd;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);color:#fff;font-weight:700;margin-bottom:12px;letter-spacing:-.01em}
+.hero h1 span{background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:#94a3b8;font-size:.95rem;max-width:480px;margin:0 auto 28px;line-height:1.6}
+.hero-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.hbadge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 16px;font-size:.8rem;color:#cbd5e1;display:flex;align-items:center;gap:6px;font-weight:500}
+.hbadge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80}
+
+/* ── MAIN LAYOUT ── */
+.page-wrap{max-width:1160px;margin:0 auto;padding:36px 20px 70px;display:grid;grid-template-columns:420px 1fr;gap:30px;align-items:start}
+@media(max-width:900px){.page-wrap{grid-template-columns:1fr}}
+
+/* ── FORM PANEL ── */
+.form-panel{background:var(--surface);border-radius:18px;box-shadow:0 4px 20px rgba(0,0,0,.07),0 1px 4px rgba(0,0,0,.04);overflow:hidden;position:sticky;top:76px;max-height:calc(100vh - 96px);display:flex;flex-direction:column}
+.form-panel-head{padding:24px 26px 0;flex-shrink:0}
+.form-panel-title{font-weight:700;font-size:1.05rem;color:var(--text);margin-bottom:4px}
+.form-panel-sub{font-size:.78rem;color:var(--muted);margin-bottom:20px}
+.form-panel-body{padding:0 26px 26px;overflow-y:auto;flex:1}
+.form-panel-body::-webkit-scrollbar{width:3px}
+.form-panel-body::-webkit-scrollbar-thumb{background:#e2e8f0;border-radius:4px}
+
+/* ── TEMPLATE PICKER ── */
+.tpl-row{display:flex;gap:8px;margin-bottom:22px}
+.tpl-btn{flex:1;padding:8px 4px;border-radius:8px;border:2px solid var(--border);background:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;color:var(--muted);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.tpl-btn .tpl-dot{width:20px;height:20px;border-radius:50%}
+.tpl-btn.active{border-color:currentColor;color:var(--text)}
+.tpl-blue .tpl-dot{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+.tpl-blue.active{border-color:#2563eb;color:#2563eb}
+.tpl-green .tpl-dot{background:linear-gradient(135deg,#059669,#0891b2)}
+.tpl-green.active{border-color:#059669;color:#059669}
+.tpl-dark .tpl-dot{background:linear-gradient(135deg,#1e293b,#475569)}
+.tpl-dark.active{border-color:#1e293b;color:#1e293b}
+
+/* ── FORM SECTIONS ── */
+.fsec{margin-bottom:20px}
+.fsec-head{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.fsec-num{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fsec-title{font-size:.72rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.1em}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:460px){.frow{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.fg label{font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.fg input,.fg textarea{border:1.5px solid var(--border);border-radius:8px;padding:8px 11px;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--text);outline:none;transition:all .2s;background:#fafbfc;width:100%}
+.fg input:focus,.fg textarea:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+.fg textarea{resize:vertical;min-height:70px;line-height:1.5}
+
+.ecard{background:#f8fafc;border:1.5px solid #e9eef5;border-radius:10px;padding:13px;margin-bottom:9px;position:relative}
+.ecard-num{position:absolute;top:11px;left:13px;width:18px;height:18px;background:var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:var(--muted)}
+.ecard > .frow, .ecard > .fg{padding-left:26px}
+.ecard .rm{position:absolute;top:10px;right:10px;background:none;border:none;color:#cbd5e1;cursor:pointer;font-size:.85rem;transition:color .2s;width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.ecard .rm:hover{color:#ef4444;background:#fef2f2}
+
+.add-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:8px;border:1.5px dashed #cbd5e1;border-radius:8px;background:none;color:var(--muted);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;cursor:pointer;transition:all .22s;margin-bottom:2px}
+.add-btn:hover{border-color:var(--primary);color:var(--primary);background:#eff6ff}
+
+.gen-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--primary),var(--accent));border:none;border-radius:11px;color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:.01em;transition:all .3s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.gen-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.4)}
+.gen-btn svg{transition:transform .3s}
+.gen-btn:hover svg{transform:translateX(3px)}
+
+/* ── PREVIEW PANEL ── */
+.preview-panel{display:flex;flex-direction:column;gap:14px}
+.preview-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--surface);border-radius:12px;padding:12px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.preview-label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:6px}
+.preview-label .live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.btn-dl{background:linear-gradient(135deg,var(--primary),var(--accent));border:none;border-radius:8px;color:#fff;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;padding:9px 20px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .25s;box-shadow:0 2px 8px rgba(37,99,235,.25)}
+.btn-dl:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.4)}
+.btn-dl:disabled{background:#cbd5e1;box-shadow:none;cursor:not-allowed;transform:none}
+
+/* ── CV PAPER WRAP ── */
+.cv-wrap{background:white;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06);overflow:hidden;min-height:520px}
+.cv-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:480px;gap:14px;color:var(--light)}
+.cv-placeholder .ph-icon{font-size:3rem;opacity:.4}
+.cv-placeholder p{font-size:.88rem;text-align:center;max-width:200px;line-height:1.5}
+
+/* ── CV DOC ── */
+.cv-doc{font-family:Georgia,serif;font-size:13px;line-height:1.6;color:#1e293b}
+
+/* TEMPLATE: Blue */
+.cv-doc.tpl-blue .cv-hd{background:linear-gradient(135deg,#1e3a5f,#1e1b4b)}
+.cv-doc.tpl-blue .cv-left{background:#f1f5f9}
+.cv-doc.tpl-blue .sec-t{color:#2563eb;border-bottom-color:#2563eb}
+.cv-doc.tpl-blue .skill-chip{background:#dbeafe;color:#1e40af}
+.cv-doc.tpl-blue .lang-lv{color:#2563eb}
+.cv-doc.tpl-blue .exp-co{color:#2563eb}
+
+/* TEMPLATE: Green */
+.cv-doc.tpl-green .cv-hd{background:linear-gradient(135deg,#064e3b,#0c4a6e)}
+.cv-doc.tpl-green .cv-left{background:#f0fdf4}
+.cv-doc.tpl-green .sec-t{color:#059669;border-bottom-color:#059669}
+.cv-doc.tpl-green .skill-chip{background:#d1fae5;color:#065f46}
+.cv-doc.tpl-green .lang-lv{color:#059669}
+.cv-doc.tpl-green .exp-co{color:#059669}
+
+/* TEMPLATE: Dark */
+.cv-doc.tpl-dark .cv-hd{background:linear-gradient(135deg,#0f172a,#1e293b)}
+.cv-doc.tpl-dark .cv-left{background:#f8fafc}
+.cv-doc.tpl-dark .sec-t{color:#475569;border-bottom-color:#1e293b}
+.cv-doc.tpl-dark .skill-chip{background:#f1f5f9;color:#334155}
+.cv-doc.tpl-dark .lang-lv{color:#475569}
+.cv-doc.tpl-dark .exp-co{color:#475569}
+
+/* CV STRUCTURE */
+.cv-doc .cv-hd{color:#fff;padding:34px 38px 26px}
+.cv-doc .cv-hd h1{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:2px;letter-spacing:-.01em}
+.cv-doc .cv-jt{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.15em;margin-bottom:14px}
+.cv-doc .cv-cts{display:flex;gap:18px;flex-wrap:wrap}
+.cv-doc .cv-ct{font-family:'Inter',sans-serif;font-size:10.5px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
+.cv-doc .cv-body{display:grid;grid-template-columns:185px 1fr}
+.cv-doc .cv-left{padding:24px 18px}
+.cv-doc .cv-right{padding:24px 26px;border-left:1px solid #e9eef5}
+.cv-doc .sec-t{font-family:'Inter',sans-serif;font-size:8.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;margin-bottom:9px;padding-bottom:5px;border-bottom:2px solid}
+.cv-doc .cv-blk{margin-bottom:20px}
+.cv-doc .skill-chip{display:inline-block;border-radius:4px;padding:2.5px 7px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;margin:2px 2px 2px 0}
+.cv-doc .lang-row{display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:11px;margin-bottom:5px;color:#374151}
+.cv-doc .lang-lv{font-size:9.5px;font-weight:700}
+.cv-doc .pro-txt{font-size:11.5px;color:#475569;line-height:1.65;font-family:'Inter',sans-serif}
+.cv-doc .exp-it{margin-bottom:15px;padding-bottom:14px;border-bottom:1px solid #f1f5f9}
+.cv-doc .exp-it:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cv-doc .exp-row{display:flex;justify-content:space-between;align-items:flex-start}
+.cv-doc .exp-pos{font-weight:700;font-size:12.5px;color:#0f172a}
+.cv-doc .exp-per{font-family:'Inter',sans-serif;font-size:9.5px;color:#94a3b8;white-space:nowrap;margin-left:8px;padding-top:2px;font-weight:500}
+.cv-doc .exp-co{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;margin-bottom:4px;margin-top:1px}
+.cv-doc .exp-desc{font-family:'Inter',sans-serif;font-size:11px;color:#64748b;line-height:1.55}
+.cv-doc .edu-it{margin-bottom:12px}
+.cv-doc .edu-deg{font-weight:700;font-size:12px;color:#0f172a}
+.cv-doc .edu-inst{font-family:'Inter',sans-serif;font-size:11px;color:#64748b;margin-top:1px}
+.cv-doc .edu-yr{font-family:'Inter',sans-serif;font-size:9.5px;color:#94a3b8;margin-top:2px;font-weight:500}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:32px 20px;color:var(--light);font-size:.78rem;border-top:1px solid var(--border);margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--primary)}
+
+@media print {
+  body{background:#fff}
+  .topbar,.hero,.form-panel,.preview-toolbar,footer{display:none!important}
+  .page-wrap{display:block!important;padding:0!important;max-width:100%!important}
+  .preview-panel{gap:0}
+  .cv-wrap{box-shadow:none!important;border-radius:0!important}
+  @page{size:A4;margin:0}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <div class="topbar-icon">📄</div>
+    <div class="topbar-text">CV <span>Gjenerator</span></div>
+  </a>
+  <a class="topbar-back" href="index.html">← Yjet Shqip</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ 100% Falas · Pa Regjistrim</div>
+  <h1>Krijo CV-në tënde <span>Profesionale</span></h1>
+  <p>Plotëso fushat, shiko rezultatin live, dhe shkarko si PDF menjëherë — në shqip, falas.</p>
+  <div class="hero-badges">
+    <div class="hbadge"><div class="dot"></div> Falas gjithmonë</div>
+    <div class="hbadge">📄 PDF me 1 klik</div>
+    <div class="hbadge">⚡ Live preview</div>
+    <div class="hbadge">🇦🇱 Në shqip</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <!-- FORM -->
+  <div class="form-panel">
+    <div class="form-panel-head">
+      <div class="form-panel-title">Plotëso të dhënat</div>
+      <div class="form-panel-sub">Ndryshimet shfaqen automatikisht në preview</div>
+
+      <!-- Template picker -->
+      <div class="tpl-row">
+        <button class="tpl-btn tpl-blue active" onclick="setTpl('blue',this)">
+          <div class="tpl-dot"></div>Blu
+        </button>
+        <button class="tpl-btn tpl-green" onclick="setTpl('green',this)">
+          <div class="tpl-dot"></div>Jeshile
+        </button>
+        <button class="tpl-btn tpl-dark" onclick="setTpl('dark',this)">
+          <div class="tpl-dot"></div>E zezë
+        </button>
+      </div>
+    </div>
+
+    <div class="form-panel-body">
+
+      <!-- 1. Personal -->
+      <div class="fsec">
+        <div class="fsec-head"><div class="fsec-num">1</div><div class="fsec-title">Të dhëna personale</div></div>
+        <div class="fg"><label>Emri i plotë *</label><input type="text" id="cvName" placeholder="Ardit Hoxha" oninput="liveUpdate()"></div>
+        <div class="fg"><label>Titulli profesional</label><input type="text" id="cvTitle" placeholder="Inxhinier Softuerësh Senior" oninput="liveUpdate()"></div>
+        <div class="frow">
+          <div class="fg"><label>Email</label><input type="email" id="cvEmail" placeholder="email@shembull.com" oninput="liveUpdate()"></div>
+          <div class="fg"><label>Telefon</label><input type="text" id="cvPhone" placeholder="+355 69 123 4567" oninput="liveUpdate()"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Qyteti</label><input type="text" id="cvCity" placeholder="Tiranë" oninput="liveUpdate()"></div>
+          <div class="fg"><label>LinkedIn / Website</label><input type="text" id="cvLink" placeholder="linkedin.com/in/emri" oninput="liveUpdate()"></div>
+        </div>
+      </div>
+
+      <!-- 2. Profile -->
+      <div class="fsec">
+        <div class="fsec-head"><div class="fsec-num">2</div><div class="fsec-title">Profili personal</div></div>
+        <div class="fg"><label>Rreth teje (2-3 fjali)</label><textarea id="cvProfile" placeholder="Profesionist me 5 vite eksperiencë në zhvillim softuerësh. I specializuar në React dhe Node.js. Kërkoj role ku mund të kontribuoj në produkte inovative." oninput="liveUpdate()"></textarea></div>
+      </div>
+
+      <!-- 3. Experience -->
+      <div class="fsec">
+        <div class="fsec-head"><div class="fsec-num">3</div><div class="fsec-title">Eksperienca profesionale</div></div>
+        <div id="expList"></div>
+        <button class="add-btn" onclick="addExp()">+ Shto eksperiencë</button>
+      </div>
+
+      <!-- 4. Education -->
+      <div class="fsec">
+        <div class="fsec-head"><div class="fsec-num">4</div><div class="fsec-title">Arsimi</div></div>
+        <div id="eduList"></div>
+        <button class="add-btn" onclick="addEdu()">+ Shto arsim</button>
+      </div>
+
+      <!-- 5. Skills & Languages -->
+      <div class="fsec">
+        <div class="fsec-head"><div class="fsec-num">5</div><div class="fsec-title">Aftësi & Gjuhë</div></div>
+        <div class="fg"><label>Aftësi (ndaj me presje)</label><input type="text" id="cvSkills" placeholder="JavaScript, Photoshop, Menaxhim ekipi, Excel..." oninput="liveUpdate()"></div>
+        <div class="fg"><label>Gjuhë — niveli në kllapa</label><input type="text" id="cvLangs" placeholder="Shqip (amtare), Anglisht (C1), Italisht (B2)" oninput="liveUpdate()"></div>
+      </div>
+
+      <button class="gen-btn" onclick="generate()">
+        Gjenero CV
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="preview-panel">
+    <div class="preview-toolbar">
+      <div class="preview-label">
+        <div class="live-dot"></div>
+        Preview live
+      </div>
+      <button class="btn-dl" id="printBtn" onclick="window.print()" disabled>
+        🖨️ Printo / Ruaj si PDF
+      </button>
+    </div>
+    <div class="cv-wrap" id="cvWrap">
+      <div class="cv-placeholder">
+        <div class="ph-icon">📄</div>
+        <p>Plotëso formën dhe kliko "Gjenero CV"</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>CV Gjenerator Shqip — Falas, pa regjistrim &nbsp;·&nbsp; <a href="index.html">Yjet Shqip</a> &nbsp;·&nbsp; <a href="about.html">Rreth Nesh</a> &nbsp;·&nbsp; <a href="privacy.html">Privatësia</a> &nbsp;·&nbsp; <a href="contact.html">Kontakt</a></p>
+</footer>
+
+<script>
+let expC = 0, currentTpl = 'blue', generated = false;
+
+function setTpl(name, btn) {
+  currentTpl = name;
+  document.querySelectorAll('.tpl-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (generated) generate();
+}
+
+function addExp() {
+  const n = ++expC;
+  const d = document.createElement('div');
+  d.className = 'ecard';
+  d.innerHTML = `
+    <div class="ecard-num">${n}</div>
+    <button class="rm" onclick="this.parentElement.remove();if(generated)generate()">✕</button>
+    <div class="frow">
+      <div class="fg"><label>Pozicioni</label><input type="text" placeholder="Web Developer" data-f="pos" oninput="liveUpdate()"></div>
+      <div class="fg"><label>Kompania</label><input type="text" placeholder="Tech Solutions" data-f="comp" oninput="liveUpdate()"></div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label>Periudha</label><input type="text" placeholder="Jan 2022 – Sot" data-f="period" oninput="liveUpdate()"></div>
+      <div class="fg"><label>Qyteti</label><input type="text" placeholder="Tiranë" data-f="loc" oninput="liveUpdate()"></div>
+    </div>
+    <div class="fg" style="margin-bottom:0;padding-left:26px"><label>Përshkrim (opsional)</label><textarea placeholder="Zhvillova features të reja, optimizova performancën..." data-f="desc" oninput="liveUpdate()"></textarea></div>`;
+  document.getElementById('expList').appendChild(d);
+}
+
+function addEdu() {
+  const d = document.createElement('div');
+  d.className = 'ecard';
+  d.innerHTML = `
+    <div class="ecard-num">—</div>
+    <button class="rm" onclick="this.parentElement.remove();if(generated)generate()">✕</button>
+    <div class="frow">
+      <div class="fg"><label>Diploma / Titulli</label><input type="text" placeholder="Bachelor Informatikë" data-f="deg" oninput="liveUpdate()"></div>
+      <div class="fg"><label>Institucioni</label><input type="text" placeholder="UT Tiranë" data-f="inst" oninput="liveUpdate()"></div>
+    </div>
+    <div class="fg" style="margin-bottom:0;padding-left:26px"><label>Vitet</label><input type="text" placeholder="2018 – 2022" data-f="years" oninput="liveUpdate()"></div>`;
+  document.getElementById('eduList').appendChild(d);
+}
+
+function getEntries(listId, fields) {
+  return [...document.getElementById(listId).querySelectorAll('.ecard')].map(c => {
+    const o = {};
+    fields.forEach(f => { const el = c.querySelector(`[data-f="${f}"]`); o[f] = el ? el.value.trim() : ''; });
+    return o;
+  });
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function liveUpdate() {
+  if (generated) generate();
+}
+
+function generate() {
+  const name    = document.getElementById('cvName').value.trim();
+  const title   = document.getElementById('cvTitle').value.trim();
+  const email   = document.getElementById('cvEmail').value.trim();
+  const phone   = document.getElementById('cvPhone').value.trim();
+  const city    = document.getElementById('cvCity').value.trim();
+  const link    = document.getElementById('cvLink').value.trim();
+  const profile = document.getElementById('cvProfile').value.trim();
+  const skills  = document.getElementById('cvSkills').value.trim().split(',').map(s=>s.trim()).filter(Boolean);
+  const langs   = document.getElementById('cvLangs').value.trim().split(',').map(s=>s.trim()).filter(Boolean);
+
+  if (!name) { alert('Shkruaj emrin e plotë!'); return; }
+
+  const exps = getEntries('expList', ['pos','comp','period','loc','desc']);
+  const edus = getEntries('eduList', ['deg','inst','years']);
+
+  const cts = [
+    email ? `<div class="cv-ct">✉ ${esc(email)}</div>` : '',
+    phone ? `<div class="cv-ct">📞 ${esc(phone)}</div>` : '',
+    city  ? `<div class="cv-ct">📍 ${esc(city)}</div>`  : '',
+    link  ? `<div class="cv-ct">🔗 ${esc(link)}</div>`  : '',
+  ].join('');
+
+  const skillsHtml = skills.length
+    ? skills.map(s => `<span class="skill-chip">${esc(s)}</span>`).join('')
+    : '<span style="color:#aaa;font-size:10px">—</span>';
+
+  const langsHtml = langs.length
+    ? langs.map(l => {
+        const m = l.match(/^(.+?)\s*\((.+)\)$/);
+        return m
+          ? `<div class="lang-row"><span>${esc(m[1].trim())}</span><span class="lang-lv">${esc(m[2])}</span></div>`
+          : `<div class="lang-row"><span>${esc(l)}</span></div>`;
+      }).join('')
+    : '<span style="color:#aaa;font-size:10px">—</span>';
+
+  const expsHtml = exps.filter(e=>e.pos||e.comp).length
+    ? exps.filter(e=>e.pos||e.comp).map(e=>`
+      <div class="exp-it">
+        <div class="exp-row">
+          <div class="exp-pos">${esc(e.pos||'—')}</div>
+          <div class="exp-per">${esc(e.period||'')}</div>
+        </div>
+        <div class="exp-co">${esc(e.comp||'')}${e.loc?' · '+esc(e.loc):''}</div>
+        ${e.desc?`<div class="exp-desc">${esc(e.desc).replace(/\n/g,'<br>')}</div>`:''}
+      </div>`).join('')
+    : '<p style="color:#aaa;font-family:Inter,sans-serif;font-size:11px">—</p>';
+
+  const edusHtml = edus.filter(e=>e.deg||e.inst).length
+    ? edus.filter(e=>e.deg||e.inst).map(e=>`
+      <div class="edu-it">
+        <div class="edu-deg">${esc(e.deg||'—')}</div>
+        <div class="edu-inst">${esc(e.inst||'')}</div>
+        ${e.years?`<div class="edu-yr">${esc(e.years)}</div>`:''}
+      </div>`).join('')
+    : '<p style="color:#aaa;font-family:Inter,sans-serif;font-size:11px">—</p>';
+
+  document.getElementById('cvWrap').innerHTML = `
+  <div class="cv-doc tpl-${currentTpl}">
+    <div class="cv-hd">
+      <h1>${esc(name)}</h1>
+      ${title?`<div class="cv-jt">${esc(title)}</div>`:''}
+      <div class="cv-cts">${cts}</div>
+    </div>
+    <div class="cv-body">
+      <div class="cv-left">
+        ${profile?`<div class="cv-blk"><div class="sec-t">Profili</div><p class="pro-txt">${esc(profile).replace(/\n/g,'<br>')}</p></div>`:''}
+        <div class="cv-blk"><div class="sec-t">Aftësi</div>${skillsHtml}</div>
+        <div class="cv-blk"><div class="sec-t">Gjuhë</div>${langsHtml}</div>
+      </div>
+      <div class="cv-right">
+        <div class="cv-blk"><div class="sec-t">Eksperienca Profesionale</div>${expsHtml}</div>
+        <div class="cv-blk"><div class="sec-t">Arsimi</div>${edusHtml}</div>
+      </div>
+    </div>
+  </div>`;
+
+  generated = true;
+  document.getElementById('printBtn').disabled = false;
+}
+
+addExp();
+addEdu();
+</script>
+</body>
+</html>
