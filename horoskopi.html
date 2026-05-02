@@ -605,6 +605,191 @@ const ADVICE_POOL = [
   'Mos krahasoni rrugën tuaj me të tjerëve — secili ka hapat e vet.',
   'Investoni në marrëdhëniet që ju ngritën — ato janë thesari juaj.'
 ];
+
+// ─── DAILY SEED ───────────────────────────────────────────────────────────────
+function dailySeed(si,d){return((si*173+d*59+si*d*7)^(d*13))>>>0;}
+function seedPick(arr,s){return arr[s%arr.length];}
+
+// ─── DAILY OVERVIEW — 6 variants per sign ────────────────────────────────────
+const DAILY_OV={
+  dash:[
+    'Marsi të dhuron sot energji ndezëse dhe vullnet të çeliktë. Çdo sfidë para teje sot duket e mundur. Yjet inkurajojnë hapin që ke shtyrë — koha është tani.',
+    'Dita ka karakter të veçantë energjik për Dashin. Impulset tuaja janë të sakta — besojini tyre dhe vepro me guxim. Mundësia e ditës shfaqet aty ku s\'e pret.',
+    'Yjet e vendosin Dashin në pozicion fitues sot. Forca juaj natyrale tregon rezultate dhe të tjerët e vënë re. Komunikimi sjell zgjidhje — mos lini asgjë pa u thënë.',
+    'Energjia planetare sot favorizon iniciativën dhe vendosmërinë. Projektet e papërfunduara gjejnë rrugëdalje dhe lidhjet e reja hapen natyrshëm. Besimi ndez entuziazmin.',
+    'Dielli ndriçon rrugën e Dashit me qartësi dhe fuqi. Mundësi të reja po shfaqen dhe ndjesia e lëvizjes përpara është e fortë. Veproni me vendosmëri.',
+    'Planetët anojnë favorshëm ndaj Dashit — dita është e mirë për fillime dhe guxim. Çdo gjë e bërë me entuziazëm sot do të ketë ndikim afatgjatë.',
+  ],
+  dem:[
+    'Venusi ndriçon botën e Demit me harmoni dhe rehatë të brendshme. Marrëdhëniet janë të ngrohta dhe produktiviteti i qëndrueshëm. Dita favorizon çdo gjë praktike.',
+    'Qetësia e Demit është sot aseti kryesor. Yjet konfirmojnë se puna e vazhdueshme po jep frytet e para. Besojini rrugës — mos u shpërqendroni.',
+    'Energjia e Demit sot është e rrënjëzuar dhe e qëndrueshme. Situata financiare merr vëmendje të favorshme dhe marrëdhëniet janë harmonike.',
+    'Venusi ju fton të gëzoheni me gjërat e thjeshta dhe të bukura. Kolegët dhe të dashurit ndiejnë praninë tuaj qetësuese. Dita e mirë për vendime afatgjata.',
+    'Demi ndihet i qetë dhe produktiv — kombinim perfekt sot. Yjet favorizojnë planet praktike, financiare dhe familjare.',
+    'Frytet e punës dhe besnikërisë ndaj vlerave janë të dukshme sot. Venusi sjell harmoni dhe çdo sipërmarrje ecën me ritëm të mirë.',
+  ],
+  bin:[
+    'Mërkuri ndez mendjen e Binjakëve me ide të shkëlqyera dhe biseda ndriçuese. Komunikimi juaj sot është i papërmbajtshëm.',
+    'Energjia intelektuale e Binjakëve sot është në kulm. Çdo fjalë ka peshë dhe të tjerët dëgjojnë. Bashkëpunimet e reja hapen natyrshëm.',
+    'Planetët aktivizojnë anën më të mprehtë — analizën, kreativitetin dhe komunikimin. Dita favorizon takime dhe nisme të reja intelektuale.',
+    'Vrull i jashtëzakonshëm për Binjakët sot. Idetë origjinale gjejnë veshë të gatshëm dhe mundësi profesionale vijnë nga lidhjet sociale.',
+    'Mërkuri favorizon çdo formë komunikimi sot. Shprehuni lirshëm — idetë janë të vlefshme. Dita e mirë për negociata dhe marrëveshje.',
+    'Natyra dinamike e Binjakëve sot bën dallimin. Çdo bisedë mund të çojë diku interesant. Jini kurioz dhe të hapur ndaj papriturës.',
+  ],
+  gaf:[
+    'Hëna amplifikoën intuitën dhe ndjeshmërinë e Gaforrjes sot. Emocionet janë udhëzues i saktë — besojini tyre.',
+    'Gaforrja ndihet e fortë dhe e qëndrueshme sot. Intuitës i vijnë sinjale të qarta — dëgjojini dhe veproni me besim.',
+    'Planetët favorizojnë jetën e brendshme dhe krijuese. Kreativiteti është i lartë dhe lidhjet dashurie thellohen natyrshëm.',
+    'Hëna sjell sot ndjeshmëri dhe përforcim intuitiv. Kini besim ndaj vetes — emocionet ju udhëzojnë drejt gjërave të duhura.',
+    'Gaforrja sot ka aftësinë e rrallë të leximit të situatave me thellësi. Intuita është superiore — mos e kontrolloni shumë.',
+    'Yjet i dhurojnë Gaforrjes qetësi dhe ëmbëlsi të brendshme sot. Marrëdhëniet me të dashurit janë burim force dhe gëzimi.',
+  ],
+  luan:[
+    'Dielli ndriçon sot çdo gjë që preket nga Luani. Jeni qendra e vëmendjes — dhe e meritoni. Kreativiteti dhe njohja janë tema yjesore.',
+    'Magnetizmi i Luanit është sot në nivel maksimal. Njerëzit tërhiqen nga prania juaj dhe mundësi të reja shfaqen. Veproni me guxim.',
+    'Energjia kreative e Luanit sot gjen kanalin e duhur. Projektet me dimension publik janë shumë të favorshme. Besojini shprehjes natyrore.',
+    'Dielli ndriçon rrugën dhe çdo hap i bërë me besim sjell rezultate. Karisma është armë e fuqishme dhe njerëzit e ndjejnë praninë tuaj.',
+    'Luani gjen harmoninë mes pasionit dhe urtësisë sot. Vendimmarrja reflekton maturinë. Yjet konfirmojnë: njohja ka ardhur — pranojeni.',
+    'Planetët i dhurojnë Luanit forcë të brendshme të jashtëzakonshme sot. Guximi dhe entuziazmi janë të papërmbajtshëm.',
+  ],
+  vir:[
+    'Mërkuri sot e çon aftësinë analitike të Virgjëreshës në nivel superior. Problemet komplekse gjejnë zgjidhje elegante dhe puna e kujdesur sjell respekt.',
+    'Yjet favorizojnë përpikmërinë dhe organizimin sot. Çdo detaj i kujdesur sot kursen probleme nesër. Eficienca juaj sot është e paprecedentë.',
+    'Energjia e Virgjëreshës sot është praktike dhe produktive. Sektori profesional fiton nga preciziteti juaj karakteristik.',
+    'Mërkuri aktivizon aftësinë komunikuese dhe analitike. Solucionet e ofruara sot do të mbahen në kujtesë. Puna me detaje sjell rezultate afatgjata.',
+    'Virgjëresha shndrit sot me efikasitetin dhe besueshmërinë e zakonshme. Disiplina po jep frytet e merituar.',
+    'Planetët i japin Virgjëreshës qartësi mendore dhe produktivitet. Projektet e komplikuara bëhen të menaxhueshme.',
+  ],
+  pel:[
+    'Venusi sjell harmoni dhe bukuri në çdo aspekt të jetës së Peshorjes sot. Marrëdhëniet janë të ekuilibruar.',
+    'Energjia balancuese e Peshorjes sot është pasuri reale. Çdo konflikt zgjidhet me taktin dhe elegancën natyrore.',
+    'Venusi ndriçon Peshorjen me bukuri dhe ekuilibër. Vendimmarrja bëhet e duhur. Marrëdhëniet dashurie dhe profesionale janë shumë të favorshme.',
+    'Peshorja gjen balancin e brendshëm sot. Çdo ndërveprim ka cilësi dhe elegancë natyrale.',
+    'Planetët favorizojnë rolin harmonizues dhe diplomatik. Çdo situatë e vështirë transformohet nëpërmjet taktit tuaj.',
+    'Energjia e Peshorjes sot ka elegancë dhe mprehtësi. Marrëdhëniet fitojnë nga komunikimi i sinqertë dhe i ekuilibruar.',
+  ],
+  akr:[
+    'Plutoni aktivizon forcën transformuese dhe intuitive të Akrepit sot. Situatat e bllokuara lëvizin — besojini instiktit.',
+    'Akrepi ndihet sot në terrenin e vet të preferuar — thellësi, analizë dhe strategji. Pasioni sjell rezultate konkrete.',
+    'Plutoni amplifikohet sot dhe fuqia e brendshme është e jashtëzakonshme. Ndërveprimet e thella prodhojnë rezultate të rëndësishme.',
+    'Energjia e Akrepit sot është magnetike dhe transformuese. Njerëzit ndiejnë prezencën tuaj të fuqishme. Dita favorizon strategjinë.',
+    'Yjet i dhurojnë Akrepit perceptim të mprehtë dhe forcë veprimi. Situata komplekse bëhen të qarta dhe vendimmarrja e sigurt.',
+    'Planetët favorizojnë intensitetin dhe thellësinë karakteristike. Transformimet pozitive janë aty ku besoni plotësisht.',
+  ],
+  she:[
+    'Jupiteri hap horizonte të reja dhe mundësi të bollshme për Shigjetarin sot. Optimizmi juaj është ngjitës.',
+    'Shigjetari ndihet i lirë dhe i frymëzuar sot. Aventura intelektuale dhe fizike ju thërret — ndiqni thirrjen.',
+    'Jupiteri amplifikohet sot. Guximi karakteristik sjell rezultate dhe njerëzit ndiejnë entuziazmit tuaj.',
+    'Energjia e Shigjetarit sot është ndezëse dhe aventuroze. Çdo hap i ri sjell frymëzim dhe çdo bisedë hap horizonte.',
+    'Planetët i japin Shigjetarit vizion të qartë dhe energji zbatimi. Projektet ambicioze gjejnë hov.',
+    'Yjet favorizojnë filozofinë dhe urtësinë natyrore. Perspektiva e gjerë e Shigjetarit zgjidh probleme të pathyeshëm.',
+  ],
+  bri:[
+    'Saturni sot shpërblen disiplinën dhe punën e vazhdueshme të Bricjapit. Njohja profesionale është e merituar.',
+    'Bricjapi ndihet i qëndrueshëm dhe i vendosur sot. Rruga juaj është e duhur dhe hapat me disiplinë japin frytet e para.',
+    'Saturni amplifikohet sot. Fuqia organizuese e Bricjapit ndihet kudo dhe kolegët ju respektojnë.',
+    'Energjia praktike dhe e fokusuese e Bricjapit sot prodhon rezultate. Çdo vendim financiar i llogaritur favorizohet.',
+    'Planetët i dhurojnë Bricjapit qartësi dhe besim në aftësitë e veta. Karriera merr hov sot.',
+    'Ambicia dhe disiplina e Bricjapit po japin frytet e merituar sot. Njohja dhe respekti janë në rrugën e tyre.',
+  ],
+  uju:[
+    'Uranusi ndez inovacionin dhe originalitetin e Ujorit sot. Idetë revolucionare gjejnë vesh të gatshëm.',
+    'Ujori ndihet i lirë dhe i frymëzuar sot. Yjet favorizojnë çdo gjë inovative dhe autentike.',
+    'Uranusi amplifikohet sot. Potenciali inovativ i Ujorit është i papërmbajtshëm. Bashkëpunimet kreative japin rezultate.',
+    'Energjia e Ujorit sot është e freskët dhe revolucionare. Idetë jo-konvencionale janë çfarë kërkohet.',
+    'Planetët i japin Ujorit vizion dhe fuqi realizimi. Projektet inovative gjejnë mbështetje.',
+    'Vizioni i Ujorit është dekada përpara kohës — por realizimi ndodh sot. Besojini instikteve inovative.',
+  ],
+  pesh:[
+    'Neptuni zgjon intuitën dhe kreativitetin e Peshqve sot në nivele të pashpjegueshme. Çdo projekt artistik ka ndikim të thellë.',
+    'Peshqit ndiejnë lidhje të thellë me botën dhe njerëzit sot. Intuita është superiore dhe kreativiteti gjen shprehje.',
+    'Neptuni amplifikohet sot. Dhurata artistike dhe empatike është e jashtëzakonshme. Marrëdhëniet thellohen papritur.',
+    'Energjia e Peshqve sot është poetike dhe ndriçuese. Ëndrrat dhe intuita janë burime informacioni. Yjet favorizojnë shprehjen.',
+    'Planetët i dhurojnë Peshqve ndjeshmëri dhe kreativitet të lartë. Projektet artistike janë shumë të favorshme.',
+    'Bujarisë dhe empatisë suaj u kthehet me interes sot. Dashuritë janë autentike dhe kreativiteti gjen rrugë shprehjeje.',
+  ],
+};
+const DAILY_LOVE=[
+  'Yjet favorizojnë bashkimet e reja dhe thellimin e atyre ekzistuese. Hapini zemrën — dashuria nuk ka afat.',
+  'Romantizmi ka ngrohtësi të veçantë sot. Nëse jeni beqar, takim i papritur mund të ndryshojë perspektivën. Çiftet forcohen nëpërmjet komunikimit.',
+  'Dashuria sot kërkon prezencë dhe vëmendje. Surprizat e vogla lënë gjurmë të mëdha. Partneri/ja ka nevojë t\'u ndjejë të pranishëm.',
+  'Energjia romantike është e lartë dhe magnetike. Nëse mendoni për dikë, koha e veprimit është sot. Çiftet gëzojnë momente cilësore.',
+  'Bisedat e sinqerta dhe të hapura zgjidhin tensione të akumuluara. Lajeni ndjenjat t\'u shprehën — shprehja emocionale forcon lidhjet.',
+  'Autenticiteti tërhek autenticitet sot. Shprehni ndjenjat pa hezitim — marrëdhëniet genuinë janë dhuratë e çmuar.',
+];
+const DAILY_CAREER=[
+  'Iniciativa dhe vendosmëria juaj do të vërehet sot. Mos lejoni mundësinë të kalojë pa vepruar.',
+  'Çdo ide e shprehur me besim tërheq mbështetje sot. Kolegët janë receptiv — prezantohuni me autoritet dhe qartësi.',
+  'Mundësi profesionale shfaqen atje ku nuk i prisnit. Mbani rrjetin social aktiv — bashkëpunimet e reja transformojnë.',
+  'Kreativiteti dhe inovacioni favorizohen sot. Idetë jo-konvencionale janë çfarë kërkohet — guxoni të propozoni.',
+  'Produktiviteti juaj sot është i lartë dhe i dukshëm. Ky është momenti për të kërkuar atë që meritoni.',
+  'Karriera sot kërkon strategji dhe qëllim të qartë. Çdo hap i bërë me vetëdije ka ndikim afatgjatë.',
+];
+const DAILY_FINANCE=[
+  'Mundësi të reja të ardhurash mund të shfaqen — analizoni me kujdes. Vendimet e matura japin frytet.',
+  'Situata financiare kërkon vëmendje sot. Rishikoni buxhetin dhe gjeni mundësi kursimi. Disiplina sot sjell fryte afatgjata.',
+  'Yjet favorizojnë investimet e matura. Shmangni shpenzimet impulsive — çdo para e kursyer sot është investim i nesërmes.',
+  'Mundësi financiare vijnë nga drejtim i papritur — mbani vëmendje dhe analizojeni me seriozitet.',
+  'Hapat financiarë të mençur po japin rezultate konkrete. Yjet konfirmojnë: rruga financiare është e duhur.',
+  'Financat sot janë të qëndrueshme por kërkojnë planifikim proaktiv. Çdo vendim i sotëm ka ndikim të nesërmes.',
+];
+const DAILY_HEALTH=[
+  'Trupi juaj dëgjohet sot — jepini atë çfarë i nevojitet. Pushimi i mjaftueshëm është prioritet.',
+  'Energjia fizike është e mirë sot, por kini kujdes me tejlodhjen. Balanconi aktivitetin me pushimin.',
+  'Yjet favorizojnë aktivitetin fizik dhe kujdesin ndaj shëndetit mendor. Gjeni momentin tuaj të qetësisë.',
+  'Nëse ndiheni të lodhur, pushoni pa faj. Rifuqizimi i qëllimshëm është investim, jo humbje kohe.',
+  'Vitaliteti sot është i mirë — shfrytëzojeni me aktivitete pozitive dhe kohë me njerëz ndriçues.',
+  'Ndjenjat e mbajtura brenda reflektohen fizikisht. Gjeni mënyrën tuaj të shprehjes — art, bisedë apo lëvizje.',
+];
+const DAILY_ADVICE2=[
+  'Besojini intuitës suaj sot — zemra shpesh e di përgjigjen para mendjes.',
+  'Qëndroni të pranishëm — momentet e vogla janë ato që mbeten.',
+  'Komunikoni hapur — fjalët e sinqerta ndërtojnë ura të qëndrueshme.',
+  'Një veprim i vogël sot mund të ndryshojë rrjedhën e gjithë javës.',
+  'Faleni veten dhe të tjerët — liria e vërtetë fillon me falje.',
+  'Ndjekni energjinë e gëzimit — ajo ju çon drejt të vërtetës suaj.',
+  'Pushoni pak nga teknologjia — natyra dhe heshtja shërojnë thellë.',
+  'Shkruani tre gjëra për të cilat jeni mirënjohës sot.',
+  'Mos krahasoni rrugën tuaj me të tjerëve — secili ka hapat e vet.',
+  'Investoni në marrëdhëniet që ju ngritin — ato janë thesari juaj real.',
+  'Çdo sfidë ka mësimin e vet — pyesni çfarë ju mëson.',
+  'Sot bëni diçka të vogël për veten — kujdesi ndaj vetes nuk është egoizëm.',
+];
+const DAILY_COLORS={
+  dash:['E kuqe','Portokalli','E verdhë e nxehtë','Bakri','E kuqe mavi','Portokalli i thellë'],
+  dem: ['E gjelbër','Kafe e ngrohtë','Krem','Jeshile deti','Okri','E gjelbër e errët'],
+  bin: ['E verdhë','Turkuaz','Argjend','E kaltër e lehtë','Limon','E verdhë-jeshile'],
+  gaf: ['Argjend','E bardhë','Blu i lehtë','Rozë i lehtë','Jeshile ujë','Lavandë'],
+  luan:['Ari','E kuqe mbretërore','Portokalli i ndezur','E verdhë diell','Ari i thellë','Bronz'],
+  vir: ['Kafe','E gjelbër e errët','Krem','Ngjyrë preshi','Okri','Jeshile ulliri'],
+  pel: ['Rozë','E kaltër qiell','Jeshile i lehtë','E bardhë kremi','Lavandë','Rozë i çelur'],
+  akr: ['E kuqe e errët','Bordeaux','E zezë me shkëlqim','Burgundy','Vjollcë e errët','Kafe-e zezë'],
+  she: ['Blu','Vjollcë','Portokalli','Ngjyrë indigo','Turkuaz','Blu e çelur'],
+  bri: ['Kafe e errët','Gri me cilësi','E zezë elegante','Ngjyrë guri','Ari antik','Olive'],
+  uju: ['Blu elektrik','Argjend-blu','Cian','Vjollcë elektrike','Ngjyrë metali','E kaltër neon'],
+  pesh:['Jeshile deti','Blu oqean','Argjend-ujë','Lavandë i ndezur','Turkuaz i thellë','Rozë detar'],
+};
+
+function buildDailyHTML(key,sign,doy){
+  const si=ORDER.indexOf(key);
+  const s0=dailySeed(si,doy),s1=dailySeed(si+12,doy),s2=dailySeed(si,doy+100);
+  const s3=dailySeed(si*2+1,doy),s4=dailySeed(si,doy*3+1),s5=dailySeed(si+5,doy+50);
+  const r=[2+(s0%4),2+(s1%4),2+(s2%4),2+(s3%4)];
+  const ln=1+(dailySeed(si*3,doy+7)%9);
+  const lc=seedPick(DAILY_COLORS[key],s5);
+  const ad=seedPick(DAILY_ADVICE2,s5);
+  const html=`
+    <h4>✦ Përmbledhja</h4><p>${seedPick(DAILY_OV[key],s0)}</p>
+    <h4>❤️ Dashuria</h4><p>${seedPick(DAILY_LOVE,s1)}</p>
+    <h4>💼 Karriera</h4><p>${seedPick(DAILY_CAREER,s2)}</p>
+    <h4>💰 Financat</h4><p>${seedPick(DAILY_FINANCE,s3)}</p>
+    <h4>🌿 Shëndeti</h4><p>${seedPick(DAILY_HEALTH,s4)}</p>
+    <h4>✨ Këshilla</h4><p><em>${ad}</em></p>
+    <h4>🔢 Numri me fat</h4><p><strong>${ln}</strong></p>
+    <h4>🎨 Ngjyra me fat</h4><p><strong>${lc}</strong></p>`;
+  return{html,r,ln,lc,ad};
+}
+
 // Monthly ratings [love, career, health, finance]
 const MR = {dash:[4,5,3,4],dem:[5,3,4,5],bin:[3,5,4,3],gaf:[5,4,5,3],luan:[5,5,4,3],vir:[3,5,5,4],pel:[5,4,4,4],akr:[4,5,3,5],she:[3,4,5,5],bri:[4,5,4,5],uju:[4,5,4,4],pesh:[5,4,5,4]};
 // Yearly ratings [love, career, health, finance]
@@ -780,19 +965,19 @@ function showHoroImpl(key, type, btn) {
     document.getElementById(type + 'Name').textContent  = sign.n;
     document.getElementById(type + 'Dates').textContent = sign.d;
     if (type === 'ditor') {
-      const entry = sign.daily[doy % sign.daily.length];
-      document.getElementById('ditorText').innerHTML = `<p>${entry.t}</p>`;
-      document.getElementById('sLove').textContent   = stars(entry.r[0]);
-      document.getElementById('sWork').textContent   = stars(entry.r[1]);
-      document.getElementById('sHealth').textContent = stars(entry.r[2]);
-      document.getElementById('sMoney').textContent  = stars(entry.r[3]);
+      const dr = buildDailyHTML(key, sign, doy);
+      document.getElementById('ditorText').innerHTML = dr.html;
+      document.getElementById('sLove').textContent   = stars(dr.r[0]);
+      document.getElementById('sWork').textContent   = stars(dr.r[1]);
+      document.getElementById('sHealth').textContent = stars(dr.r[2]);
+      document.getElementById('sMoney').textContent  = stars(dr.r[3]);
       document.getElementById('ditorPlanet').textContent = `Planeti: ${sign.pl}  ·  Element: ${sign.el}`;
       document.getElementById('ditorLucky').innerHTML =
-        `<span class="lucky-tag">✦ Numri: ${sign.ln}</span>
-         <span class="lucky-tag">✦ Dita: ${sign.ld}</span>
-         <span class="lucky-tag">✦ Ngjyra: ${sign.lc}</span>`;
-      renderSecs('ditorSecs', entry.r);
-      document.getElementById('ditorAdvice').textContent = ADVICE_POOL[doy % ADVICE_POOL.length];
+        `<span class="lucky-tag">✦ Numri me fat: ${dr.ln}</span>
+         <span class="lucky-tag">✦ Dita me fat: ${sign.ld}</span>
+         <span class="lucky-tag">✦ Ngjyra me fat: ${dr.lc}</span>`;
+      renderSecs('ditorSecs', dr.r);
+      document.getElementById('ditorAdvice').textContent = dr.ad;
     } else if (type === 'mujor') {
       document.getElementById('mujorText').innerHTML = buildMonthlyHTML(sign, key, mon);
       renderSecs('mujorSecs', MR[key]);
