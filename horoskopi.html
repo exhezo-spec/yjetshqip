@@ -99,6 +99,8 @@ main{max-width:920px;margin:0 auto;padding:32px 16px 40px}
 .result-body{font-size:1.08rem;line-height:1.95;color:#cfc8e0;font-weight:300}
 .result-body strong{color:var(--gold-light);font-weight:600}
 .result-body p{margin-bottom:12px}
+.result-body h4{font-family:'Cinzel Decorative',serif;font-size:.72rem;color:var(--gold);letter-spacing:.07em;margin:20px 0 7px;text-transform:uppercase}
+.result-body .m-days{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.1);border-radius:10px;padding:11px 15px;margin:8px 0 4px;font-size:.88rem;color:#c0b8d8;line-height:1.7}
 
 /* ── STARS ── */
 .stars-row{display:flex;gap:20px;flex-wrap:wrap;margin:22px 0;padding:18px;background:rgba(255,255,255,.02);border-radius:12px;border:1px solid rgba(201,168,76,.08)}
@@ -614,24 +616,138 @@ function renderSecs(id, r){
   document.getElementById(id).innerHTML=defs.map((d,idx)=>`<div class="horo-sec"><div class="horo-sec-icon">${d.i}</div><div class="horo-sec-label">${d.l}</div><div class="horo-sec-stars">${stars(r[idx])}</div><div class="horo-sec-text">${SEC_PHRASES[d.k][r[idx]-1]}</div></div>`).join('');
 }
 
-// ─── MONTHLY TEXT (12-entry, keyed to real month) ────────────────────────────
-function buildMonthlyText(sign, mIdx) {
+// ─── MONTHLY RICH DATA (detailed, per-sign, month-aware) ──────────────────────
+const MONTHLY_RICH = {
+  dash: mn => ({
+    ov: `Muaji ${mn} e vendos Dashin në pozicion të fuqishëm dhe aktiv. Marsi, planeti sundues, ju jep energji të jashtëzakonshme dhe vullnet të çeliktë për të arritur qëllimet tuaja. Ky nuk është muaj për të pritur — çdo hap i ndërmarrë me vendosmëri do të prodhojë rezultate konkrete. Megjithatë, kujdes: shpejtësia e Dashit ndonjëherë shkakton gabime që mund të shmangen me pak reflektim. Balanconi veprimin me mençurinë dhe ${mn} do të jetë ndër muajt më produktivë të vitit. Mundësitë janë reale dhe të prekshme — thjesht duhet t'i kapni.`,
+    lo: `Jeta romantike është e gjallë dhe intensive. Beqarët do të kenë mundësi të jashtëzakonshme — dikush që ju admiron nga larg do të marrë guximin të afrohet; mos e injoroni. Nëse jeni në çift, pasioni rinxitet nëpërmjet surprizave dhe aventurave të përbashkëta. Komunikimi i hapur do të forcojë lidhjen si asnjëherë tjetër. Shmangni kokëfortësinë gjatë mosmarrëveshjeve — kompromisi nuk është dobësi, por mençuri e vërtetë.`,
+    ca: `Sektori profesional është zona juaj e shkëlqimit këtë muaj. Mos hezitoni të prezantoni ide të reja ose të merrni iniciativën — autoriteti juaj natyral do të tërhiqë vëmendjen e eprorëve. Nëse keni pritur momentin e duhur për të kërkuar promovim ose rritje page, ${mn} ju favorizon fuqishëm. Projektet me risk të llogaritur janë shumë të rekomandueshme.`,
+    mo: `Financat kërkojnë planifikim aktiv dhe disiplinë. Shpenzimet impulsive — dobësi klasike e Dashit — duhet kontrolluar me vetëdisiplinë të ndërgjegjshme. Bëni listën e shpenzimeve thelbësore dhe jo-esenciale. Nga ana pozitive, mundësi të reja të ardhurash mund të vijnë nga projekte anësore ose bonuse të papritura. Analizoni para se të veproni.`,
+    he: `Energjia fizike është e lartë, por kini kujdes me tejlodhjen. Jeni të prirur të sforcoheni kur jeni në lëvizje, por trupi ka nevojë për pushim të rregullt. Prioritizoni gjumin e mjaftueshëm, hidratimin dhe vaktet e rregullta. Aktiviteti fizik si vrapimi ose yoga ju ndihmon të kanalizoni energjinë e tepërt në mënyrë konstruktive.`,
+    da: `5, 9, 14, 22 dhe 28 — ditët kur planetet janë në pozicion më favorshëm për Dashin`,
+    ad: `Fuqia juaj më e madhe është vendosmëria — por çdo vendim i madh meriton të paktën një natë gjumë para se të veproni. Guximi kur bashkohet me strategjinë bëhet absolutisht i papërmbajtshëm.`
+  }),
+  dem: mn => ({
+    ov: `Muaji ${mn} i sjell Demit një periudhë qetësie, produktiviteti dhe rritjeje të qëndrueshme. Venusi, planeti sundues, ndriçon njëkohësisht marrëdhëniet dhe financat. Ndiheni të rrënjëzuar dhe të qartë në qëllimet tuaja — ky nuk është muaj për ndryshime drastike, por për konsolidimin e gjithçkaje të nisur. Puna e vazhdueshme dhe besnikëria ndaj vlerave tuaja do të sjellin shpërblime reale dhe të prekshme. Universi po ju tregon se durimi është strategjia fituese.`,
+    lo: `Dashuria ka ngrohtësi dhe thellësi. Çiftet konsolidojnë lidhjen nëpërmjet komunikimit të sinqertë dhe planeve të përbashkëta — diskutoni ëndrrat dhe gjërat që doni të ndërtoni bashkë. Beqarët do të tërhiqen nga persona të qëndrueshëm dhe të besuar; evitoni ata me personalitete të paqëndrueshme. Romantizmi i vërtetë fillon me besueshmërinë dhe respektin reciprok.`,
+    ca: `Karriera ecën me ritëm të qëndrueshëm dhe rezultate reale. Projektet afatgjata fillojnë të tregojnë fryte. Nëse keni investuar kohë dhe energji në një projekt specifik, ${mn} mund të jetë momenti i korrjes. Bashkëpunimet me kolegë të besueshëm sjellin rezultate sinergjike — zgjidhni partnerët tuaj me kujdes dhe mençuri.`,
+    mo: `Ky është ndër muajt financiare më të favorshëm. Venusi favorizon akumulimin dhe investimet afatgjata. Nëse keni menduar të bëni investim — pronë, fond kursimi ose biznes të vogël — ${mn} ju jep energji favorable. Kini kujdes me huadhëniet ndaj miqve — kjo mund të ndikojë negativisht marrëdhëniet e çmuara.`,
+    he: `Shëndeti është i mirë kur lidheni me natyrën dhe ruani rutinën. Shëtitjet, ushqimi i shëndetshëm dhe gjumi cilësor janë themelet tuaja. Ky muaj, vini re si reagoni ndaj stresit — nëse simptoma fizike shfaqen, zakonisht kanë burim emocional. Masazhi ose aktivitete relaksuese si noti japin rezultate të mrekullueshme.`,
+    da: `4, 10, 18, 24 dhe 30 janë ditët kur yjet favorizojnë Demin në mënyrë të veçantë`,
+    ad: `Qëndrueshmëria juaj është dhurata më e vlefshme që i jepni vetes dhe të tjerëve. Mos u tundni nga gjërat që duken të shpejta dhe të lehta — lumturia juaj fillon me themele të forta.`
+  }),
+  bin: mn => ({
+    ov: `Muaji ${mn} ndez mendjen e Binjakëve me ide, bashkëpunime dhe mundësi komunikuese të bollshme. Mërkuri, planeti juaj sundues, lëviz fuqishëm dhe çdo fjalë juaj godet me saktësi dhe elegancë. Ky muaj ju fton të zgjeroni rrjetin social, të prezantoni ide të reja dhe të eksploroni fusha që ju kanë tërhequr prej kohësh. Dinamizmi juaj natyral do të tërhiqë mundësi nga drejtimi ku nuk i pritni. Mbajini sytë hapur — bashkëpunimet e papritura shpesh janë ato më transformuese.`,
+    lo: `Dashuria ka karakter intelektual dhe emocionues. Bisedat e thella do t'ju afrojnë me partnerin ose do t'ju bëjnë të dashuroheni me dikë të ri dhe interesant. Beqarët do të kenë takime sociale ku ndodhin lidhjet e papritura. Nëse jeni në çift, provoni diçka krejtësisht të re bashkë — kurs, udhëtim spontan ose aktivitet i ri që asnjëri prej jush nuk ka provuar.`,
+    ca: `Prezantime, negociata, propozime — çdo gjë e shprehur me gojë ose shkrim do të ketë ndikim të madh këtë muaj. Rrjeti juaj social hap dyer konkrete dhe të papritura. Nëse keni projekt krijues ose komunikues, ${mn} është koha ideale për ta nisur ose çuar përpara. Kini kujdes me angazhimet e shumta — zgjidhni ato me prioritet të qartë.`,
+    mo: `Financat janë të ndryshueshme — mundësi të papritura mund të vijnë, por kjo kërkon vigilancë. Shmangni vendime financiare të nxituara bazuar vetëm mbi entuziazëm të momentit. Konsultohuni me dikë të besuar para investimeve të mëdha. Kontrolloni kontratat dhe marrëveshjet me kujdes — detajet bëjnë dallimin.`,
+    he: `Mendja juaj kurrë nuk ndalon — dhe kjo mund të bëhet burim lodhje kronike. Ky muaj, praktikat e qetësisë si meditimi, shëtitjet e qeta apo leximi janë shumë të rëndësishme. Shmangni ndërrimin e orarit të gjumit — ritmi i rregullt ju jep qartësi mendore të çmuar.`,
+    da: `3, 7, 15, 21 dhe 27 janë ditët me energji favorizuese dhe komunikim të lartë`,
+    ad: `Mendjemprehtësia juaj është forcë, por thellësia është çelësi tjetër i suksesit. Zgjidhni një gjë dhe bëjeni mirë — suksesi rritet me fokus të qëndrueshëm, jo me shumësi.`
+  }),
+  gaf: mn => ({
+    ov: `Muaji ${mn} fton Gaforrjen të ndërtojë siguri dhe të investojë në marrëdhëniet kryesore. Hëna, planeti sundues, sjell valë emocionale që mund të jenë gjithashtu burim i madh kreativiteti. Kjo periudhë është ideale për të forcuar lidhjet familjare, për të rishikuar qëllimet e shtëpisë dhe karijerës, dhe për të marrë vendime bazuar mbi intuitën tuaj të pazakontë. Çdo gjë e ndërtuar me zemër dhe sinqeritet këtë muaj ka qëndrueshmëri të jashtëzakonshme.`,
+    lo: `Dashuria ka thellësi dhe sinqeritet të rrallë. Nëse jeni në çift, biseda të hapura do të afrojnë dy shpirtrat — thoni ato gjëra që i keni mbajtur brenda prej kohësh. Beqarët do të jenë shumë tërheqës për partnerë që kërkojnë ndershmëri dhe ngrohtësi. Familja luan rol të rëndësishëm në jetën romantike të Gaforrjes këtë muaj.`,
+    ca: `Karriera ecën mirë kur keni mbështetje ekipore. ${mn} favorizon lidershipin empatik — aftësia juaj për të kuptuar nevojat e ekipit prodhon rezultate të jashtëzakonshme. Nëse jeni në kërkim pune, mundësi vijnë nga rekomandime personale të besuara. Kreativiteti dhe intuita janë asetet tuaja kryesore profesionale.`,
+    mo: `Financat kërkojnë kujdes emocional — shpenzimet për qetësi emocionale mund të jenë të tepruara dhe jo-efektive. Krijoni dallim të qartë mes asaj që "doni" dhe asaj që "keni nevojë". Kursimet për shtëpinë ose familjen janë shumë të favorshme. Evitoni huamarrjet për gjëra jo-thelbësore.`,
+    he: `Shëndeti lidhet ngushtë me gjendjen emocionale të Gaforrjes. Kur jeni të lumtur dhe të sigurt, trupi juaj funksionon shkëlqyeshëm. Ky muaj, investoni në marrëdhënie që ju ngrisin dhe largohuni nga ato që ju lodhin. Uji — breg deti, pishinë, banjo të gjata — ka efekt shërues të veçantë për ju.`,
+    da: `2, 8, 16, 20 dhe 25 janë ditët kur intuita dhe mundësitë janë në kulmin e tyre`,
+    ad: `Ndjenjat tuaja janë burim informacioni — jo dobësi. Dëgjojini me vëmendje dhe veproni sipas tyre me guxim dhe vetëbesim.`
+  }),
+  luan: mn => ({
+    ov: `Muaji ${mn} e vendos Luanin pikërisht aty ku i pëlqen — në qendër të vëmendjes dhe mundësive. Dielli, planeti sundues, ndriçon sektorin e karijerës dhe kreativitetit duke ju dhuruar magnetizëm të shtuar dhe energji rivolucionuese. Ky muaj kërkon nga ju të shprehni potencialin e plotë — nëse keni ëndërruar të bëni diçka të madhe, tani është koha e duhur. Njohja dhe respekti që meritoni janë në rrugën e tyre drejt jush.`,
+    lo: `Romantizmi kap intensitetin maksimal. Beqarët do të bëhen objekt admirimi nga disa persona njëkohësisht — kini durimin të zgjidhni me mençuri dhe jo vetëm emocion. Çiftet kalojnë momente mbresëlënëse të paharrueshme — planifikoni diçka ekstravagante dhe spektakolare. Ekspresiviteti juaj emocional forcën lidhjen dhe krijon kujtime të paçmueshme.`,
+    ca: `Jupiteri ndikon karrierën e Luanit drejtpërdrejt. Mundësi promovimi, projekte me profil të lartë, prezantime para auditorëve të rëndësishëm — të gjitha janë aktive dhe të mundshme. Besojini instinktit kreativ dhe mos lini idetë tuaja të gjumosën. Kini kujdes me egon — suksesi shijohet më plotësisht kur ndahet me të tjerët.`,
+    mo: `Të ardhurat mund të rriten nga burime kreative ose projekte anësore të talentit tuaj. Shmangni shpenzimet ekstravagante për imazh dhe status — autenticiteti juaj është tashmë i mjaftueshëm. Investimet në zhvillim personal si kurse dhe trajnime sjellin kthim financiar afatmesëm të qëndrueshëm.`,
+    he: `Vitaliteti është i shkëlqyer, por zemra si organ dhe emocion kërkon kujdes të veçantë. Aktiviteti fizik i rregullt dhe shprehja emocionale e lirë janë thelbësore për mirëqenien tuaj. Gjumi i mjaftueshëm është i domosdoshëm — pa pushim, energjia juaj dramatike kthehet në nervozizëm.`,
+    da: `1, 8, 14, 19 dhe 27 janë ditët e fuqisë maksimale solare për Luanin`,
+    ad: `Madhështia juaj e vërtetë nuk qëndron vetëm në skenën e jashtme — por në ndjeshmërinë me të cilën trajtoni ata afër jush. Jepuni kohë cilësore njerëzve të dashur.`
+  }),
+  vir: mn => ({
+    ov: `Muaji ${mn} i ofron Virgjëreshës mundësinë e rrallë për të korrur frytet e punës sistematike dhe të planifikuar. Mërkuri shton aftësinë analitike dhe komunikuese — jeni në gjendje të zgjidhni probleme komplekse me efikasitet të jashtëzakonshëm. Kjo periudhë favorizon organizimin, planifikimin afatmesëm dhe vendosjen e kufijve të shëndetshëm. Çdo detaj i kujdesur tani do të kursejë probleme dhe kohë në muajt e ardhshëm.`,
+    lo: `Marrëdhëniet romantike fitojnë thellësi kur komunikimi është i sinqertë dhe direkt. Çiftet mund të diskutojnë tema serioze me qartësi dhe qetësi. Beqarët do të tërhiqen nga persona intelektualë dhe të organizuar — ndoshta nga mjedisi i punës ose studimit. Shmangni perfeksionizmin edhe në dashuri — askush nuk është i përsosur, por dikush mund të jetë i duhuri.`,
+    ca: `Saturni shpërblen disiplinën me njohje konkrete dhe profesionale. Nëse keni investuar kohë dhe energji në projekte specifike, ${mn} sjell konfirmimin e vlerës suaj. Eprorët e vënë re saktësinë dhe besueshmërinë tuaj. Kini kujdes me perfeksionizmin e tepërt — "mjaftueshëm mirë dhe në kohë" shpesh i kalon "perfekt por me vonesë".`,
+    mo: `Financat janë të mira kur menaxhohen me disiplinë — çfarë bëni ju shumë mirë. Rishikoni buxhetin dhe gjeni hapësira optimizimi. Investimet konservative dhe të bazuara në fakte janë ide të mira. Evitoni me rigorozitet skema fitim-të-shpejtë — analizoni çdo propozim me skepticizëm konstruktiv.`,
+    he: `Rishikoni zakonet tuaja shëndetësore — ushqimi, gjumi, ushtrimet. Stresi i akumuluar mund të shfaqet si simptoma fizike — merrni vlerësim mjekësor nëse keni shtyrë kontrollet. Aktiviteti i moderuar fizik dhe pushimi i mjaftueshëm janë armët kryesore të shëndetit tuaj.`,
+    da: `6, 12, 17, 23 dhe 29 janë ditët kur qartësia dhe produktiviteti janë në maksimum`,
+    ad: `Nuk keni nevojë të kontrolloni çdo detaj për të qenë efektiv. Ky muaj, praktikoni lënien e vogëlsirave dhe koncentrohuni në tablonë e madhe.`
+  }),
+  pel: mn => ({
+    ov: `Muaji ${mn} fton Peshorjen të gjejë ekuilibrin e brendshëm dhe të forcojë marrëdhëniet kryesore. Venusi, planeti sundues, sjell harmoni dhe bukuri në çdo aspekt të jetës — nga ambientet ku jetoni deri te mënyra si komunikoni. Ky nuk është muaj për konflikte dhe tension — është muaj për ndërtim të qëndrueshëm dhe kujdes reciprok. Talenti juaj unik për të gjetur kompromise do të jetë dhuratë e papagueshme.`,
+    lo: `Dashuria ka elegancë dhe thellësi karakteristike. Çiftet gëzojnë momente të bukura bashkëjetese — planifikoni diçka estetikisht të bukur: darkë me kerzë, muzikë live ose piknik romantik. Beqarët do të kenë mundësi të takojnë persona të cilësueshëm nëpërmjet ngjarjeve sociale ose artistike. Mos hezitoni të shprehni ndjenjat — hezitimi i prolongon gjërat pa asnjë arsye.`,
+    ca: `Peshorja shkëlqen në mjedise bashkëpunuese dhe diplomatike. Roli juaj si ndërmjetës dhe ndërtues konsensusi do të vlerësohet shumë nga ekipi. Projektet që kërkojnë menaxhim marrëdhëniesh ose prezencë publike janë shumë të favorshme. Merrni vendime me vendosmëri — eprorët respektojnë ata që vendosin me siguri.`,
+    mo: `Financat janë të qëndrueshme kur shmanget tepria në të dy drejtimet. Ky muaj, gjeni balancin tuaj financiar personal. Mundësi partnershipesh financiare ose investime bashkëpunuese janë shumë favorshme. Shmangni vendimet financiare nën presion social ose për të kënaqur të tjerët.`,
+    he: `Shëndeti lidhet ngushtë me harmoninë e mjedisit dhe marrëdhënieve. Stresi nga konfliktet e pa-zgjidhura reflektohet fizikisht — qyrtisni çdo tension dhe gjeni rrugëdalje konstruktive. Aktiviteti i moderuar si yoga, shëtitje ose dans kombinuar me ushqim të ekuilibruar jep rezultate optimale.`,
+    da: `5, 11, 18, 24 dhe 30 janë ditët kur harmonia dhe mundësitë janë në kulmin e tyre`,
+    ad: `Vendimet e vështira nuk bëhen asnjëherë më të lehta me shtyrje të pafundme. Zgjidhni me vendosmëri dhe besojini gjykimit tuaj — keni informacionin e nevojshëm.`
+  }),
+  akr: mn => ({
+    ov: `Muaji ${mn} aktivizon forcën transformuese të Akrepit. Plutoni, planeti sundues, krijon kushtet për largimin e gjithçkaje të kalbur dhe hapësirën për diçka autentike dhe të fuqishme. Kjo periudhë mund të sjellë ndryshime të mëdha — në karrierë, marrëdhënie ose perspektivë të brendshme shpirtërore. Mos i rezistoni ndryshimit — Akrepi lulëzon pikërisht kur transformohet dhe sheddon lëkurën e vjetër me guxim.`,
+    lo: `Dashuria ka intensitetin karakteristik — thellësi, pasion dhe autenticitet të rrallë. Biseda kulmante me partnerin mund t'i qartësojnë gjëra shumë të rëndësishme: a jeni në të njëjtin drejtim? Beqarët do të tërhiqen nga persona misterioz dhe kompleks — besojini intuitës suaj mbi karakterin e njerëzve, jo vetëm pamjes së jashtme.`,
+    ca: `${mn} favorizon hulumtimin, analizën e thellë dhe strategjitë afatgjata. Akrepi punon me efikasitet maksimal kur ka liri të plotë veprimi — kërkojeni atë hapësirë. Mundësi fshehura mund të zbulohen nëpërmjet informacionit ose kontakteve të neglizhura. Mos tregoni të gjitha kartat tuaja menjëherë — strategjia e planifikuar do t'ju japë avantazh.`,
+    mo: `Financat kërkojnë inteligjencë strategjike të rreptë. Mundësi investimi jo-konvencionale mund të jenë shumë profitabile nëse hulumtohen seriozisht dhe plotësisht. Kini kujdes me partnerët financiare të paqartë dhe të errët. Burime të reja të ardhurash mund të vijnë nga shkathtësi specifike që keni.`,
+    he: `Shëndeti ka lidhje të thellë me botën emocionale të Akrepit. Ndjenjat e pa-shprehura ose trauma të pa-procesuar shfaqen si probleme fizike. Ky muaj, jepini vetes hapësirë për të shprehur dhe procesuar — qoftë nëpërmjet terapisë, journaling apo bisedave të besuara. Ushtrimet intensive janë kanal i shkëlqyer shkarkues.`,
+    da: `4, 10, 17, 23 dhe 28 janë ditët kur intuita dhe forca transformuese janë maksimale`,
+    ad: `Çdo gjë që nuk ju shërben ka kohë të largohet pa keqardhje. Bëni guximin e lëshimit — hapësira e lirë është pikërisht aty ku mbijnë gjërat e reja dhe të fuqishme.`
+  }),
+  she: mn => ({
+    ov: `Muaji ${mn} zgjon aventurierin dhe filozofin e brendshëm të Shigjetarit. Jupiteri, planeti sundues, hap horizonte të reja — mendore, fizike dhe shpirtërore. Kjo periudhë është ideale për të mësuar diçka të re, për të udhëtuar dhe për të rishikuar besimet dhe vlerat tuaja. Optimizmi juaj karakteristik është dhuratë e çmuar — ndajeni me të tjerët dhe do të ktheheni shumëfish.`,
+    lo: `Dashuria ka liri dhe aventurë si themel të qëndrueshëm. Beqarët do të kenë mundësi romantike gjatë udhëtimeve, kurseve ose ngjarjeve kulturore stimuluese. Nëse jeni në çift, planifikoni diçka aventuroze bashkë — rutina e mërzitshme është armiku juaj kryesor. ${mn} favorizon dashuritë që ju lënë të lirë të rriteni si individ brenda marrëdhënies.`,
+    ca: `Karriera fiton nga guximi dhe perspektiva e gjerë e Shigjetarit. Mundësi ndërkombëtare ose projekte me dimension global janë shumë të favorshme. Nëse keni ëndërruar të punoni me partnerë nga vendet e tjera, ${mn} hap rrugët konkrete. Certifikimet e reja dhe arsimimi i vazhdueshëm rrisin vlerën tuaj profesionale ndjeshëm.`,
+    mo: `Jupiteri sjell bujari financiare, por menaxhojeni me mençuri dhe kujdes. Paratë vijnë lehtë — dhe mund të ikin po aq lehtë. Bëni dallim të qartë mes shpenzimit të gëzueshëm dhe atij impulsiv. Investimet afatgjata si fondet e pensionit janë shumë të rekomandueshme.`,
+    he: `Energjia juaj është ndër më të lartat e zodiakut, por kini kujdes me aktivitete shumë rrezikuese — jeni të prirur drejt lëndimeve nga mosmarrja parasysh e limiteve fizike. Aktivitetet si gjimnastikë ose sporte ekipore janë ideale. Sigurohuni që dieta mbështetë nivelin e lartë të aktivitetit tuaj.`,
+    da: `3, 9, 15, 21 dhe 26 janë ditët kur Jupiteri ndriçon rrugën e Shigjetarit`,
+    ad: `Jo çdo mundësi meriton "po" të menjëhershëm. Ky muaj, praktikoni prioritizimin — zgjidhni aventurat që ju çojnë drejt qëllimeve tuaja afatgjata.`
+  }),
+  bri: mn => ({
+    ov: `Muaji ${mn} shpërblen Bricjapin për çdo orë të investuar me seriozitet dhe dedikrim të plotë. Saturni, planeti sundues, ndodhet në pozicion të favorshëm dhe çdo punë e bërë me disiplinë prodhon rezultate konkrete dhe afatgjata. Ky muaj mund të sjellë njohje profesionale të merituar, konfirmim financiar ose thellim të rëndësishëm të marrëdhënieve kryesore. Jeni gati — e keni fituar me mund dhe durim.`,
+    lo: `Dashuria është serioze, e qëndrueshme dhe me thellësi karakteristike. Çiftet e ngurta konsolidojnë lidhjen nëpërmjet vendimeve të rëndësishme të përbashkëta. Beqarët do të tërhiqen nga persona ambiciozë dhe të qëndrueshëm. Çelësi këtë muaj është autenticiteti — tregohuni ashtu siç jeni, pa maska dhe pa pretendime.`,
+    ca: `Saturni shpërblen Bricjapin me njohje dhe mundësi karriere të mëdha. Nëse keni punuar me dedikrim ndër vite, tani vjen konfirmimi i plotë. Pozicione udhëheqëse, kontrata të reja ose projekte strategjike janë shumë të mundshme. Qëndroni profesional dhe të fokusuar — mos u shpërqendroni nga politikat e brendshme.`,
+    mo: `Financat janë në gjendje shumë të favorshme. Investimet konservative dhe afatgjata kanë potencial kthimi të mirë. Rishikoni portofolin financiar dhe bëni rregullimet e nevojshme. Kursimi sistematik vazhdon të jetë strategjia juaj fituese afatgjatë.`,
+    he: `Shëndeti kërkon vëmendje ndaj eshtrave, nyjeve dhe sistemit muskuloskeletal. Aktiviteti i strukturuar si stërvitja me pesha ose pilates është ideal. Mos neglizhoni pushimin — Bricjapi ka tendencën të punojë deri në rraskapitje. Bilansi punë-pushim është çelësi i shëndetit.`,
+    da: `7, 13, 20, 25 dhe 31 janë ditët kur Saturni rreshton fuqitë e tij për Bricjapin`,
+    ad: `Keni punuar shumë për të arritur këtu. Lejojeni veten të festoni arritjet — dhe ndajini me ata që ju kanë mbështetur. Mirënjohja e hapur forcën lidhjet.`
+  }),
+  uju: mn => ({
+    ov: `Muaji ${mn} aktivizon potencialin revolucionar dhe inovativ të Ujorit. Uranusi, planeti sundues, krijon kushte për ndryshime befasuese dhe mundësi të papritura dhe frymëzuese. Kjo periudhë është ideale për të sjellë idetë tuaja të avancuara në praktikë, për të ndërtuar aleanca me njerëz me mendje të ngjashme dhe për të kontribuar në diçka që i kalon kufijtë e interesit personal. Inovacioni juaj ka vlerë reale dhe të prekshme.`,
+    lo: `Dashuria ka autenticitet dhe liri si baza. Çiftet që respektojnë individualitetin e njëri-tjetrit do të gëzojnë momente të jashtëzakonshme. Beqarët do të takojnë persona unikalë dhe interesantë — ndoshta në ngjarje kulturore ose diskutime intelektuale. Shmangni marrëdhëniet kufizuese — Ujori lulëzon me partnerë që kuptojnë nevojën për hapësirë.`,
+    ca: `Teknologjia, inovacioni dhe projektet humanitare janë fushat tuaja të shkëlqimit. Idetë jo-konvencionale do të gjejnë mbështetje nga kolegë me mendjemprehtësi. Mundësitë e lidershipit vijnë nëpërmjet iniciativave të reja dhe kurajuese. Tregoni vlerat dhe vizionin tuaj — jo vetëm aftësi teknike.`,
+    mo: `Financat mund të kenë surpriza pozitive nga burime dixhitale ose inovative. Investimet në teknologji mund të jenë shumë profitabile nëse hulumtohen me kujdes. Kini kujdes me skemat e paqarta dhe premtimet e mëdha — analizoni me skepticizëm dhe konsultohuni me ekspertë.`,
+    he: `Ujori neglizhon trupin kur mendja është e zënë me ide. Ky muaj, sigurohuni për rutinë minimale shëndetësore — gjumë i rregullt, hidratim dhe lëvizje fizike. Aktivitetet sociale si sporte ekipore ose klasa grupore kombinojnë socialin me fizikun në mënyrë ideale.`,
+    da: `2, 8, 14, 20 dhe 26 janë ditët kur Uranusi aktivizon potencialin tuaj inovativ`,
+    ad: `Idetë tuaja janë dekada përpara kohës — por realizimi ndodh sot. Zgjidhni një ide dhe çoni atë nga vizion abstrakt në plan konkret dhe të realizueshëm.`
+  }),
+  pesh: mn => ({
+    ov: `Muaji ${mn} thellohet bota e brendshme dhe krijuese e Peshqve. Neptuni, planeti sundues, amplifikohet dhe intuita juaj arrin nivele mbresëlënëse dhe të pashpjegueshme. Kjo periudhë është ideale për projekte artistike, shpirtërore dhe krijuese — çdo gjë e krijuar tani ka potencial të jashtëzakonshëm dhe të qëndrueshëm. Marrëdhëniet dashurie dhe shpirtërore marrin thellësi të re dhe kuptim të ri. Ëndrrat tuaja janë mesazhe — dëgjojini me vëmendje.`,
+    lo: `Dashuria ka dimensione poetike dhe shpirtërore. Lidhjet romantike thellohen nëpërmjet kuptimit të ndërsjelltë dhe shprehjes emocionale të guximshme. Beqarët do të jenë shumë tërheqës për persona artistikë dhe ndijshëm. Mos u frikësoni nga vulnerabiliteti — ajo që e bën dashurinë autentike është saktësisht kjo hapje e plotë.`,
+    ca: `Sektorët kreativë, shëndetësorë dhe artistikë janë fushat tuaja optimale. Intuita juaj e jashtëzakonshme ju jep avantazh kudo që empatia dhe krijimtaria janë vlera. Nëse keni projekt krijues të papërfunduar, ${mn} ju jep energji dhe qartësi për ta çuar deri në fund.`,
+    mo: `Financat kërkojnë kufi të qartë dhe vetëdisiplinë të ndërgjegjshme. Tendenca për të dhënë pa llogaritur ose për të shpenzuar emocionalisht duhet kontrolluar. Besojini intuitës suaj mbi investimet, por verifikoni gjithmonë me fakte objektive. Bashkëpunimet financiare me persona të besueshëm janë shumë të favorshme.`,
+    he: `Shëndeti është shumë i ndjeshëm ndaj energjisë së mjedisit dhe njerëzve rreth tyre. Ky muaj, bëni "pastrimin" e mjedisit emocional — largohuni nga marrëdhëniet kullues dhe vendosni kufij të qartë. Praktika shpirtërore si meditimi, yoga ose kohë pranë ujit janë terapeutike dhe shëruese.`,
+    da: `1, 7, 13, 19 dhe 25 janë ditët kur Neptuni shtrin magjinë e tij`,
+    ad: `Ndjeshmëria juaj është superfuqi — jo dobësi. Besojini intuitës dhe kreativitetit — ato janë udhëzuesit tuaj më të besueshëm dhe autentikë.`
+  })
+};
+
+function buildMonthlyHTML(sign, key, mIdx) {
   const mn = MO[mIdx];
-  const t = [
-    /* 0 Jan */ `${mn} fton ${sign.n} të vendosë themele të reja. ${sign.pl} favorizon planifikimin dhe çdo hap i matur ky muaj do të japë fryte afatgjata. Karriera kërkon strukturë dhe qëllime të qarta. Financiarisht, hartoni buxhetin e vitit me kujdes. Marrëdhëniet fitojnë nga komunikimi i sinqertë.`,
-    /* 1 Shk */ `${mn} sjell ${sign.n} energji të brendshme të thellë. ${sign.el} amplifikohet — intuita juaj është armë e fortë. Karriera fiton nga fokusi dhe perseveranca. Marrëdhëniet dashurie kërkojnë sinqeritet të plotë. Financiarisht, shmangni vendime të nxituara.`,
-    /* 2 Mar */ `${mn} rigjallëron ${sign.n} me frymën e pranverës. ${sign.pl} ndriçon komunikimin dhe idetë rrjedhin lirshëm — paraqitini. Dashuria është e ngrohtë dhe e hapur ndaj mundësive. Karriera njeh hapa pozitivë. Investimet e nisura tani kanë potencial të mirë.`,
-    /* 3 Pri */ `${mn} i sjell ${sign.n} vrull energjie të veçantë. ${sign.pl} ndikon direkt sektorin e karrierës dhe mundësitë po trokasin — mos i lini të ikin. Marrëdhëniet favorizojnë komunikimin e hapur dhe sinqertë. Financiarisht, investime të matura. Shëndeti është i qëndrueshëm.`,
-    /* 4 Maj */ `${mn} sjell ${sign.n} qetësi dhe produktivitet. ${sign.el} ju jep forcë dhe qëndrueshmëri të qëllimit. Karriera ecën me ritëm të vazhdueshëm — rezultatet janë duke u pjekur. Dashuritë janë harmonike. Financiarisht, kursimi i mirëmenduar sjell stabilitet.`,
-    /* 5 Qer */ `${mn} aktivizon natyrën sociale të ${sign.n}. ${sign.pl} favorizon partneritetet dhe takimet — rrjeti juaj social hap dyer. Karierra fiton nga bashkëpunimet. Dashuria është e gjallë dhe e hapur. Buxhetoni me kujdes shpenzimet verore.`,
-    /* 6 Kor */ `${mn} vë ${sign.n} në kulmin e energjisë verore. ${sign.el} është aktiv — ndiheni vital dhe i motivuar. Karriera kërkon vendim — mos hezitoni. Dashuritë janë pasionante. Mundësi investimi konkrete shfaqen ky muaj.`,
-    /* 7 Gus */ `${mn} nxeh energjinë e ${sign.n} me intensitet diellor. ${sign.pl} ndikon karrierën drejtpërdrejt — njohja e pritur po vjen. Marrëdhëniet janë të ngrohta dhe çiftet forcohen. Bëni investime të mençura — planetet financiare janë favorshëm.`,
-    /* 8 Sht */ `${mn} sjell ritëm të ri dhe fokus për ${sign.n}. Pas verës, ${sign.el} ju jep stabilitet. Karriera kërkon organizim dhe strukturë. Marrëdhëniet fitojnë nga koha cilësore. Financiarisht, rishikoni planet dhe bëni rregullimet e nevojshme.`,
-    /* 9 Tet */ `${mn} thellohet bota e brendshme e ${sign.n}. ${sign.pl} favorizon introspeksionin dhe vendimet e pjekura. Karriera fiton nga analiza e kujdesshme. Dashuritë janë serioze dhe autentike. Strategjia afatgjatë financiare është çelësi.`,
-    /*10 Nën */ `${mn} fton ${sign.n} të mbyllë ciklin vjetor me mençuri. ${sign.el} sjell qetësi dhe fokus të thellë. Karriera planifikon hapin tjetër me precizion. Marrëdhëniet kanë nevojë për ngrohësi dhe vëmendje. Kurseni me plan — periudha e ardhshme do ta shpërblejë.`,
-    /*11 Dhj */ `${mn} sjell ${sign.n} reflektim dhe bilanc. ${sign.pl} ndriçon arritjet e vitit dhe ju fton të vlerësoni rrugën. Festivalet forcojnë lidhjet familjare. Karriera planifikon vitin e ri me ambicion. Financiarisht, mbylleni vitin me planin e vitit të ardhshëm gati.`,
-  ];
-  return t[mIdx];
+  const d = MONTHLY_RICH[key] ? MONTHLY_RICH[key](mn) : null;
+  if (!d) return `<p>${mn} sjell mundësi dhe sfida interesante për ${sign.n}. Kjo është koha për të vepruar me mençuri dhe vendosmëri.</p>`;
+  return `
+    <h4>✦ Panorama e Muajit</h4>
+    <p>${d.ov}</p>
+    <h4>❤️ Dashuria &amp; Marrëdhëniet</h4>
+    <p>${d.lo}</p>
+    <h4>💼 Karriera &amp; Puna</h4>
+    <p>${d.ca}</p>
+    <h4>💰 Paratë &amp; Financat</h4>
+    <p>${d.mo}</p>
+    <h4>🌿 Shëndeti &amp; Energjia</h4>
+    <p>${d.he}</p>
+    <h4>📅 Ditët e Rëndësishme të ${mn}</h4>
+    <div class="m-days">✦ ${d.da}</div>
+    <h4>✨ Këshilla e Muajit</h4>
+    <p><em>${d.ad}</em></p>
+  `;
 }
 
 // ─── BUILD SIGN GRIDS ─────────────────────────────────────
@@ -678,7 +794,7 @@ function showHoroImpl(key, type, btn) {
       renderSecs('ditorSecs', entry.r);
       document.getElementById('ditorAdvice').textContent = ADVICE_POOL[doy % ADVICE_POOL.length];
     } else if (type === 'mujor') {
-      document.getElementById('mujorText').innerHTML = `<p>${buildMonthlyText(sign, mon)}</p>`;
+      document.getElementById('mujorText').innerHTML = buildMonthlyHTML(sign, key, mon);
       renderSecs('mujorSecs', MR[key]);
       document.getElementById('mujorFocus').textContent = 'Ky muaj favorizon veçanërisht ' + topArea(MR[key]) + ' — çoni energjinë atje.';
       document.getElementById('mujorLucky').innerHTML =
