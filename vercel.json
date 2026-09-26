@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/horoscope.js": {
+      "includeFiles": "{horoskopi.html,horoskopi/**/*.html,assets/horoscope.js}",
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    { "src": "/horoskopi\\.html", "dest": "/api/horoscope?slug=index" },
+    { "src": "/horoskopi/(dashi|demi|binjaket|gaforrja|luani|virgjeresha|peshorja|akrepi|shigjetari|bricjapi|ujori|peshqit)/?", "dest": "/api/horoscope?slug=$1" },
+    { "handle": "filesystem" }
+  ]
+}

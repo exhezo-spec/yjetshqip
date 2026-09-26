@@ -141,6 +141,28 @@
 .celestial-theme .article-col h2,.celestial-theme .faq-q{font:500 13px/1.6 Inter,sans-serif;letter-spacing:0;color:#e1daf2}
 .celestial-theme .faq-title{font:400 30px 'Cormorant Garamond',Georgia,serif;color:var(--ink);letter-spacing:0}
 .celestial-theme .month-badge{font:400 12px Inter,sans-serif;color:var(--warm)}
+.reading-date{font:400 11px/1.7 Inter,sans-serif;color:var(--soft);margin:16px 0}
+.daily-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.daily-summary{padding:18px;border:1px solid var(--line);border-radius:14px;background:#ffffff02}
+.daily-summary h3{margin:0 0 10px;font:500 16px Inter,sans-serif}
+.daily-summary a{color:var(--lavender);font-size:12px;text-decoration:none}
+.daily-summary h3 a{font-size:16px}
+.daily-summary a:hover{text-decoration:underline}
+.celestial-theme .sign-guide h3{font:500 16px/1.5 Inter,sans-serif;color:var(--ink);margin:26px 0 12px}
+.sign-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sign-facts dt{font-size:11px;color:var(--soft)}
+.sign-facts dd{margin:6px 0 0;color:var(--warm);font-size:13px}
+.sign-dates-table{border-collapse:collapse;width:100%;font:400 13px/1.7 Inter,sans-serif;margin-bottom:24px}
+.sign-dates-table caption{text-align:left;color:var(--soft);font-size:11px;padding-bottom:12px}
+.sign-dates-table th,.sign-dates-table td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+.sign-dates-table th{font-weight:500;color:var(--ink)}
+.sign-dates-table td{color:var(--soft)}
+.sign-dates-table a{color:var(--lavender);text-decoration:none}
+.sign-dates-table a:hover{text-decoration:underline}
+.faq-item summary{cursor:pointer;padding:4px 0;min-height:32px}
+.faq-item[open] summary{margin-bottom:12px}
+#datat-e-shenjave,#si-pergatitet,#daily-overview{scroll-margin-top:155px}
+@media(max-width:600px){.daily-summary-grid,.sign-facts{grid-template-columns:1fr}.daily-summary{padding:16px}.sign-facts{gap:14px}.sign-dates-table th,.sign-dates-table td{padding:12px 8px}}
 @media(min-width:1600px){.celestial-hero{padding-top:105px;padding-bottom:90px}}
 @media(max-width:1260px){.celestial-hero,.discover-section{margin-left:28px;margin-right:28px}.day-strip,.trust-band{margin-left:28px;margin-right:28px}.celestial-hero{gap:40px}.celestial-theme .topnav{padding-left:28px!important;padding-right:28px!important}}
 @media(max-width:1000px){.celestial-theme .topnav{height:70px}.celestial-theme .topnav .topnav-links{background:#111624;border-color:var(--line)}.celestial-theme .mobile-menu{background:#ffffff05;border-color:#ffffff24;border-radius:100px;font-size:12px}.celestial-theme #subnav{top:70px}.celestial-hero{gap:28px;padding-top:50px;padding-bottom:44px}.hero-copy h1{font-size:66px}.zodiac-panel{padding:18px}.celestial-theme .sign-picker{grid-template-columns:repeat(3,minmax(0,1fr))}.constellation{display:none}.discovery-card{padding:22px}.discovery-card.featured p{max-width:80%}.card-art{width:115px;height:115px;opacity:.2}.celestial-theme .signs-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}

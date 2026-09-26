@@ -1,7 +1,9 @@
 
 // ─── UTILS ───────────────────────────────────────────────
 const MO = ['Janar','Shkurt','Mars','Prill','Maj','Qershor','Korrik','Gusht','Shtator','Tetor','Nëntor','Dhjetor'];
-const now = new Date();
+// One publishing day for readers and the server, regardless of their timezone.
+const dayParts = Object.fromEntries(new Intl.DateTimeFormat('en', {timeZone:'Europe/Tirane',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).map(p => [p.type,p.value]));
+const now = new Date(Number(dayParts.year), Number(dayParts.month)-1, Number(dayParts.day), 12);
 const doy = Math.floor((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate()) - Date.UTC(now.getFullYear(),0,0))/864e5);
 const mon = now.getMonth();
 const yr  = now.getFullYear();

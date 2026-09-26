@@ -20,6 +20,8 @@ function updateResultActions(key, period) {
   };
   syncRemember();
   status.textContent = period === 'ditor' ? 'Për datën ' + now.toLocaleDateString('sq-AL', {day:'numeric', month:'long', year:'numeric'}) : '';
+  const readingDate = document.getElementById('ditorReadDate');
+  if (period === 'ditor' && readingDate) readingDate.textContent = 'Leximi i datës ' + now.toLocaleDateString('sq-AL', {day:'numeric',month:'long',year:'numeric'}) + ' · Ora e Shqipërisë';
   remember.onclick = () => {
     try {
       if (storedSign() === key) { localStorage.removeItem('ys_sign'); status.textContent = 'Shenja u hoq nga ky shfletues.'; }
