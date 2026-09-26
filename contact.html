@@ -104,6 +104,19 @@ footer .footer-links a:hover{color:var(--gold-light);border-bottom-color:rgba(20
 footer .footer-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);margin:0 auto 14px}
 footer p{color:var(--muted);font-size:.8rem}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="/assets/site.js"></script>
+<link rel="canonical" href="https://yjetshqip.site/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:site_name" content="Yjet Shqip">
+<meta property="og:title" content="Na Kontakto — Yjet Shqip">
+<meta property="og:description" content="Na kontaktoni — Yjet Shqip. Dërgoni mesazhin tuaj, sugjerime ose pyetje.">
+<meta property="og:url" content="https://yjetshqip.site/contact.html">
+<meta property="og:image" content="https://yjetshqip.site/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
@@ -113,7 +126,8 @@ footer p{color:var(--muted);font-size:.8rem}
     <div class="topnav-icon">✦</div>
     <div class="topnav-name">Yjet Shqip</div>
   </a>
-  <div class="topnav-links">
+  <button class="mobile-menu" type="button" aria-controls="site-menu" aria-expanded="false">Menu ☰</button>
+  <div class="topnav-links" id="site-menu">
     <a href="horoskopi.html">Horoskopi</a>
     <a href="emra.html">Emra</a>
     <a href="mjete.html">Mjetet</a>
@@ -181,8 +195,9 @@ footer p{color:var(--muted);font-size:.8rem}
         <textarea id="message" name="message" placeholder="Shkruani mesazhin tuaj këtu..." required></textarea>
       </div>
 
+      <p id="formFeedback" class="form-feedback" role="status" aria-live="polite"></p>
       <button type="submit" class="btn-submit">✦ &nbsp;Dërgoni Mesazhin</button>
-      <p class="form-note">Të dhënat tuaja nuk ndahen me palë të treta. <a href="privacy.html">Politika e Privatësisë</a>.</p>
+      <p class="form-note">Emri, emaili dhe mesazhi përpunohen nga Formspree për të na dërguar kërkesën tuaj. <a href="privacy.html">Politika e Privatësisë</a>.</p>
     </form>
 
     <div class="success-msg" id="successMsg">
@@ -212,53 +227,7 @@ footer p{color:var(--muted);font-size:.8rem}
   <p style="margin-top:8px;font-size:.72rem;color:rgba(122,109,150,.5)">Për argëtim. Vendimet e jetës mbeten gjithmonë në duart tuaja.</p>
 </footer>
 
-<script>
-<<<<<<< HEAD
-// AJAX submit via Formspree — no page reload
-document.getElementById('contactForm').addEventListener('submit', async function(e){
-  e.preventDefault();
-  try{
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: {'Accept': 'application/json'}
-=======
-// Show success if redirected back with ?success=true (Netlify default redirect)
-if(new URLSearchParams(window.location.search).get('success') === 'true'){
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('successMsg').classList.add('visible');
-}
-
-// AJAX submit for better UX (no page reload)
-document.getElementById('contactForm').addEventListener('submit', async function(e){
-  e.preventDefault();
-  const data = new FormData(this);
-  try{
-    const res = await fetch('/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: new URLSearchParams(data).toString()
->>>>>>> 0638fb1f65e697fb41a46af20bfa07ef5320d8d9
-    });
-    if(res.ok){
-      this.style.display = 'none';
-      document.getElementById('successMsg').classList.add('visible');
-    } else {
-<<<<<<< HEAD
-      const json = await res.json().catch(()=>({}));
-      alert(json.error || 'Gabim gjatë dërgimit. Provoni përsëri.');
-    }
-  }catch(err){
-    alert('Gabim gjatë dërgimit. Kontrolloni lidhjen me internetin.');
-=======
-      this.submit();
-    }
-  }catch(err){
-    this.submit();
->>>>>>> 0638fb1f65e697fb41a46af20bfa07ef5320d8d9
-  }
-});
-</script>
+<script defer src="/assets/contact.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

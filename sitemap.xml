@@ -1,46 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://yjetshqip.site/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://yjetshqip.site/horoskopi.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://yjetshqip.site/emra.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://yjetshqip.site/mjete.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://yjetshqip.site/cv.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://yjetshqip.site/prompt.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
+  <url><loc>https://yjetshqip.site/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi.html</loc></url>
+  <url><loc>https://yjetshqip.site/emra.html</loc></url>
+  <url><loc>https://yjetshqip.site/mjete.html</loc></url>
+  <url><loc>https://yjetshqip.site/cv.html</loc></url>
+  <url><loc>https://yjetshqip.site/prompt.html</loc></url>
+  <url><loc>https://yjetshqip.site/creator-tools.html</loc></url>
+  <url><loc>https://yjetshqip.site/about.html</loc></url>
+  <url><loc>https://yjetshqip.site/contact.html</loc></url>
+  <url><loc>https://yjetshqip.site/privacy.html</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/dashi/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/demi/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/binjaket/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/gaforrja/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/luani/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/virgjeresha/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/peshorja/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/akrepi/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/shigjetari/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/bricjapi/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/ujori/</loc></url>
+  <url><loc>https://yjetshqip.site/horoskopi/peshqit/</loc></url>
 </urlset>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sq">
 <head>
 <meta charset="UTF-8">
@@ -14,8 +14,6 @@
   gtag('js', new Date());
   gtag('config', 'G-5EW6GH4QFH');
 </script>
-<!-- ADSENSE: zëvendëso ca-pub-XXXXXXXXXXXXXXXX me Publisher ID-in tënd -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ── VARIABLES ── */
@@ -362,17 +360,32 @@ footer p{font-family:'Inter',sans-serif;color:#94a3b8}
 .feature-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:linear-gradient(135deg,rgba(124,58,237,.5),rgba(201,168,76,.4));border:1px solid rgba(201,168,76,.28);border-radius:10px;color:#fff;font-family:'Cinzel Decorative',serif;font-size:.78rem;letter-spacing:.05em;transition:all .28s;text-decoration:none;align-self:flex-start;margin-top:6px}
 .feature-btn:hover{background:linear-gradient(135deg,rgba(124,58,237,.75),rgba(201,168,76,.6));border-color:rgba(201,168,76,.5);transform:translateX(5px);box-shadow:0 4px 18px rgba(201,168,76,.2)}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
+<script defer src="/assets/site.js"></script>
+<link rel="canonical" href="https://yjetshqip.site/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:site_name" content="Yjet Shqip">
+<meta property="og:title" content="Yjet Shqip — Horoskopi &amp; Numerologjia">
+<meta property="og:description" content="Horoskopi shqip ditor, mujor dhe vjetor. Numerologjia, Zodiaku Kinez dhe Përshtatshmëria e çifteve. Falas.">
+<meta property="og:url" content="https://yjetshqip.site/">
+<meta property="og:image" content="https://yjetshqip.site/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
+<body class="home-focus">
 
 <!-- ═══ TOPNAV ═══ -->
 <header class="topnav">
-  <a class="topnav-brand" href="#">
+  <a class="topnav-brand" href="/index.html">
     <div class="topnav-icon">✦</div>
     <div class="topnav-name">Yjet Shqip</div>
   </a>
-  <div class="topnav-links">
+  <button class="mobile-menu" type="button" aria-controls="site-menu" aria-expanded="false">Menu ☰</button>
+  <div class="topnav-links" id="site-menu">
     <a href="horoskopi.html">Horoskopi</a>
+    <a href="emra.html">Emra për Bebe</a>
     <a href="mjete.html">Mjetet</a>
     <a href="creator-tools.html">Creator Tools</a>
     <a href="cv.html">CV Gjenerator</a>
@@ -388,70 +401,33 @@ footer p{font-family:'Inter',sans-serif;color:#94a3b8}
 <section class="hero-section">
   <div class="hero-left">
     <div class="hero-badge">Mirësevini në Yjet Shqip</div>
-    <h1>Fati yt fillon<br>me <span>yjet shqip</span></h1>
-    <p>Horoskopi ditor, emra për bebe, numerologji dhe mjete të tjera — falas, krejtësisht në shqip.</p>
+    <h1>Horoskopi yt<br><span>për sot</span></h1>
+    <p>Zgjidh shenjën tënde dhe lexo horoskopin e ditës. Falas, në shqip dhe pa regjistrim.</p>
     <div class="hero-date" id="todayDate"></div>
-    <div class="visitor-widget">
-      <span class="vw-dot"></span>
-      <span class="vw-label">Vizitorë</span>
-      <span class="vw-num" id="visitorCount">—</span>
-    </div>
+
     <br>
     <div class="hero-cta-row">
-      <a class="hero-cta" href="horoskopi.html">Horoskopi ♈</a>
-      <a class="hero-cta-secondary" href="emra.html">Emra për Bebe 👶</a>
+      <a class="hero-cta" href="#choose-sign">Zgjidh shenjën ♈</a>
+      <a class="hero-cta-secondary" href="#toolsSection">Eksploro mjetet →</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="zwheel">
-      <div class="zwheel-glow"></div>
-      <div class="zwheel-outer"></div>
-      <div class="zwheel-mid"></div>
-      <div class="zwheel-inner"></div>
-      <div class="zwheel-center">☀</div>
-      <div class="zwheel-signs" id="zwheelSigns"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FEATURE CARDS ═══ -->
-<div class="features-divider">
-  <div class="fd-line"></div>
-  <span class="fd-label">✦ Eksploroni</span>
-  <div class="fd-line"></div>
-</div>
-<section class="features-section">
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">♈</div>
-      <h2>Horoskopi Shqip</h2>
-      <p>Çfarë kanë rezervuar yjet për ty sot? Zbulo horoskopin ditor, mujor dhe vjetor për shenjën tënde — me hollësi dhe kuptim të vërtetë.</p>
-      <a class="feature-btn" href="horoskopi.html">Lexo Horoskopin →</a>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">👶</div>
-      <h2>Emra për Bebe</h2>
-      <p>Gjej emrin e përsosur për vogëlushin tënd. Emra ilirë, myslimanë, katolikë dhe modernë — me kuptimin dhe origjinën e tyre.</p>
-      <a class="feature-btn" href="emra.html">Shiko Emrat →</a>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📄</div>
-      <h2>CV Gjenerator</h2>
-      <p>Krijo CV-në tënde profesionale në pak minuta. Zgjedh stilin, plotëso të dhënat dhe shkarko si PDF — pa regjistrim.</p>
-      <a class="feature-btn" href="cv.html">Krijo CV-në →</a>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">✨</div>
-      <h2>AI Prompt Gjenerator</h2>
-      <p>Gjenero prompte të sakta dhe të detajuara për imazhe me AI — ideale për Midjourney, DALL·E dhe Stable Diffusion.</p>
-      <a class="feature-btn" href="prompt.html">Gjenero Prompte →</a>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎬</div>
-      <h2>Creator Tools</h2>
-      <p>Gjenero hook-e virale, caption, hashtag dhe bio profesionale për TikTok, Instagram Reels dhe YouTube — falas, menjëherë.</p>
-      <a class="feature-btn" href="creator-tools.html">Hap Creator Tools →</a>
-    </div>
+  <div class="hero-right" id="choose-sign">
+    <h2 class="picker-title">Cila është shenja jote?</h2>
+    <!-- SIGN_PICKER -->
+<div class="sign-picker"><a class="sign-choice" data-sign-link="dash" data-sign-name="Dashi" href="/horoskopi/dashi/"><span aria-hidden="true">♈</span>Dashi<small>21 Mar – 19 Apr</small></a>
+<a class="sign-choice" data-sign-link="dem" data-sign-name="Demi" href="/horoskopi/demi/"><span aria-hidden="true">♉</span>Demi<small>20 Apr – 20 Maj</small></a>
+<a class="sign-choice" data-sign-link="bin" data-sign-name="Binjakët" href="/horoskopi/binjaket/"><span aria-hidden="true">♊</span>Binjakët<small>21 Maj – 20 Qer</small></a>
+<a class="sign-choice" data-sign-link="gaf" data-sign-name="Gaforrja" href="/horoskopi/gaforrja/"><span aria-hidden="true">♋</span>Gaforrja<small>21 Qer – 22 Kor</small></a>
+<a class="sign-choice" data-sign-link="luan" data-sign-name="Luani" href="/horoskopi/luani/"><span aria-hidden="true">♌</span>Luani<small>23 Kor – 22 Gus</small></a>
+<a class="sign-choice" data-sign-link="vir" data-sign-name="Virgjëresha" href="/horoskopi/virgjeresha/"><span aria-hidden="true">♍</span>Virgjëresha<small>23 Gus – 22 Sht</small></a>
+<a class="sign-choice" data-sign-link="pel" data-sign-name="Peshorja" href="/horoskopi/peshorja/"><span aria-hidden="true">♎</span>Peshorja<small>23 Sht – 22 Tet</small></a>
+<a class="sign-choice" data-sign-link="akr" data-sign-name="Akrepi" href="/horoskopi/akrepi/"><span aria-hidden="true">♏</span>Akrepi<small>23 Tet – 21 Nën</small></a>
+<a class="sign-choice" data-sign-link="she" data-sign-name="Shigjetari" href="/horoskopi/shigjetari/"><span aria-hidden="true">♐</span>Shigjetari<small>22 Nën – 21 Dhj</small></a>
+<a class="sign-choice" data-sign-link="bri" data-sign-name="Bricjapi" href="/horoskopi/bricjapi/"><span aria-hidden="true">♑</span>Bricjapi<small>22 Dhj – 19 Jan</small></a>
+<a class="sign-choice" data-sign-link="uju" data-sign-name="Ujori" href="/horoskopi/ujori/"><span aria-hidden="true">♒</span>Ujori<small>20 Jan – 18 Shk</small></a>
+<a class="sign-choice" data-sign-link="pesh" data-sign-name="Peshqit" href="/horoskopi/peshqit/"><span aria-hidden="true">♓</span>Peshqit<small>19 Shk – 20 Mar</small></a></div>
+<a class="return-sign" id="returnSign" hidden></a>
+<!-- END_SIGN_PICKER -->
   </div>
 </section>
 
@@ -460,14 +436,14 @@ footer p{font-family:'Inter',sans-serif;color:#94a3b8}
 <!-- ═══ TOOL CARDS ═══ -->
 <section class="tools-section" id="toolsSection">
   <div class="tools-header">
-    <h2>✦ Zgjidhni një mjet</h2>
+    <h2>Eksploro edhe mjetet tona</h2>
     <p>Të gjitha falas, pa regjistrim</p>
   </div>
   <div class="tools-grid">
-    <a class="tool-card" href="horoskopi.html">
+    <a class="tool-card" href="mjete.html">
       <div class="tool-icon ti-purple">♈</div>
-      <div class="tool-title">Horoskopi</div>
-      <div class="tool-desc">Lexo horoskopin ditor, mujor dhe vjetor për shenjën tënde.</div>
+      <div class="tool-title">Numerologji &amp; Zodiak</div>
+      <div class="tool-desc">Eksploro numerologjinë, zodiakun kinez dhe përputhshmërinë.</div>
       <div class="tool-arrow">→</div>
     </a>
     <a class="tool-card" href="cv.html">
@@ -488,37 +464,10 @@ footer p{font-family:'Inter',sans-serif;color:#94a3b8}
       <div class="tool-desc">Emra vajzash, djemsh, ilirë, myslimanë, katolikë dhe me kuptim — me shpjegimin e tyre.</div>
       <div class="tool-arrow">→</div>
     </a>
+    <a class="tool-card" href="creator-tools.html"><div class="tool-icon ti-purple">🎬</div><div class="tool-title">Mjete për Krijues</div><div class="tool-desc">Ide për hyrje videosh, përshkrime dhe bio në shqip.</div><div class="tool-arrow">→</div></a>
   </div>
 </section>
 
-
-<!-- ═══ MJETET MË TË PËRDORURA ═══ -->
-<section class="popular-section">
-  <div class="popular-header">
-    <h2>Mjetet më të përdorura</h2>
-    <p>Eksploro mjetet tona spirituale dhe zbulo sekretet e fatit</p>
-  </div>
-  <div class="popular-grid">
-    <a class="popular-card" href="mjete.html">
-      <div class="popular-icon">🔢</div>
-      <h3>Numerologji</h3>
-      <p>Zbulo numrin tënd të jetës, fatin dhe qëllimin e shpirtit bazuar në datëlindjen tënde.</p>
-      <span class="popular-link">Zbulo numrin →</span>
-    </a>
-    <a class="popular-card" href="mjete.html">
-      <div class="popular-icon">💑</div>
-      <h3>Përputhshmëria e Çifteve</h3>
-      <p>Sa të përputhur jeni? Testo lidhjen tuaj me numerologji dhe zodiakun.</p>
-      <span class="popular-link">Testo çiftin →</span>
-    </a>
-    <a class="popular-card" href="mjete.html">
-      <div class="popular-icon">🎴</div>
-      <h3>Tarot</h3>
-      <p>Tërhiq kartën e ditës dhe lexo mesazhin e saj për udhëzim dhe frymëzim.</p>
-      <span class="popular-link">Tërhiq kartën →</span>
-    </a>
-  </div>
-</section>
 
 <!-- ═══ PSE YJET SHQIP ═══ -->
 <section class="why-section">
@@ -563,34 +512,11 @@ footer p{font-family:'Inter',sans-serif;color:#94a3b8}
 
 <script>
 // ─── ZODIAC WHEEL ────────────────────────────────────────
-(function(){
-  const signs = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
-  const el = document.getElementById('zwheelSigns');
-  if(!el) return;
-  const r = 148; // radius — matches .zwheel width/2 minus padding
-  signs.forEach((s, i) => {
-    const angle = (i * 30 - 90) * Math.PI / 180;
-    const x = 50 + r / 3.4 * Math.cos(angle);
-    const y = 50 + r / 3.4 * Math.sin(angle);
-    const span = document.createElement('span');
-    span.className = 'zs';
-    span.textContent = s;
-    span.style.cssText = `left:${x}%;top:${y}%;transform:translate(-50%,-50%)`;
-    el.appendChild(span);
-  });
-  // divider lines
-  const container = el.parentElement;
-  for(let i=0;i<12;i++){
-    const line = document.createElement('div');
-    line.className = 'zwheel-line';
-    line.style.transform = `rotate(${i*30}deg)`;
-    container.appendChild(line);
-  }
-})();
+
 
 // ─── NAVIGATION ──────────────────────────────────────────
 function scrollToContent() {
-  document.getElementById('toolsSection').scrollIntoView({behavior:'smooth'});
+  document.getElementById('choose-sign').scrollIntoView({behavior:'smooth'});
 }
 
 // ─── UTILS ───────────────────────────────────────────────
@@ -602,31 +528,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('todayDate').textContent=
     `${DA[d.getDay()]}, ${d.getDate()} ${MO[d.getMonth()]} ${d.getFullYear()}`;
 
-  // ── VISITOR COUNTER ──────────────────────────────────────
-  const el = document.getElementById('visitorCount');
-
-  function fmt(n){
-    if(n >= 1000) return (n/1000).toFixed(1).replace('.0','') + 'k';
-    return n.toLocaleString('sq');
-  }
-
-  const today = new Date().toDateString();
-  const lastVisit = localStorage.getItem('ys_last_visit');
-  const shouldHit = lastVisit !== today;
-
-  const base = 'https://api.counterapi.dev/v1/yjetshqip/vizitore';
-  const url = shouldHit ? base + '/up' : base;
-
-  fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      const val = data && (data.count ?? data.value);
-      if(val != null){
-        el.textContent = fmt(val);
-        if(shouldHit) localStorage.setItem('ys_last_visit', today);
-      }
-    })
-    .catch(() => { el.textContent = '—'; });
 });
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
