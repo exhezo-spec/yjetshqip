@@ -24,7 +24,7 @@ const descriptions = [
  'Ujori lidhet tradicionalisht me pavarësinë dhe idetë e reja. Mendo si mund të provosh një qasje tjetër dhe ta shpjegosh qartë atë te njerëzit me të cilët bashkëpunon.',
  'Peshqit lidhen tradicionalisht me imagjinatën dhe ndjeshmërinë. Jepi hapësirë krijimtarisë dhe reflekto mbi kufijtë që të ndihmojnë të ruash qetësinë.'
 ];
-const links = order.map((key,i) => `<a class="sign-choice" data-sign-link="${key}" data-sign-name="${signData[key].n}" href="/horoskopi/${slugs[i]}/"><span aria-hidden="true">${signData[key].s}</span>${signData[key].n}<small>${signData[key].d}</small></a>`).join('\n');
+const links = order.map((key,i) => `<a class="sign-choice" data-sign-link="${key}" data-sign-name="${signData[key].n}" href="/horoskopi/${slugs[i]}/"><span aria-hidden="true">${signData[key].s}\uFE0E</span><strong>${signData[key].n}</strong><small>${signData[key].d}</small></a>`).join('\n');
 const picker = `<div class="sign-picker">${links}</div>\n<a class="return-sign" id="returnSign" hidden></a>`;
 let home = read('index.html');
 home = home.replace(/<!-- SIGN_PICKER -->[\s\S]*?<!-- END_SIGN_PICKER -->|<!-- SIGN_PICKER -->/, '<!-- SIGN_PICKER -->\n' + picker + '\n<!-- END_SIGN_PICKER -->');
@@ -38,7 +38,7 @@ for (let i=0; i<order.length; i++) {
  const key=order[i], sign=signData[key], url='https://yjetshqip.site/horoskopi/'+slugs[i]+'/';
  const title=sign.n+' — Horoskopi Ditor, Mujor dhe Vjetor | Yjet Shqip';
  const description='Horoskopi për shenjën '+sign.n+': lexo rezultatin ditor, mujor dhe vjetor në shqip. Ruaj shenjën tënde dhe shpërndaje lidhjen.';
- let html=template.replace('<body>', '<body data-sign="'+key+'">')
+ let html=template.replace(/<body([^>]*)>/, '<body$1 data-sign="'+key+'">')
   .replace(/<title>.*?<\/title>/, '<title>'+title+'</title>')
   .replace(/(<meta name="description" content=")[^"]*/, '$1'+description)
   .replace(/(<link rel="canonical" href=")[^"]*/, '$1'+url)

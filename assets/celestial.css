@@ -1,0 +1,150 @@
+/* Yjet Shqip: midnight surfaces, editorial type and restrained celestial details. */
+.celestial-theme{--night:#0c101b;--surface:#131927;--line:#ffffff14;--ink:#f0eee9;--soft:#a7aabb;--lavender:#c5b6f6;--warm:#e8cd99;background:var(--night);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+.celestial-theme *{box-sizing:border-box}
+.celestial-theme{margin:0;overflow-x:clip}
+.celestial-theme .topnav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+.celestial-theme .topnav-brand{display:flex;align-items:center;text-decoration:none}
+.celestial-theme .topnav-icon{display:grid;place-items:center}
+.topnav-links{display:flex;align-items:center}
+.celestial-theme main{margin:0 auto}
+.celestial-theme .footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center}
+.celestial-theme .footer-links a{text-decoration:none}
+.celestial-theme a{-webkit-tap-highlight-color:transparent}
+.celestial-theme .topnav{height:80px;padding:0 max(28px,calc((100vw - 1200px)/2))!important;border-bottom:1px solid var(--line);background:#0c101bef;box-shadow:none;backdrop-filter:blur(20px);gap:28px;text-align:left}
+.celestial-theme .topnav::after{display:none}
+.celestial-theme .topnav-brand{gap:11px;flex-shrink:0}
+.celestial-theme .topnav-icon{background:transparent;color:var(--warm);box-shadow:none;font-size:32px;width:32px;height:40px}
+.celestial-theme .topnav-name{font:600 20px Inter,sans-serif;letter-spacing:-.8px;color:var(--ink)}
+.celestial-theme .topnav-links{gap:8px}
+.celestial-theme .topnav-links a{font:400 13px Inter,sans-serif;color:var(--soft);letter-spacing:0;padding:12px}
+.celestial-theme .topnav-links a:hover{color:var(--ink);background:#ffffff06}
+.celestial-theme .topnav-btn,.celestial-theme .back-link{background:#ffffff06;border:1px solid #ffffff24;border-radius:100px;color:var(--ink);box-shadow:none;font:500 12px Inter,sans-serif;padding:12px 20px;text-decoration:none;white-space:nowrap}
+.celestial-theme .topnav-btn:hover,.celestial-theme .back-link:hover{background:#ffffff0f;transform:none}
+.skip-link{position:fixed;left:16px;top:-80px;z-index:200;background:var(--warm);color:var(--night);padding:12px 20px;border-radius:8px}
+.skip-link:focus{top:12px}
+.celestial-home main{max-width:none;padding:0;background:transparent}
+.celestial-hero{position:relative;isolation:isolate;max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1.05fr;gap:68px;align-items:center;padding:78px 0 64px}
+.celestial-hero::before{content:'';position:absolute;z-index:-1;width:650px;height:600px;right:-50px;top:-30px;background:radial-gradient(ellipse,#71589919,transparent 65%);pointer-events:none}
+.hero-copy{position:relative}
+.eyebrow{display:flex;align-items:center;gap:10px;font:500 10px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:22px}
+.eyebrow::before{content:'';width:22px;height:1px;background:currentColor}
+.hero-copy h1{font:400 clamp(62px,6.5vw,88px)/.99 'Cormorant Garamond',Georgia,serif;letter-spacing:-3px;color:var(--ink);margin:0 0 26px}
+.hero-copy h1 em{font-weight:400;color:var(--lavender)}
+.hero-copy>p{max-width:355px;color:var(--soft);font-size:14px;line-height:1.9;margin:0 0 28px}
+.hero-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:22px}
+.primary-link{display:inline-flex;align-items:center;gap:26px;background:var(--lavender);color:#1b162b;text-decoration:none;padding:15px 22px;border-radius:100px;font:600 13px Inter,sans-serif;min-height:48px;transition:background .2s,transform .2s}
+.primary-link:hover{background:#ded3ff;transform:translateY(-2px)}
+.quiet-link{font:500 12px Inter,sans-serif;color:var(--soft);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:12px}
+.quiet-link:hover{color:var(--ink)}
+.hero-footnote{display:flex;align-items:center;gap:8px;margin-top:28px;font-size:10px;color:#979bae;letter-spacing:.3px}
+.hero-footnote svg{color:var(--warm);width:14px;height:14px}
+.constellation{position:absolute;right:0;top:6px;width:115px;height:130px;opacity:.65;pointer-events:none}
+.zodiac-panel{position:relative;border:1px solid #ffffff1b;border-radius:24px;background:linear-gradient(145deg,#191d2bc7,#101521);padding:26px;box-shadow:0 24px 80px #0002;scroll-margin-top:105px}
+.panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.panel-top h2{font:500 16px Inter,sans-serif;letter-spacing:-.5px;margin:0}
+.panel-top>span{font:400 10px Inter,sans-serif;color:var(--soft);border:1px solid var(--line);border-radius:30px;padding:5px 10px;white-space:nowrap}
+.celestial-theme .sign-picker{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.celestial-theme .sign-choice{position:relative;min-width:0;min-height:102px;border:1px solid #ffffff09;border-radius:12px;background:#ffffff02;padding:14px 5px 12px;gap:5px;font-size:11px;font-weight:500;color:#dedee6;transition:background .2s,border-color .2s,transform .2s}
+.celestial-theme .sign-choice>span{font-family:Georgia,'Segoe UI Symbol',serif;font-variant-emoji:text;font-size:27px;line-height:1.2;color:var(--warm);margin-bottom:4px}
+.celestial-theme .sign-choice strong{font-weight:500;font-size:11px}
+.celestial-theme .sign-choice small{font-size:8px;color:#9da2b6;letter-spacing:-.1px}
+.celestial-theme .sign-choice:hover{border-color:#c5b6f655;background:#c5b6f60e;transform:translateY(-3px)}
+.panel-bottom{display:flex;align-items:center;gap:7px;justify-content:center;color:#959aae;font:400 10px Inter,sans-serif;margin:20px 0 0}
+.panel-bottom svg{width:12px;height:12px;color:var(--lavender)}
+.celestial-theme .return-sign{font:500 12px Inter,sans-serif;color:var(--lavender);border-top:1px solid var(--line);padding-top:14px;margin-top:16px;display:block;text-align:center}
+.day-strip{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:#9da2b6;font:400 11px Inter,sans-serif}
+.day-strip time{display:flex;align-items:center;gap:10px;color:#d9d9e4;text-transform:capitalize}
+.day-strip time::before{content:'';width:5px;height:5px;background:var(--lavender);border-radius:50%;box-shadow:0 0 12px #c5b6f655}
+.day-strip>span{display:flex;align-items:center;gap:10px}
+.day-strip svg{width:15px;height:15px;color:var(--warm)}
+.discover-section{max-width:1200px;margin:auto;padding:70px 0 74px;scroll-margin-top:90px}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px}
+.section-heading .eyebrow{margin-bottom:10px}
+.section-heading h2{font:400 42px/1.1 'Cormorant Garamond',Georgia,serif;letter-spacing:-1px;margin:0}
+.section-heading>p{font-size:12px;line-height:1.7;color:var(--soft);max-width:220px;margin:0}
+.discovery-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.discovery-card{grid-column:span 2;position:relative;overflow:hidden;min-height:215px;border:1px solid var(--line);border-radius:18px;background:#121723;text-decoration:none;color:var(--ink);padding:26px;display:flex;flex-direction:column;align-items:flex-start;transition:background .2s,border-color .2s,transform .2s}
+.discovery-card.featured{grid-column:span 3;min-height:235px;background:linear-gradient(115deg,#1d1b2d,#141927)}
+.discovery-card.family{background:linear-gradient(115deg,#1b2528,#131b25)}
+.discovery-card:hover{border-color:#c5b6f64d;transform:translateY(-4px);background-color:#191f2e}
+.card-icon{width:40px;height:40px;display:grid;place-items:center;background:#ffffff05;border:1px solid #ffffff0b;border-radius:11px;color:var(--lavender);margin-bottom:20px}
+.family .card-icon{color:#c3d8bb}
+.card-icon svg{width:21px;height:21px}
+.discovery-card h3{font:500 17px Inter,sans-serif;letter-spacing:-.5px;margin:0 0 10px;z-index:1}
+.discovery-card p{color:var(--soft);font-size:12px;line-height:1.8;max-width:300px;margin:0;z-index:1}
+.discovery-card.featured p{max-width:70%}
+.card-arrow{position:absolute;right:24px;top:28px;color:#9da2b6;font:400 18px Inter,sans-serif}
+.card-art{position:absolute;width:150px;height:150px;right:12px;bottom:10px;opacity:.32;pointer-events:none;color:var(--lavender)}
+.family .card-art{color:#c3d8bb}
+.trust-band{max-width:1200px;margin:0 auto 74px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.trust-item{display:flex;align-items:flex-start;gap:14px}
+.trust-item>svg{width:22px;height:22px;flex-shrink:0;color:var(--warm);margin-top:3px}
+.trust-item h3{font:500 12px Inter,sans-serif;margin:0 0 6px;color:#dddde7}
+.trust-item p{color:#9298ac;font:400 11px/1.7 Inter,sans-serif;margin:0}
+.celestial-theme footer{background:transparent;border-top:1px solid var(--line);padding:32px max(28px,calc((100vw - 1200px)/2));margin:0;font-family:Inter,sans-serif}
+.celestial-theme footer .footer-links{gap:18px;margin-bottom:20px}
+.celestial-theme footer .footer-links a{font:400 11px Inter,sans-serif;color:var(--soft);letter-spacing:0}
+.celestial-theme footer p{font:400 10px/1.8 Inter,sans-serif;color:#8f95a8!important}
+.celestial-theme footer .footer-divider{display:none}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:25px}
+.footer-top .footer-links{margin:0!important}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;text-align:left;padding-top:22px;border-top:1px solid var(--line)}
+.footer-bottom p{margin:0}
+.icon-defs{position:absolute;width:0;height:0;overflow:hidden}
+/* Horoscope pages share the same visual language. */
+.celestial-theme .page-hero{background:radial-gradient(ellipse at 50% 0,#49365c24,transparent 75%);border-color:var(--line)}
+.celestial-theme .page-hero::before,.celestial-theme .page-hero::after{display:none}
+.celestial-theme .page-hero-inner{padding:52px 24px 40px;max-width:1000px}
+.celestial-theme .page-hero-inner h1{font:400 clamp(32px,4vw,52px)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-1px;text-shadow:none;color:var(--ink)}
+.celestial-theme .page-hero-inner p{font:400 13px/1.8 Inter,sans-serif;color:var(--soft);max-width:540px;margin:14px auto 0}
+.celestial-theme #subnav{top:80px;box-shadow:none;background:#0c101bef;border-color:var(--line);padding:12px;gap:8px}
+.celestial-theme #subnav button{font:500 12px Inter,sans-serif;letter-spacing:0;min-height:42px;border-radius:100px;padding:12px 24px;color:var(--soft)}
+.celestial-theme #subnav button.active{background:var(--lavender);color:#20192e;border-color:transparent;box-shadow:none}
+.celestial-theme main{max-width:960px;padding-top:32px}
+.celestial-home main{max-width:none;padding-top:0}
+.celestial-theme .sec-h2{font:500 19px Inter,sans-serif;letter-spacing:-.5px;color:var(--ink)}
+.celestial-theme .sec-intro-text{font:400 12px/1.8 Inter,sans-serif;color:var(--soft);font-style:normal}
+.celestial-theme .section-title{font:400 11px Inter,sans-serif;letter-spacing:0;color:var(--soft);margin:20px 0}
+.celestial-theme .signs-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.celestial-theme .sign-card{background:#141a27;border:1px solid var(--line);border-radius:14px;padding:17px 5px;box-shadow:none;transform:none}
+.celestial-theme .sign-card.selected{background:#c5b6f612;border-color:#c5b6f680;box-shadow:none;transform:none}
+.celestial-theme .sign-card:hover{border-color:#c5b6f650;background:#1b2031;transform:translateY(-2px)}
+.celestial-theme .sign-card .sign-name{font:500 11px Inter,sans-serif;color:var(--ink)}
+.celestial-theme .sign-card .sign-dates{font:400 9px Inter,sans-serif;color:var(--soft);margin-top:6px}
+.celestial-theme .sign-card .sign-emoji{color:var(--warm);font:28px Georgia,'Segoe UI Symbol',serif;font-variant-emoji:text;margin-bottom:8px}
+.celestial-theme .result-card{background:linear-gradient(135deg,#171d2b,#111722);border:1px solid #ffffff1c;box-shadow:0 20px 70px #0002;border-radius:22px;padding:32px;scroll-margin-top:152px}
+.celestial-theme .result-header{border-color:var(--line);gap:20px}
+.celestial-theme .result-symbol{color:var(--warm);filter:none;font-variant-emoji:text}
+.celestial-theme .result-title h3{font:400 34px 'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+.celestial-theme .result-title p{font:400 12px/1.8 Inter,sans-serif;color:var(--soft);font-style:normal}
+.celestial-theme .result-body{font:400 14px/1.95 Inter,sans-serif;color:#c1c4d2}
+.celestial-theme .result-body strong{color:#e4d7ff;font-weight:500}
+.celestial-theme .result-body h4{font:500 12px Inter,sans-serif;color:var(--warm);letter-spacing:.3px}
+.celestial-theme .stars-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:#0c101b66;border-color:var(--line)}
+.celestial-theme .star-item span{font:400 10px Inter,sans-serif;letter-spacing:0;color:var(--soft)}
+.celestial-theme .star-item .stars{color:var(--warm);font-size:14px}
+.celestial-theme .horo-sec{background:#ffffff02;border-color:var(--line);padding:16px 12px}
+.celestial-theme .horo-sec-label,.celestial-theme .focus-label{color:var(--soft);font-size:10px;letter-spacing:.5px}
+.celestial-theme .horo-sec-text{font:400 11px/1.7 Inter,sans-serif;color:#b1b6c9;font-style:normal}
+.celestial-theme .focus-box{background:#c5b6f607;border-color:#c5b6f62a;padding:20px}
+.celestial-theme .focus-text{font:400 13px/1.8 Inter,sans-serif;color:#d8d8e5;font-style:normal}
+.celestial-theme .lucky-tag{font:400 11px/1.6 Inter,sans-serif;color:var(--warm);background:#e8cd9907;border-color:#e8cd9920}
+.celestial-theme .result-actions button,.celestial-theme .result-actions a{background:#ffffff05;border-color:#ffffff20;border-radius:100px;font-size:11px;color:var(--ink);padding:12px 17px}
+.celestial-theme .result-actions button:first-child{background:var(--lavender);border-color:transparent;color:#20192e}
+.celestial-theme .action-status{font-size:11px;color:var(--soft)}
+.celestial-theme .method-note{background:transparent;border:1px solid var(--line);color:var(--soft);font-size:11px;line-height:1.8;margin:24px auto}
+.celestial-theme .sign-profile{background:#121723;border-color:var(--line);font:400 13px/1.9 Inter,sans-serif;margin:24px auto;padding:26px}
+.celestial-theme .sign-profile h2{font:400 28px 'Cormorant Garamond',Georgia,serif;color:var(--ink);margin-bottom:16px}
+.celestial-theme .sign-profile p{color:#b1b6c9;margin-bottom:12px}
+.celestial-theme .article-intro,.celestial-theme .article-col p,.celestial-theme .article-links-row,.celestial-theme .faq-a{font:400 12px/1.9 Inter,sans-serif;color:var(--soft)}
+.celestial-theme .article-col,.celestial-theme .faq-item{background:#121723;border-color:var(--line)}
+.celestial-theme .article-col h2,.celestial-theme .faq-q{font:500 13px/1.6 Inter,sans-serif;letter-spacing:0;color:#e1daf2}
+.celestial-theme .faq-title{font:400 30px 'Cormorant Garamond',Georgia,serif;color:var(--ink);letter-spacing:0}
+.celestial-theme .month-badge{font:400 12px Inter,sans-serif;color:var(--warm)}
+@media(min-width:1600px){.celestial-hero{padding-top:105px;padding-bottom:90px}}
+@media(max-width:1260px){.celestial-hero,.discover-section{margin-left:28px;margin-right:28px}.day-strip,.trust-band{margin-left:28px;margin-right:28px}.celestial-hero{gap:40px}.celestial-theme .topnav{padding-left:28px!important;padding-right:28px!important}}
+@media(max-width:1000px){.celestial-theme .topnav{height:70px}.celestial-theme .topnav .topnav-links{background:#111624;border-color:var(--line)}.celestial-theme .mobile-menu{background:#ffffff05;border-color:#ffffff24;border-radius:100px;font-size:12px}.celestial-theme #subnav{top:70px}.celestial-hero{gap:28px;padding-top:50px;padding-bottom:44px}.hero-copy h1{font-size:66px}.zodiac-panel{padding:18px}.celestial-theme .sign-picker{grid-template-columns:repeat(3,minmax(0,1fr))}.constellation{display:none}.discovery-card{padding:22px}.discovery-card.featured p{max-width:80%}.card-art{width:115px;height:115px;opacity:.2}.celestial-theme .signs-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:720px){.celestial-hero{grid-template-columns:1fr;gap:34px;margin:0 20px;padding:38px 0}.hero-copy h1{font-size:64px;letter-spacing:-2px;margin-bottom:18px}.hero-copy>p{max-width:340px;font-size:13px;margin-bottom:20px}.eyebrow{font-size:9px;margin-bottom:18px}.hero-copy h1 br:first-of-type{display:none}.hero-footnote{margin-top:18px}.zodiac-panel{padding:20px;border-radius:20px}.celestial-theme .sign-picker{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.celestial-theme .sign-choice{min-height:96px}.celestial-theme .sign-choice small{font-size:7px}.day-strip{margin:0 20px;align-items:flex-start;font-size:10px;gap:10px}.day-strip>span{max-width:135px;line-height:1.5;text-align:right}.discover-section{margin:0 20px;padding:44px 0}.section-heading{align-items:flex-start;flex-direction:column;gap:12px}.section-heading h2{font-size:36px}.section-heading>p{max-width:300px;font-size:11px}.discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.discovery-card,.discovery-card.featured{grid-column:span 1;min-height:220px;padding:20px}.discovery-card.featured{grid-column:span 2;min-height:205px}.discovery-card:last-child{grid-column:span 2;min-height:180px}.discovery-card h3{font-size:15px}.discovery-card p{font-size:11px}.discovery-card.featured p{max-width:70%}.card-arrow{right:18px;top:22px}.trust-band{grid-template-columns:1fr;gap:24px;margin:0 20px 44px;padding:28px 0}.footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;gap:20px}.celestial-theme footer{text-align:left;padding:28px 20px}.celestial-theme footer .footer-links{justify-content:flex-start;gap:16px}.celestial-theme .topnav{padding:0 20px!important}.celestial-theme .topnav-name{font-size:18px}.celestial-theme main{padding-left:16px;padding-right:16px}.celestial-home main{padding-left:0;padding-right:0}.celestial-theme .result-card{padding:22px 18px;border-radius:18px}.celestial-theme .stars-row{grid-template-columns:repeat(2,1fr);gap:20px}.celestial-theme .signs-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.celestial-theme .sign-profile{padding:20px}.celestial-theme .page-hero-inner{padding:34px 20px}.celestial-theme .result-actions{gap:8px}.celestial-theme .result-actions button,.celestial-theme .result-actions a{font-size:10px;padding:12px}.celestial-theme .result-body{font-size:13px}}
+@media(max-width:440px){.celestial-theme .sign-picker{grid-template-columns:repeat(3,minmax(0,1fr))}.celestial-theme .sign-choice small{font-size:9px}}
+@media(max-width:370px){.hero-copy h1{font-size:54px}.hero-buttons{gap:12px}.primary-link{gap:16px;padding:14px 18px}.panel-top{gap:8px}.panel-top h2{font-size:14px}.panel-top>span{font-size:9px}.discovery-grid{grid-template-columns:1fr}.discovery-card,.discovery-card.featured,.discovery-card:last-child{grid-column:span 1;min-height:190px}}
+@media(prefers-reduced-motion:reduce){.celestial-theme *{transition:none!important;animation:none!important;scroll-behavior:auto!important}.celestial-theme a:hover,.celestial-theme button:hover{transform:none!important}}

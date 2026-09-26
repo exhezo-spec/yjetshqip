@@ -484,7 +484,7 @@ function buildGrid(containerId, fn) {
   el.innerHTML = ORDER.map(k => {
     const s = S[k];
     return `<button type="button" class="sign-card" data-sign="${k}" aria-pressed="false" onclick="${fn}('${k}',this)">
-      <span class="sign-emoji">${s.s}</span>
+      <span class="sign-emoji" aria-hidden="true">${s.s}\uFE0E</span>
       <span class="sign-name">${s.n}</span>
       <span class="sign-dates">${s.d}</span>
     </button>`;

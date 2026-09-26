@@ -2,6 +2,8 @@
 
 Faqe statike HTML/CSS/JavaScript. Publikimi duhet të përfshijë skedarët HTML në rrënjë, `assets/`, `horoskopi/`, `robots.txt` dhe `sitemap.xml`.
 
+Pamja e kryefaqes dhe faqeve të horoskopit përcaktohet në `assets/celestial.css`. Kontrollet e përbashkëta dhe menuja në telefon përdorin `assets/site.css` dhe `assets/site.js`.
+
 ## Përditësimi i horoskopit
 
 - `horoskopi.html`: modeli i faqeve dhe përmbajtja e përbashkët.
