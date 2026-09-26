@@ -7,6 +7,7 @@
     }
   },
   "routes": [
+    { "src": "/horoskopi/?", "status": 308, "headers": { "Location": "/horoskopi.html" } },
     { "src": "/horoskopi\\.html", "dest": "/api/horoscope?slug=index" },
     { "src": "/horoskopi/(dashi|demi|binjaket|gaforrja|luani|virgjeresha|peshorja|akrepi|shigjetari|bricjapi|ujori|peshqit)/?", "dest": "/api/horoscope?slug=$1" },
     { "handle": "filesystem" }
