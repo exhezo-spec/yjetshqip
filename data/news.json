@@ -1,6 +1,5 @@
 {
-  "updated": "2026-10-13T20:00:00+00:00",
-  "sample": true,
+  "updated": "2026-10-13T20:47:26.421014+00:00",
   "categories": {
     "vendi": "Vendi",
     "bota": "Bota",
@@ -11,76 +10,466 @@
   },
   "items": [
     {
-      "id": "s01", "cat": "vendi", "kicker": "Tiranë",
-      "title": "Nis sezoni i ri kulturor me ekspozita dhe koncerte në kryeqytet",
-      "summary": "Bashkia njofton programin e vjeshtës me ekspozita, shfaqje teatrore dhe koncerte në sheshe të hapura. Hyrja për shumicën e aktiviteteve do të jetë falas, ndërsa kalendari i plotë publikohet javën e ardhshme. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T19:40:00+00:00"
-    },
-    {
-      "id": "s02", "cat": "showbiz", "kicker": "Hollywood",
-      "title": "Festivali i filmit mbyll edicionin me rekord spektatorësh",
-      "summary": "Edicioni i këtij viti regjistroi numrin më të lartë të biletave të shitura në historinë e festivalit. Çmimi kryesor shkoi për një dramë të pavarur, ndërsa publiku vlerësoi më shumë një komedi romantike. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T18:10:00+00:00"
-    },
-    {
-      "id": "s03", "cat": "sport", "kicker": "Champions League",
+      "id": "s03",
+      "cat": "sport",
+      "kicker": "Champions League",
       "title": "Java e tretë e grupeve sjell përmbysje dhe gola në minutat e fundit",
       "summary": "Tre ndeshje u vendosën pas minutës së 85-të, duke përmbysur renditjen në dy grupe. Skuadrat e mëdha mbeten në garë, por disa favoritë tani varen nga rezultatet e javës së ardhshme. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T21:05:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T21:05:00+00:00"
     },
     {
-      "id": "s04", "cat": "tech", "kicker": "AI",
+      "id": "4030f59ffefb",
+      "cat": "showbiz",
+      "kicker": "Industria Muzikore",
+      "title": "Jesse Jo Stark nënshkruan me WME, Rebecca Allen largohet nga Universal Music U.K.",
+      "summary": "Këngëtarja, aktore dhe drejtore kreative e Chrome Hearts, Jesse Jo Stark, ka nënshkruar me agjencinë WME për përfaqësim në të gjitha fushat. Albumi i saj i ri \"Muse\" del më 6 nëntor, pas një serie koncertesh ku ka hapur shfaqje për Post Malone, Guns N' Roses dhe Jane's Addiction. Ndërkohë, Rebecca Allen po largohet nga Universal Music U.K.",
+      "source": "Variety",
+      "url": "https://variety.com/2026/music/news/jesse-jo-stark-wme-1236910696/",
+      "image": "https://variety.com/wp-content/uploads/2026/10/bfa79580-47a8-4fe7-ad92-1fd4c30a057f-e1791924228990.jpg",
+      "published": "2026-10-13T20:43:57+00:00"
+    },
+    {
+      "id": "af82918b65ff",
+      "cat": "sport",
+      "kicker": "Premier League",
+      "title": "Pse sulmuesi 60 milionë paund i Spurs po luan me ekipin U21",
+      "summary": "Richarlison, i blerë për 60 milionë paund, është lënë jashtë skuadrës së Tottenham për Premier League dhe po luan me U21. Spurs po kalon krizë golash dhe ndodhet në zonën e rënies, por braziliani nuk merret parasysh nga trajneri. Situata e tij mbetet e pazgjidhur pavarësisht nevojës së ekipit për golashënues.",
+      "source": "BBC Sport",
+      "url": "https://www.bbc.co.uk/sport/football/articles/ck9qzwp9ejgro?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0aff/live/b604c290-c737-11f1-9085-f95bdc648acc.jpg",
+      "published": "2026-10-13T20:39:18+00:00"
+    },
+    {
+      "id": "cc31bdd167d9",
+      "cat": "showbiz",
+      "kicker": "Mipcom Cannes",
+      "title": "Paramount sjell portën ikonike të studios në Cannes gjatë Mipcom",
+      "summary": "Studiot Paramount kanë vendosur një replikë të portës së famshme Bronson Gate jashtë Le Palais des Festivals në Cannes, gjatë panairit të madh të industrisë së medias Mipcom. Porta, e ndërtuar në shkallë 90% të madhësisë origjinale, është montuar midis qendrës së konferencave dhe bregdetit francez, duke tërhequr vëmendjen e pjesëmarrësve.",
+      "source": "Variety",
+      "url": "https://variety.com/2026/tv/global/mipcom-cannes-2026-exhibitors-booths-paramount-1236909496/",
+      "image": "https://variety.com/wp-content/uploads/2026/10/Paramount-Booth-Mipcom-2026.jpg",
+      "published": "2026-10-13T20:38:57+00:00"
+    },
+    {
+      "id": "41d15466fa73",
+      "cat": "tech",
+      "kicker": "Teknologji",
+      "title": "Gjykata urdhëron OpenAI të dorëzojë dokumentet e punësimit në rastin Apple",
+      "summary": "Një gjykatë federale vendosi që Apple mund të ketë qasje në materialet e intervistave të OpenAI me ish-punonjës të Apple, si dhe mesazhe private dhe dëshmi nga figura kyçe. Rasti lidhet me akuza për vjedhje të sekreteve tregtare nga Apple ndaj OpenAI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024",
+      "published": "2026-10-13T20:36:44+00:00"
+    },
+    {
+      "id": "3bf7198f2244",
+      "cat": "showbiz",
+      "kicker": "Muzikë Country",
+      "title": "Zyrtarizohen fituesit e Çmimeve të Transmetimit 2026 nga CMA",
+      "summary": "Shoqata e Muzikës Country (CMA) ka shpallur fituesit e Çmimeve të Transmetimit për vitin 2026. Lajmin ua ka dhënë vetë Zach Top, i zgjedhur artisti i ri i vitit nga CMA, duke befasuar stacionet radio dhe personazhet e transmetimit që u nderuan me këtë çmim.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/pro/country-music-association-2026-broadcast-award-winners-list/",
+      "image": null,
+      "published": "2026-10-13T20:34:33+00:00"
+    },
+    {
+      "id": "c162d94e33eb",
+      "cat": "showbiz",
+      "kicker": "Showbiz",
+      "title": "John Boyega u martua fshehurazi dy vjet më parë, pret fëmijën e parë",
+      "summary": "Aktori i Star Wars, John Boyega, ka zbuluar se është martuar në fshehtësi pothuajse dy vjet më parë. Ai dhe gruaja e tij janë duke pritur fëmijën e parë së bashku, lajm që aktori e ka bërë publik vetëm tani.",
+      "source": "E! News",
+      "url": "https://www.eonline.com/news/1437049/john-boyega-privately-got-married-2-years-ago-is-expecting-first-baby?cmpid=rss-syndicate-genericrss-us-top_stories",
+      "image": "https://akns-images.eonline.com/eol_images/Entire_Site/20261013/679931eb-19c4-4fc4-a313-faacfff6655f_1791922336.jpg",
+      "published": "2026-10-13T20:23:16+00:00"
+    },
+    {
+      "id": "3ba9283bc735",
+      "cat": "bota",
+      "kicker": "Vatikan",
+      "title": "Vatikani: Papa u diagnostikua me kancer në mushkëri, operacioni i suksesshëm",
+      "summary": "Papa Leo iu nënshtrua me sukses një ndërhyrjeje kirurgjikale për heqjen e një lobe të mushkërisë së djathtë, njoftoi Vatikani. Sipas deklaratës zyrtare, operacioni shkoi mirë pas diagnostikimit të kancerit në mushkëri.",
+      "source": "BBC News",
+      "url": "https://www.bbc.co.uk/news/articles/ck1wvd9dvv22o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ccec/live/9e543840-c71b-11f1-bc2e-018d645d8d21.jpg",
+      "published": "2026-10-13T20:22:23+00:00"
+    },
+    {
+      "id": "4a63b81844a7",
+      "cat": "showbiz",
+      "kicker": "Animacion",
+      "title": "Anderson .Paak dhe Gabrielle Union bashkohen në speciale të Krishtlindjeve",
+      "summary": "Penny Proud do të kalojë një Krishtlindje kaotike në serialin animuar 'The Proud Family', me një listë të gjatë të yjeve të ftuar. Anderson .Paak dhe Gabrielle Union janë vetëm disa nga emrat e njohur që do të marrin pjesë në episodin special të festave.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/culture/tv-film/proud-family-wizmas-disney-plus-special-anderson-paak-1236360066/",
+      "image": null,
+      "published": "2026-10-13T20:21:56+00:00"
+    },
+    {
+      "id": "38049c8503b6",
+      "cat": "showbiz",
+      "kicker": "Muzikë",
+      "title": "Brandi Carlile prezanton festivalin 2027 me Kelly Clarkson dhe Sierra Ferrell",
+      "summary": "Këngëtarja Brandi Carlile ka njoftuar programin e festivalit të saj muzikor Girls Just Wanna Weekend për vitin 2027. Eventi katërditor do të mbahet në janar dhe do të ketë si headliners Kelly Clarkson dhe Sierra Ferrell. Festivali premton një fundjavë të veçantë me artistë të njohur të muzikës.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/music/music-news/brandi-carlile-girls-just-wanna-weekend-lineup-kelly-clarkson-1236359905/",
+      "image": null,
+      "published": "2026-10-13T20:17:22+00:00"
+    },
+    {
+      "id": "c1d2c79a3064",
+      "cat": "vendi",
+      "kicker": "Protesta studentore",
+      "title": "Student në operacion pas dhunimit nga policia, jashtë rrezikut për jetën",
+      "summary": "Studenti që u dhunua nga efektivë të policisë gjatë protestës ndodhet aktualisht në operacion, por është jashtë rrezikut për jetën. Të riut i është thyer këmba gjatë incidentit dhe po merr trajtim në spitalin e Traumës.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/u-rrah-nga-policet-dhe-i-thyen-kemben-detajet-e-reja-studenti-te-trauma-ja-si-eshte-gjendja-shendetesore-e-te-riut/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/dhuna-koma.jpg",
+      "published": "2026-10-13T20:14:42+00:00"
+    },
+    {
+      "id": "b66a90d2faf6",
+      "cat": "showbiz",
+      "kicker": "Hollywood",
+      "title": "Joe Manganiello tregon pse Tom Cruise e bllokoi për rolin e Reacher",
+      "summary": "Aktori Joe Manganiello në librin e tij të ri të kujtimeve 'Bloodlines' zbulon se si humbi rolin kryesor në filmin 'Reacher'. Ai beson se Tom Cruise ishte arsyeja që nuk u zgjodh për këtë personazh në adaptation e Prime.",
+      "source": "E! News",
+      "url": "https://www.eonline.com/news/1437046/joe-manganiello-says-tom-cruise-blocked-reacher-role-due-to-sofia-vergara?cmpid=rss-syndicate-genericrss-us-top_stories",
+      "image": "https://akns-images.eonline.com/eol_images/Entire_Site/20261013/ffc4c926-e508-46c2-9de1-c528ee153a14_1791920397.jpg",
+      "published": "2026-10-13T20:14:00+00:00"
+    },
+    {
+      "id": "bbbe8f21bb07",
+      "cat": "tech",
+      "kicker": "Fuzion bërthamor",
+      "title": "Kompania Cambridge Heavy Industries ndërton pajisje fuzioni bërthamore për tavolinë",
+      "summary": "Startup-i Cambridge Heavy Industries po ndërton një pajisje fuzioni bërthamore të vogël me laser, e cila synon të furnizojë me energji gjeneratën e ardhshëm të centraleve të fuzionit. Pajisja kompakte po zhvillohet në heshtje nga kompania amerikane për t'u përdorur në prodhimin e energjisë së pastër.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/cambridge-heavy-industries-has-been-quietly-building-a-desktop-fusion-device/",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/02/nif-laser-preamplifiers.jpeg?resize=1200,800",
+      "published": "2026-10-13T20:13:53+00:00"
+    },
+    {
+      "id": "64138e9a3af7",
+      "cat": "showbiz",
+      "kicker": "Showbiz",
+      "title": "Megan Thee Stallion bëhet ambasadore e parë VIP e Gymshark",
+      "summary": "Reparja amerikane Megan Thee Stallion është zgjedhur ambasadore e parë celebrity e markës së veshmbathjeve sportive Gymshark. Ajo do të lançojë një koleksion të vetin me shorts gjatë këtij muaji, duke vazhduar rolin e saj si 'Hot Girl Coach' që promovon stërvitjen me vetëbesim.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/music/rb-hip-hop/megan-thee-stallion-gymshark-celebrity-ambassador-1236360023/",
+      "image": null,
+      "published": "2026-10-13T20:07:13+00:00"
+    },
+    {
+      "id": "a1cf1821bf74",
+      "cat": "sport",
+      "kicker": "Merkato",
+      "title": "Porro dëshiron të kthehet në La Liga, Barça në interes",
+      "summary": "Mbrojtësi i Tottenhamit, Pedro Porro, dëshiron të transferohet te Barcelona. Në merkaton e janarit, Chelsea po shikon mundësinë për të sjellë mesfushorin Frenkie de Jong, ndërsa disa klube të Premier League janë pas sulmuesit kroat Dion Beljo.",
+      "source": "BBC Sport",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cm62yxegwy41o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/079b/live/2ab93150-c735-11f1-9a39-31b474234113.png",
+      "published": "2026-10-13T20:06:30+00:00"
+    },
+    {
+      "id": "1e8b87705886",
+      "cat": "tech",
+      "kicker": "Apple Music",
+      "title": "Apple Music ndryshon ikonën e kuqe, vjen versioni bardh e zi",
+      "summary": "Apple Music ka zëvendësuar ikonën e saj të kuqe me një version bardh e zi në versionin beta të iOS 27.2, sipas raportimeve. Nota muzikore në ikonë ka gjithashtu një kënd pak më të mprehtë se origjinali, ndërsa një logo e re ishte vënë re muajin e kaluar edhe në faqen e Apple Music Hall.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1010619/apple-music-new-icon-ios-27-beta",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/apple-music-new-old-icon-avstorm-twitter.jpeg?quality=90&amp;strip=all&amp;crop=0%2C6.369982547993%2C100%2C87.260034904014&amp;w=1200",
+      "published": "2026-10-13T20:05:02+00:00"
+    },
+    {
+      "id": "c33b4fbba15f",
+      "cat": "showbiz",
+      "kicker": "Broadway",
+      "title": "Si të blini bileta për shfaqjet më të mëdha të Broadway deri në 2027",
+      "summary": "Broadway përgatitet për një sezon plot yje, me aktrorë të njohur nga Hollywood, transferime nga West End dhe rikthime të profilit të lartë deri në vitin 2027. Mes emrave më tërheqës janë Julia Louis-Dreyfus që debuton në Broadway së bashku me Ed Harris dhe Allison Janney, si dhe Tom Hiddleston me Hayley Atwell që bashkohen sërish në skenë.",
+      "source": "Variety",
+      "url": "https://variety.com/shop/broadway-show-tickets-where-to-buy-1234970196/",
+      "image": "https://variety.com/wp-content/uploads/2026/09/Evita-West-End-1.jpg",
+      "published": "2026-10-13T20:04:06+00:00"
+    },
+    {
+      "id": "a8608ca9a0bb",
+      "cat": "bota",
+      "kicker": "Jemen",
+      "title": "Raketa ndërpriten pranë Riyadit, koalicioni saudit godet depo karburanti në Jemen",
+      "summary": "Koalicioni ushtarak i udhëhequr nga Arabia Saudite ka goditur një depo karburanti pranë kryeqytetit jemenas Sanaa, që kontrollohet nga rebelet huti. Sulmi erdhi ndërsa raketa u ndërprenë pranë Riyadit në Arabi Saudite.",
+      "source": "BBC News",
+      "url": "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/eff9/live/16b445b0-c720-11f1-a64c-550be9e3c66b.jpg",
+      "published": "2026-10-13T20:02:15+00:00"
+    },
+    {
+      "id": "a2dae87b302f",
+      "cat": "tech",
+      "kicker": "Energji fuzion",
+      "title": "Licube përgatitet të furnizojë me litium industrinë e energjisë fuzion",
+      "summary": "Centralet e energjisë fuzion do të kenë nevojë për sasi të mëdha litiumi. Kompania Licube po përgatitet të bëhet një furnizues kryesor i këtij materiali për industrinë e re të energjisë fuzion.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/licube-wants-to-be-the-fuel-provider-to-the-fusion-power-industry-see-how-at-techcrunch-disrupt/",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1092180978.jpg?resize=1200,850",
+      "published": "2026-10-13T20:00:00+00:00"
+    },
+    {
+      "id": "e561deda4a4c",
+      "cat": "showbiz",
+      "kicker": "The Chicks",
+      "title": "The Chicks për Bush dhe Trump: 'Tani do t'i jepja George Bush-it një puthje të madhe'",
+      "summary": "Trio country The Chicks po festojnë 20-vjetorin e albumit të tyre 'Taking the Long Way' me koncerte në Manhattan. Në shfaqje, grupi bëri krahasime mes ish-presidentit George W. Bush dhe Donald Trump, duke thënë se tani e shohin Bush-in nën një dritë tjetër.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/lists/the-chicks-taking-the-long-way-tour/",
+      "image": null,
+      "published": "2026-10-13T19:59:05+00:00"
+    },
+    {
+      "id": "afffcfba6c00",
+      "cat": "vendi",
+      "kicker": "Protesta studentore",
+      "title": "Student thyen këmbën gjatë përplasjeve me policinë në protestën e Tiranës",
+      "summary": "Kryeqyteti u përfshi sot në protesta të dhunshme të studentëve që nisën në orën 14:00. Gjatë përplasjeve me policinë, një student raportohet se ka thyer këmbën dhe është tërhequr zvarrë nga forcat e rendit. Studentët shprehën revoltë ndaj qeverisë.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/pamje-tronditese-perplasjet-e-dhunshme-me-policine-nje-student-thyen-kemben-policia-e-terheq-zvarre-i-riu-ne-gjendje-kome-video/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/protetaaaaaaaaaaaaaaa.jpg",
+      "published": "2026-10-13T19:57:36+00:00"
+    },
+    {
+      "id": "5675058b3248",
+      "cat": "showbiz",
+      "kicker": "Hollywood",
+      "title": "Tre kompani amerikane bashkohen për prodhimin e filmave horror",
+      "summary": "BondIt Media Capital, Buffalo 8 Distribution dhe Sandaled Kid Productions kanë krijuar një partneritet për të zhvilluar tre filma horror me koncepte të larta tregtare. BondIt do të financojë projektet, Buffalo 8 do të merret me shpërndarjen, ndërsa Sandaled Kid Productions do të përqendrohet në zhvillimin dhe prodhimin e filmave.",
+      "source": "Variety",
+      "url": "https://variety.com/2026/film/news/bondit-buffalo-8-sandaled-kid-productions-horror-film-slate-1236910380/",
+      "image": "https://variety.com/wp-content/uploads/2026/10/Sandaled-Kid-Buffalo-8.jpg",
+      "published": "2026-10-13T19:53:46+00:00"
+    },
+    {
+      "id": "f0497ab139a4",
+      "cat": "vendi",
+      "kicker": "Champions League",
+      "title": "Bayern humbet 2-0 në Norvegji, Viking dominon pjesën e parë",
+      "summary": "Kampionët e Gjermanisë, Bayern Munich, po përballen me një disfatë të papritur 2-0 ndaj Viking në Norvegji gjatë pjesës së parë të Champions League. Golat u shënuan nga Stensness dhe Christiansen, ndërsa gjermanët u gjetën të papërgatitur në mbrojtje. Në ndeshje të tjera, Inter barazon 1-1 me Brugge dhe Barcelona po njëjtin rezultat me Galatasaray.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/video-bayern-ngrin-ne-norvegji-viking-i-shenon-dy-gola-ne-pjesen-e-pare-barazim-inter-dhe-barcelona/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/Capture-48.png",
+      "published": "2026-10-13T19:52:15+00:00"
+    },
+    {
+      "id": "8cd415cc4ee6",
+      "cat": "bota",
+      "kicker": "Rap, Drejtësi",
+      "title": "Ish-shefi i bandës merr 40 vjet burg për vrasjen e Tupac Shakur",
+      "summary": "Davis u shpall fajtor muajin e kaluar për rolin që luajti në vrasjen e superyllit të rap-it në vitin 1996. Ai u dënua me 40 vjet heqje lirie për orkestrimin e atentatit me armë nga një makinë në lëvizje që mori jetën e Tupac Shakur në Las Vegas.",
+      "source": "BBC News",
+      "url": "https://www.bbc.co.uk/news/articles/c60rln2jvv2zo?at_medium=RSS&at_campaign=rss",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/37f6/live/8c0f8020-c73b-11f1-a64c-550be9e3c66b.jpg",
+      "published": "2026-10-13T19:51:14+00:00"
+    },
+    {
+      "id": "20ff96291dde",
+      "cat": "vendi",
+      "kicker": "Protesta Studentore",
+      "title": "Studentët ndezin zjarr te Bashkia e Tiranës dhe Pazari i Ri",
+      "summary": "Protesta e studentëve është zgjeruar në disa pika të kryeqytetit. Pas Ministrisë së Arsimit, studentët kanë djegur objekte te Bashkia e Tiranës dhe te Pazari i Ri. Vazhdojnë përplasjet me policinë dhe shoqërimet e protestuesve.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/live-pas-ministrise-se-arsimit-i-vune-flaken-bashkise-se-tiranes-revolta-e-studenteve-zhvendoset-ne-akse-kryesore-te-kryeqytetit-ndizet-zjarr-edhe-te-pazari-i-ri/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/pzariiiiiiiiiiiii.jpg",
+      "published": "2026-10-13T19:45:09+00:00"
+    },
+    {
+      "id": "c839b9474fae",
+      "cat": "tech",
+      "kicker": "E-commerce",
+      "title": "Shopify hap katalogun e saj për agjentët e inteligjencës artificiale",
+      "summary": "Shopify njoftoi se do të lejojë agjentët e inteligjencës artificiale të shfletojnë dhe blejnë produkte në emër të përdoruesve. Përdoruesit do të mund të konfigurojnë agjentët e tyre për të bërë blerje nga mbi një miliard produkte në katalogun e Shopify.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/gettyimages-2225304503.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.729057198914%2C100%2C78.541885602173&amp;w=1200",
+      "published": "2026-10-13T19:42:42+00:00"
+    },
+    {
+      "id": "0f574851b82f",
+      "cat": "showbiz",
+      "kicker": "Hollywood",
+      "title": "Shane Harper publikon foto të rralla me bashkëshorten Samantha Boscarino",
+      "summary": "Aktori i NCIS: New York, Shane Harper, ka ndarë momente private nga martesa e tij me Samantha Boscarino. Çifti u njoh në vitin 2010 gjatë xhirimeve të serialit Good Luck Charlie, dhe përfaqësuesi i aktorit konfirmoi lidhjen e tyre rreth një vit më parë. Harper tani ka publikuar një pamje të rrallë nga jeta e tyre bashkëshortore.",
+      "source": "E! News",
+      "url": "https://www.eonline.com/news/1437044/shane-harper-shares-rare-glimpse-into-samantha-boscarino-marriage?cmpid=rss-syndicate-genericrss-us-top_stories",
+      "image": "https://akns-images.eonline.com/eol_images/Entire_Site/20251202/231a0e98-2f8b-4e9c-b815-a44e861285db_1764709927.jpg",
+      "published": "2026-10-13T19:41:04+00:00"
+    },
+    {
+      "id": "s01",
+      "cat": "vendi",
+      "kicker": "Tiranë",
+      "title": "Nis sezoni i ri kulturor me ekspozita dhe koncerte në kryeqytet",
+      "summary": "Bashkia njofton programin e vjeshtës me ekspozita, shfaqje teatrore dhe koncerte në sheshe të hapura. Hyrja për shumicën e aktiviteteve do të jetë falas, ndërsa kalendari i plotë publikohet javën e ardhshme. (Lajm shembull për dizajnin.)",
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T19:40:00+00:00"
+    },
+    {
+      "id": "11bc7e1418df",
+      "cat": "showbiz",
+      "kicker": "Podcast",
+      "title": "Ari Emanuel dhe Ben Persky kthehen me sezonin e dytë të podkastit 'Rushmore'",
+      "summary": "Ari Emanuel, kryetar ekzekutiv i WME Group dhe TKO Group, bashkë me menaxherin muzikor Ben Persky,lanson sezonin e dytë të podkastit të tyre 'Rushmore'. Në episodet e reja do të debatojnë mbi më të mirët e të gjitha kohërave me mysafirë të profilit të lartë, përfshirë Larry David dhe Jerry Seinfeld. Sezoni i dytë do të jetë i disponueshëm në YouTube.",
+      "source": "Variety",
+      "url": "https://variety.com/2026/digital/news/ari-emanuel-podcast-rushmore-season-2-larry-david-jerry-seinfeld-1236910537/",
+      "image": "https://variety.com/wp-content/uploads/2026/10/Ben-Persky-Larry-David-Jerry-Seinfeld-and-Ari-Emanuel.jpg",
+      "published": "2026-10-13T19:34:24+00:00"
+    },
+    {
+      "id": "afa14571c4b6",
+      "cat": "showbiz",
+      "kicker": "Showbiz",
+      "title": "Nipi i Dolly Parton mohon akuzat për kërcënime ndaj pasurisë së këngëtares",
+      "summary": "Bryan Seaver ka paraqitur përgjigjen e tij të parë me shkrim duke mohuar se ka bërë kërcënime me dhunë kundër pasurisë së Dolly Parton pas vdekjes së saj. Ai thotë se pasuria po shtrembëron një shkëmbim miqësor mes tyre. Rasti lidhet me një urdhër kufizues që po luftohet nga nipi i këngëtares.",
+      "source": "Billboard",
+      "url": "https://www.billboard.com/pro/dolly-parton-nephew-fights-restraining-order-denies-threats/",
+      "image": null,
+      "published": "2026-10-13T19:30:12+00:00"
+    },
+    {
+      "id": "c1489708a6d1",
+      "cat": "vendi",
+      "kicker": "Protesta",
+      "title": "Rreth 40 të shoqëruar nga protesta, tensione të larta për më shumë se 7 orë",
+      "summary": "Pas më shumë se shtatë orësh protestë me përplasje fizike dhe ndërhyrje të forcave të rendit, numri i të shoqëruarve ka shkuar në rreth 40 persona. Burime bëjnë me dije se të ndaluarit janë dërguar në komisariatet e kryeqytetit. Protesta ka qenë e shoqëruar me tensione të larta.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/bilanci-i-protestes-pas-me-shume-se-7-oresh-rritet-numri-i-te-ndaluarve-dhjetera-protestues-te-shoqeruar/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/tjrgfn.jpg",
+      "published": "2026-10-13T19:30:00+00:00"
+    },
+    {
+      "id": "99a372e30a66",
+      "cat": "vendi",
+      "kicker": "Protesta studentore",
+      "title": "Studentët protestojnë 8 orë para Ministrisë së Arsimit, policia përdor gaz lotsjellës",
+      "summary": "Studentët protestues dhe policia u përplasën për 8 orë para Ministrisë së Arsimit në Tiranë. Forcat e rendit përdorën gaz lotsjellës dhe ujë me presion ndaj protestuesve. Protesta më pas u zhvendos te Bashkia e Tiranës, ku disa prej tyre hynë brenda godinës.",
+      "source": "Balkanweb",
+      "url": "https://www.balkanweb.com/mbi-6-ore-revolte-studentet-vijojne-rezistencen-pas-ministrise-se-arsimit-protesta-zhvendoset-te-bashkia-e-tiranes-policia-pergjigjet-me-gaz-lotsjelles-dhe-uje-me-presion/",
+      "image": "https://www.balkanweb.com/wp-content/uploads/2026/10/tryrtyrtey.jpg",
+      "published": "2026-10-13T19:27:41+00:00"
+    },
+    {
+      "id": "s02",
+      "cat": "showbiz",
+      "kicker": "Hollywood",
+      "title": "Festivali i filmit mbyll edicionin me rekord spektatorësh",
+      "summary": "Edicioni i këtij viti regjistroi numrin më të lartë të biletave të shitura në historinë e festivalit. Çmimi kryesor shkoi për një dramë të pavarur, ndërsa publiku vlerësoi më shumë një komedi romantike. (Lajm shembull për dizajnin.)",
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T18:10:00+00:00"
+    },
+    {
+      "id": "s04",
+      "cat": "tech",
+      "kicker": "AI",
       "title": "Aplikacionet e përkthimit në kohë reale arrijnë te telefonat e mesëm",
       "summary": "Funksioni i përkthimit të bisedave pa internet, deri tani i rezervuar për modelet e shtrenjta, po vjen edhe te telefonat me çmim mesatar. Shqipja është mes gjuhëve të para të mbështetura. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T16:30:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T16:30:00+00:00"
     },
     {
-      "id": "s05", "cat": "jeta", "kicker": "Gjumi",
+      "id": "s05",
+      "cat": "jeta",
+      "kicker": "Gjumi",
       "title": "Studim: 20 minuta ecje pas darke përmirëson cilësinë e gjumit",
       "summary": "Një studim me 400 pjesëmarrës gjeti se një shëtitje e lehtë pas darke lidhet me gjumë më të thellë dhe më pak zgjime gjatë natës. Efekti ishte më i dukshëm te personat që punojnë ulur gjatë ditës. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T14:00:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T14:00:00+00:00"
     },
     {
-      "id": "s06", "cat": "bota", "kicker": "Klima",
+      "id": "s06",
+      "cat": "bota",
+      "kicker": "Klima",
       "title": "Vjeshta më e ngrohtë e dekadës në Evropën Jugore",
       "summary": "Temperaturat e tetorit tejkaluan mesataren shumëvjeçare me gati tre gradë në disa vende të Mesdheut. Meteorologët presin ftohje nga mesi i muajit, me reshje të shumta në Ballkan. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T12:15:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T12:15:00+00:00"
     },
     {
-      "id": "s07", "cat": "showbiz", "kicker": "Muzikë",
+      "id": "s07",
+      "cat": "showbiz",
+      "kicker": "Muzikë",
       "title": "Albumi i ri i vjeshtës kryeson listat në 14 vende",
       "summary": "Albumi debutoi në vendin e parë në 14 tregje brenda javës së parë, me dy këngë në top 10 të platformave të streaming. Turneu evropian, me një ndalesë në Ballkan, njoftohet për pranverë. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T11:00:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T11:00:00+00:00"
     },
     {
-      "id": "s08", "cat": "sport", "kicker": "Kombëtarja",
+      "id": "s08",
+      "cat": "sport",
+      "kicker": "Kombëtarja",
       "title": "Kombëtarja grumbullohet për ndeshjet e nëntorit",
       "summary": "Trajneri publikoi listën e lojtarëve për dy ndeshjet kualifikuese të nëntorit, me dy debutues nga kampionati vendas. Biletat për ndeshjen në shtëpi dalin në shitje javën e ardhshme. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T09:45:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T09:45:00+00:00"
     },
     {
-      "id": "s09", "cat": "tech", "kicker": "Telefona",
+      "id": "s09",
+      "cat": "tech",
+      "kicker": "Telefona",
       "title": "Përditësimi i ri i sistemit sjell kursim baterie deri në 15%",
       "summary": "Versioni i ri i sistemit operativ optimizon aplikacionet në sfond dhe premton deri në 15% më shumë autonomi. Përditësimi po shpërndahet gradualisht gjatë dy javëve të ardhshme. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T08:20:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-13T08:20:00+00:00"
     },
     {
-      "id": "s10", "cat": "vendi", "kicker": "Ekonomi",
+      "id": "s10",
+      "cat": "vendi",
+      "kicker": "Ekonomi",
       "title": "Çmimet e qirave në bregdet bien pas sezonit turistik",
       "summary": "Pas një vere me kërkesë rekord, qiratë mujore në qytetet bregdetare kanë rënë mesatarisht 20% krahasuar me gushtin. Agjencitë presin stabilizim deri në fund të vitit. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T17:30:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-12T17:30:00+00:00"
     },
     {
-      "id": "s11", "cat": "jeta", "kicker": "Ushqim",
+      "id": "s11",
+      "cat": "jeta",
+      "kicker": "Ushqim",
       "title": "Perimet e stinës: çfarë të gatuash në tetor",
       "summary": "Kungulli, lakra dhe panxhari janë në pikun e tyre këtë muaj dhe kushtojnë më pak se në çdo stinë tjetër. Kuzhinierët sugjerojnë receta të thjeshta në furrë që ruajnë vlerat ushqyese. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T15:00:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-12T15:00:00+00:00"
     },
     {
-      "id": "s12", "cat": "bota", "kicker": "Shkencë",
+      "id": "s12",
+      "cat": "bota",
+      "kicker": "Shkencë",
       "title": "Teleskopi i ri regjistron galaktikën më të largët të fotografuar ndonjëherë",
       "summary": "Astronomët publikuan imazhin e një galaktike që ekzistonte vetëm 300 milionë vjet pas Big Bang-ut. Zbulimi hap pyetje të reja për shpejtësinë me të cilën u formuan yjet e parë. (Lajm shembull për dizajnin.)",
-      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T10:00:00+00:00"
+      "source": "Shembull",
+      "url": "#",
+      "image": null,
+      "published": "2026-10-12T10:00:00+00:00"
     }
   ]
 }
