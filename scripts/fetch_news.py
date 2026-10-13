@@ -79,7 +79,116 @@ dhe shkruaj për lexuesin shqiptar:
 - "summary": përmbledhje ORIGJINALE në shqip, 2–3 fjali (40–70 fjalë), me faktet kryesore (kush, çfarë, ku, kur).
   Shkruaje me fjalët e tua, mos përkthe fjali për fjali. Shqipe standarde, e natyrshme, me ë dhe ç.
 - "kicker": 1–3 fjalë etiketë (p.sh. "Champions League", "Hollywood", "AI").
-Mos shto fakte që nuk janë në tekst. Mos shkruaj opinion. Kthe VETËM JSON me këto tri fusha."""
+- "body": shkrimi i plotë në shqip si listë paragrafësh (2–4 paragrafë, 50–90 fjalë secili), që zgjeron përmbledhjen
+  me kontekstin dhe detajet që JANË në tekstin e burimit. Nëse teksti i burimit është i shkurtër, shkruaj vetëm 2 paragrafë.
+  Paragrafi i parë nuk duhet të përsërisë përmbledhjen fjalë për fjalë.
+RREGULLA: Përdor vetëm faktet që janë në tekstin e dhënë. Mos shpik emra, shifra, data, citime apo rrjedhoja.
+Mos shkruaj opinion. Kthe VETËM JSON me fushat: title, summary, kicker, body (array stringjesh)."""
+
+
+SITE = "https://yjetshqip.site"
+PAGES_DIR = ROOT / "lajme"
+TEMPLATE = ROOT / "templates" / "lajm.html"
+MONTHS_SQ = ["janar","shkurt","mars","prill","maj","qershor","korrik","gusht","shtator","tetor","nëntor","dhjetor"]
+DAYS_SQ = ["e hënë","e martë","e mërkurë","e enjte","e premte","e shtunë","e diel"]
+
+
+def slugify(text):
+    t = text.lower()
+    for a, b in (("ë", "e"), ("ç", "c"), ("ä", "a"), ("ö", "o"), ("ü", "u"), ("é", "e"), ("è", "e"), ("á", "a"), ("ó", "o"), ("í", "i"), ("ñ", "n")):
+        t = t.replace(a, b)
+    t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+    return t[:70].rstrip("-") or "lajm"
+
+
+def esc(x):
+    return str(x or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+def tirana(iso):
+    from datetime import timedelta
+    d = datetime.fromisoformat(iso)
+    # Shqipëria: CET/CEST (ora verore mars–tetor, e diela e fundit)
+    y = d.year
+    def last_sunday(month):
+        from calendar import monthrange
+        last = datetime(y, month, monthrange(y, month)[1], tzinfo=timezone.utc)
+        return last - timedelta(days=(last.weekday() + 1) % 7)
+    start, end = last_sunday(3).replace(hour=1), last_sunday(10).replace(hour=1)
+    off = 2 if start <= d.astimezone(timezone.utc) < end else 1
+    return d.astimezone(timezone(timedelta(hours=off)))
+
+
+def build_pages(items):
+    """Krijon /lajme/<slug>.html për çdo lajm + sitemap-lajme.xml."""
+    if not TEMPLATE.exists():
+        log("! mungon templates/lajm.html, faqet nuk u gjeneruan")
+        return items
+    tpl = TEMPLATE.read_text(encoding="utf-8")
+    PAGES_DIR.mkdir(exist_ok=True)
+    for it in items:
+        if not it.get("slug"):
+            it["slug"] = slugify(it["title"]) + "-" + it["id"][:6]
+        it["page"] = "/lajme/" + it["slug"] + ".html"
+    for it in items:
+        d = tirana(it["published"])
+        date_long = f"{DAYS_SQ[d.weekday()]}, {d.day} {MONTHS_SQ[d.month-1]} {d.year}"
+        body = it.get("body") or []
+        body_html = "".join(f"<p>{esc(p)}</p>" for p in body) or f"<p>{esc(it['summary'])}</p>"
+        related = [x for x in items if x["cat"] == it["cat"] and x["id"] != it["id"]][:5]
+        related_html = "".join(
+            f'<li><a class="noimage" href="{x["page"]}"><span><span class="kicker">{esc(x.get("kicker") or CATEGORIES[x["cat"]])}</span>'
+            f'<h4>{esc(x["title"])}</h4><span class="byline"><b>{esc(x["source"])}</b></span></span></a></li>' for x in related)
+        figure = (f'<figure><img src="{esc(it["image"])}" alt="{esc(it["title"])}"><figcaption>Foto: {esc(it["source"])}</figcaption></figure>'
+                  if it.get("image") else "")
+        jsonld = json.dumps({
+            "@context": "https://schema.org",
+            "@graph": [
+                {"@type": "NewsArticle", "headline": it["title"][:110], "description": it["summary"],
+                 "image": [it["image"]] if it.get("image") else [], "datePublished": it["published"],
+                 "dateModified": it["published"], "inLanguage": "sq",
+                 "mainEntityOfPage": SITE + it["page"], "articleSection": CATEGORIES[it["cat"]],
+                 "author": {"@type": "Organization", "name": "Yjet Shqip"},
+                 "publisher": {"@type": "Organization", "name": "Yjet Shqip", "url": SITE,
+                               "logo": {"@type": "ImageObject", "url": SITE + "/assets/social-preview.png"}},
+                 "isBasedOn": it["url"]},
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Yjet Shqip", "item": SITE + "/"},
+                    {"@type": "ListItem", "position": 2, "name": "Lajmet", "item": SITE + "/lajme.html"},
+                    {"@type": "ListItem", "position": 3, "name": CATEGORIES[it["cat"]], "item": SITE + "/lajme.html#" + it["cat"]},
+                    {"@type": "ListItem", "position": 4, "name": it["title"]}]},
+            ]}, ensure_ascii=False)
+        html = tpl
+        for k, v in {
+            "title": esc(it["title"]), "description": esc(it["summary"][:158]), "page": it["page"],
+            "image": esc(it.get("image") or SITE + "/assets/social-preview.png"), "published": it["published"],
+            "category": esc(CATEGORIES[it["cat"]]), "cat": it["cat"], "kicker": esc(it.get("kicker") or CATEGORIES[it["cat"]]),
+            "summary": esc(it["summary"]), "source": esc(it["source"]), "url": esc(it["url"]),
+            "date_long": date_long, "time": d.strftime("%H:%M"), "figure": figure, "body": body_html,
+            "related": related_html, "jsonld": jsonld,
+        }.items():
+            html = html.replace("{{" + k + "}}", v)
+        (PAGES_DIR / (it["slug"] + ".html")).write_text(html, encoding="utf-8")
+
+    # sitemap-lajme.xml: të gjitha faqet në dosje + Google News për 48 orët e fundit
+    from datetime import timedelta
+    recent = datetime.now(timezone.utc) - timedelta(hours=48)
+    by_slug = {it["slug"]: it for it in items}
+    rows = []
+    for f in sorted(PAGES_DIR.glob("*.html"), key=lambda p: p.stat().st_mtime, reverse=True):
+        it = by_slug.get(f.stem)
+        loc = SITE + "/lajme/" + f.name
+        lastmod = (it["published"] if it else datetime.fromtimestamp(f.stat().st_mtime, timezone.utc).isoformat())
+        news = ""
+        if it and datetime.fromisoformat(it["published"]) >= recent:
+            news = (f'<news:news><news:publication><news:name>Yjet Shqip</news:name><news:language>sq</news:language></news:publication>'
+                    f'<news:publication_date>{it["published"]}</news:publication_date><news:title>{esc(it["title"])}</news:title></news:news>')
+        rows.append(f"<url><loc>{esc(loc)}</loc><lastmod>{lastmod}</lastmod>{news}</url>")
+    (ROOT / "sitemap-lajme.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n' + "\n".join(rows) + "\n</urlset>\n", encoding="utf-8")
+    log(f"U gjeneruan {len(items)} faqe lajmesh dhe sitemap-lajme.xml ({len(rows)} URL)")
+    return items
 
 
 def log(msg):
@@ -183,7 +292,7 @@ def rewrite_with_claude(client, item):
         try:
             msg = client.messages.create(
                 model=MODEL,
-                max_tokens=400,
+                max_tokens=1200,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user}],
             )
@@ -191,10 +300,14 @@ def rewrite_with_claude(client, item):
             m = re.search(r"\{.*\}", text, re.S)
             data = json.loads(m.group(0) if m else text)
             if data.get("title") and data.get("summary"):
+                body = data.get("body") or []
+                if isinstance(body, str):
+                    body = [b for b in re.split(r"\n\s*\n", body) if b.strip()]
                 return {
                     "title": data["title"].strip(),
                     "summary": data["summary"].strip(),
                     "kicker": (data.get("kicker") or CATEGORIES[item["cat"]]).strip(),
+                    "body": [str(b).strip() for b in body if str(b).strip()][:4],
                 }
         except Exception as ex:
             log(f"    retry {attempt + 1}: {ex}")
@@ -234,7 +347,8 @@ def main():
             continue
         written.append({
             "id": it["id"], "cat": it["cat"], "kicker": out["kicker"],
-            "title": out["title"], "summary": out["summary"],
+            "title": out["title"], "summary": out["summary"], "body": out["body"],
+            "slug": slugify(out["title"]) + "-" + it["id"][:6],
             "source": it["source"], "url": it["url"], "image": it["image"],
             "published": it["published"],
         })
@@ -243,6 +357,7 @@ def main():
     items = written + list(known.values())
     items.sort(key=lambda x: x["published"], reverse=True)
     items = items[:KEEP_ITEMS]
+    items = build_pages(items)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({

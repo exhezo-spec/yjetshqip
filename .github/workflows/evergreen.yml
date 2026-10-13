@@ -1,0 +1,29 @@
+name: Faqet evergreen (përputhshmëria + numerologjia)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install anthropic
+      - name: Shkruaj dhe ndërto faqet
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/build_evergreen.py
+      - name: Commit
+        run: |
+          git config user.name "yjetshqip-bot"
+          git config user.email "bot@yjetshqip.site"
+          git add data/evergreen.json perputhshmeria numerologjia sitemap-evergreen.xml
+          git diff --cached --quiet && exit 0
+          git commit -m "evergreen: përputhshmëria + numerologjia"
+          git push

@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://yjetshqip.site/sitemap.xml
+Sitemap: https://yjetshqip.site/sitemap-lajme.xml
+Sitemap: https://yjetshqip.site/sitemap-evergreen.xml
