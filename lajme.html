@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lajmet e ditës · Yjet Shqip</title>
+<meta name="description" content="Lajmet e ditës në shqip: vendi, bota, showbiz, sport, teknologji dhe jetë. Përditësohen çdo orë.">
+<meta name="keywords" content="lajme shqip,lajmet e fundit,showbiz shqip,horoskop shqip,numerologji shqip,yjet shqip">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1VVEM1S6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XD1VVEM1S6');
+</script>
+<link rel="canonical" href="https://yjetshqip.site/lajme.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:site_name" content="Yjet Shqip">
+<meta property="og:title" content="Lajmet e ditës · Yjet Shqip">
+<meta property="og:description" content="Lajmet e ditës në shqip: vendi, bota, showbiz, sport, teknologji dhe jetë. Përditësohen çdo orë.">
+<meta property="og:url" content="https://yjetshqip.site/lajme.html">
+<meta property="og:image" content="https://yjetshqip.site/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout concept: a printed almanac page. Left-ragged editorial columns, a hairline ephemeris
+     table for the twelve signs, and one bold object: a canvas-drawn zodiac wheel with the Sun's
+     real position for today. No centered hero, no cards-with-shadows. */
+  :root {
+    --bg: #eef0f3;        /* moonstone paper, cool-biased */
+    --bg-2: #e3e6ec;      /* table stripe / inset */
+    --ink: #171a2c;       /* navy ink */
+    --ink-2: #4a4f63;     /* secondary text */
+    --rule: #c6cad6;      /* hairlines */
+    --brass: #a3762a;     /* star accent */
+    --brass-soft: #d9c08a;
+    --font-display: "Newsreader", "Iowan Old Style", "Palatino", Georgia, serif;
+    --font-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1120; --bg-2: #171a2c; --ink: #e9e8e1; --ink-2: #a5a7b8;
+      --rule: #2f3350; --brass: #d2a85a; --brass-soft: #6b5426; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1120; --bg-2: #171a2c; --ink: #e9e8e1; --ink-2: #a5a7b8;
+    --rule: #2f3350; --brass: #d2a85a; --brass-soft: #6b5426; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 16px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  /* ---------- header ---------- */
+  .top { border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+  .brand { text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: .01em; display: flex; align-items: baseline; gap: 8px; }
+  .brand small { font-family: var(--font-mono); font-size: 11px; color: var(--ink-2); letter-spacing: .08em; text-transform: uppercase; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+  nav a:hover { color: var(--ink); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--rule); color: var(--ink); font: inherit; padding: 6px 12px; cursor: pointer; }
+  .today { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .04em; white-space: nowrap; }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 5vw, 72px); align-items: center; padding-block: clamp(40px, 7vw, 96px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 20px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(42px, 6.4vw, 84px); line-height: .98; letter-spacing: -.01em; margin: 0 0 24px; text-wrap: balance; }
+  h1 em { font-style: italic; font-weight: 500; }
+  .lede { font-size: 19px; color: var(--ink-2); max-width: 34em; margin: 0 0 32px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
+  .btn { display: inline-block; text-decoration: none; background: var(--ink); color: var(--bg); padding: 13px 22px; font-weight: 500; font-size: 15px; }
+  .btn:hover { background: var(--brass); color: #fff; }
+  .link { font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+  .link:hover { border-color: var(--ink); }
+  .fine { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); margin: 28px 0 0; letter-spacing: .03em; }
+
+  .wheel { position: relative; width: 100%; max-width: 440px; justify-self: end; aspect-ratio: 1; }
+  .wheel canvas { width: 100%; height: 100%; display: block; }
+  .wheel figcaption { position: absolute; left: 0; right: 0; bottom: -34px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); text-align: center; letter-spacing: .04em; }
+
+  /* ---------- news portal ---------- */
+  .news-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+  .news-head h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); margin: 0; line-height: 1.05; }
+  .news-head .meta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .04em; }
+  .news-tabs { display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 32px; }
+  .news-tabs button { background: none; border: 0; border-right: 1px solid var(--rule); font: 500 14px var(--font-body); color: var(--ink-2); padding: 12px 18px; cursor: pointer; }
+  .news-tabs button:last-child { border-right: 0; }
+  .news-tabs button[aria-pressed="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--brass); }
+  .news-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0 48px; }
+  .lead { text-decoration: none; display: grid; gap: 14px; padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
+  .lead .img { aspect-ratio: 16/9; max-width: 100%; background: var(--bg-2); overflow: hidden; }
+  .lead .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lead h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.08; margin: 0; text-wrap: balance; }
+  .lead p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 40em; }
+  .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); }
+  .byline { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+  .byline b { font-weight: 500; color: var(--ink); }
+  .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .news-list li { border-bottom: 1px solid var(--rule); }
+  .news-list a { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 16px; padding: 16px 0; text-decoration: none; }
+  .news-list a:hover h4 { text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 3px; }
+  .news-list .img { width: 88px; aspect-ratio: 4/3; background: var(--bg-2); overflow: hidden; }
+  .news-list .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .news-list .noimg { display: none; }
+  .news-list a.noimage { grid-template-columns: 1fr; }
+  .news-list h4 { font-family: var(--font-display); font-weight: 600; font-size: 20px; line-height: 1.2; margin: 6px 0 6px; }
+  .news-list p { margin: 0; font-size: 14.5px; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .news-more { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+  .news-more a { text-decoration: none; display: grid; gap: 6px; align-content: start; border-top: 1px solid var(--rule); padding-top: 14px; }
+  .news-more h4 { font-family: var(--font-display); font-weight: 600; font-size: 19px; line-height: 1.2; margin: 0; }
+  .news-more h4 a:hover { text-decoration: underline; }
+  .news-all { margin-top: 36px; display: flex; justify-content: flex-end; }
+  .news-empty { color: var(--ink-2); padding: 24px 0; border-top: 1px solid var(--ink); }
+  .sample-note { font-family: var(--font-mono); font-size: 12px; color: var(--brass); margin: 0 0 16px; }
+
+  /* ---------- section headers ---------- */
+  section { border-top: 1px solid var(--rule); padding-block: clamp(40px, 6vw, 80px); }
+  .sec-head { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: end; margin-bottom: 36px; }
+  .sec-head h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .sec-head p { margin: 0; color: var(--ink-2); max-width: 36em; }
+  .count { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .08em; text-transform: uppercase; }
+
+  /* ---------- sign table ---------- */
+  .signs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .signs li { border-bottom: 1px solid var(--rule); }
+  .signs a {
+    display: grid; grid-template-columns: 36px 1.6fr 1.3fr 1fr 1fr 24px; gap: 16px; align-items: baseline;
+    padding: 14px 0; text-decoration: none; min-width: 0;
+  }
+  .signs a:hover { background: var(--bg-2); }
+  .signs .glyph { font-family: var(--font-display); font-size: 22px; line-height: 1; color: var(--brass); }
+  .signs .name { font-family: var(--font-display); font-size: 24px; font-weight: 600; }
+  .signs .dates, .signs .deg { font-family: var(--font-mono); font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .signs .el { font-size: 14px; color: var(--ink-2); }
+  .signs .arrow { font-family: var(--font-mono); color: var(--ink-2); text-align: right; }
+  .signs li.now a { background: var(--bg-2); box-shadow: inset 3px 0 0 var(--brass); padding-left: 12px; }
+  .signs li.now .name::after { content: "Dielli sot"; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--brass); margin-left: 12px; vertical-align: middle; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+
+  /* ---------- tools ---------- */
+  .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--rule); }
+  .tool { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 28px 24px 32px; text-decoration: none; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .tool:hover { background: var(--bg-2); }
+  .tool .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); }
+  .tool h3 { font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 1.1; margin: 0; }
+  .tool p { margin: 0; color: var(--ink-2); font-size: 15.5px; flex: 1; }
+  .tool .go { font-family: var(--font-mono); font-size: 12px; margin-top: 8px; }
+  .tool.wide { grid-column: span 2; }
+  .tool.wide h3 { font-size: 36px; }
+
+  /* ---------- principles ---------- */
+  .why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  .why h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; margin: 0 0 8px; }
+  .why p { margin: 0; color: var(--ink-2); }
+  .why .n { font-family: var(--font-mono); font-size: 12px; color: var(--brass); letter-spacing: .1em; display: block; margin-bottom: 14px; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--ink); padding-block: 40px 56px; }
+  footer .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+  footer .brand { font-size: 26px; }
+  footer p { color: var(--ink-2); font-size: 15px; margin: 10px 0 0; max-width: 30em; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  footer li a { text-decoration: none; font-size: 15px; color: var(--ink-2); }
+  footer li a:hover { color: var(--ink); }
+  footer .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 14px; }
+  .disclaimer { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); margin-top: 32px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .wheel { justify-self: start; max-width: 360px; margin-top: 12px; }
+    .sec-head { grid-template-columns: 1fr; }
+    .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tool.wide { grid-column: span 2; }
+    .why { grid-template-columns: 1fr; gap: 28px; }
+    .news-grid { grid-template-columns: 1fr; }
+    .lead { margin-bottom: 28px; }
+    .news-more { grid-template-columns: 1fr 1fr; }
+    footer .wrap { grid-template-columns: 1fr 1fr; }
+    .today { display: none; }
+  }
+  @media (max-width: 640px) {
+    nav ul { display: none; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 64px; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 8px 16px 16px; z-index: 5; }
+    nav ul.open { display: flex; }
+    nav li a { display: block; padding: 10px 0; border-top: 1px solid var(--rule); }
+    .menu-btn { display: inline-block; }
+    .top { position: relative; }
+    .signs a { grid-template-columns: 28px 1fr auto; grid-template-areas: "g n d" "g e e"; row-gap: 4px; }
+    .signs .glyph { grid-area: g; } .signs .name { grid-area: n; font-size: 20px; } .signs .dates { grid-area: d; }
+    .signs .deg, .signs .arrow { display: none; }
+    .signs .el { grid-area: e; }
+    .signs li.now .name::after { display: block; margin: 4px 0 0; }
+    .tools { grid-template-columns: 1fr; }
+    .tool.wide { grid-column: span 1; }
+    .tool.wide h3 { font-size: 28px; }
+    footer .wrap { grid-template-columns: 1fr; }
+    .news-more { grid-template-columns: 1fr; gap: 20px; }
+    .news-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    .news-tabs button { white-space: nowrap; }
+    .wheel figcaption { position: static; margin-top: 10px; text-align: left; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .signs a, .tool, .btn { transition: background .15s ease; }
+  }
+</style>
+
+<style>
+  .page-head { padding-block: clamp(32px, 5vw, 64px) 8px; }
+  .page-head h1 { font-size: clamp(36px, 5vw, 64px); margin-bottom: 8px; }
+  .page-head p { color: var(--ink-2); margin: 0; max-width: 40em; }
+  .all-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .all-list li { border-bottom: 1px solid var(--rule); }
+  .all-list a { display: grid; grid-template-columns: 160px minmax(0, 1fr) 220px; gap: 24px; padding: 22px 0; text-decoration: none; align-items: start; }
+  .all-list .img { width: 160px; aspect-ratio: 4/3; background: var(--bg-2); overflow: hidden; }
+  .all-list .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .all-list a.noimage { grid-template-columns: minmax(0, 1fr) 220px; }
+  .all-list h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.15; margin: 6px 0 8px; }
+  .all-list a:hover h3 { text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 3px; }
+  .all-list p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+  .all-list .side { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); display: grid; gap: 4px; justify-items: end; text-align: right; }
+  .all-list .side b { font-weight: 500; color: var(--ink); }
+  .all-list .side .cat { color: var(--brass); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+  @media (max-width: 760px) {
+    .all-list a, .all-list a.noimage { grid-template-columns: 1fr; gap: 10px; }
+    .all-list .img { width: 100%; max-width: 100%; aspect-ratio: 16/9; }
+    .all-list .side { justify-items: start; text-align: left; grid-auto-flow: column; gap: 14px; }
+  }
+</style>
+
+<a class="skip" href="#main">Kalo te përmbajtja</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://yjetshqip.site/">Yjet Shqip <small>horoskop · numerologji</small></a>
+    <nav aria-label="Kryesore">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="https://yjetshqip.site/lajme.html">Lajmet</a></li>
+        <li><a href="https://yjetshqip.site/horoskopi.html">Horoskopi</a></li>
+        <li><a href="https://yjetshqip.site/emra.html">Emra për bebe</a></li>
+        <li><a href="https://yjetshqip.site/#mjetet">Mjetet</a></li>
+        <li><a href="https://yjetshqip.site/about.html">Rreth nesh</a></li>
+      </ul>
+    </nav>
+    <span class="today" id="todayLine">—</span>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Lajmet · përditësohen çdo orë</p>
+    <h1>Të gjitha lajmet</h1>
+    <p>Vendi, bota, showbiz, sport, teknologji dhe jetë. Shkruar shkurt, në shqip, me lidhjen te burimi origjinal.</p>
+  </div>
+  <section id="lajmet" style="border-top:0; padding-top: 16px;">
+    <div class="wrap">
+      <div class="news-head"><span class="meta" id="newsMeta">Duke ngarkuar…</span></div>
+      <p class="sample-note" id="sampleNote" hidden>Lajme shembull për dizajnin — zëvendësohen automatikisht sapo të aktivizohet marrja e lajmeve.</p>
+      <div class="news-tabs" id="newsTabs" role="group" aria-label="Kategoritë"></div>
+      <ul class="all-list" id="allList"></ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="https://yjetshqip.site/">Yjet Shqip</a>
+      <p>Një hapësirë për kureshtjen tënde. Horoskop, numerologji dhe mjete të vogla, në shqip.</p>
+      <p class="disclaimer">Horoskopi është për argëtim dhe reflektim. Zgjedhjet mbeten të tuat.</p>
+    </div>
+    <div>
+      <div class="h">Faqet</div>
+      <ul>
+        <li><a href="https://yjetshqip.site/horoskopi.html">Horoskopi</a></li>
+        <li><a href="https://yjetshqip.site/emra.html">Emra për bebe</a></li>
+        <li><a href="https://yjetshqip.site/mjete.html">Mjetet</a></li>
+        <li><a href="https://yjetshqip.site/about.html">Rreth nesh</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="h">Të tjera</div>
+      <ul>
+        <li><a href="https://yjetshqip.site/privacy.html">Privatësia</a></li>
+        <li><a href="https://yjetshqip.site/contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var MONTHS = ["Jan","Shk","Mar","Pri","Maj","Qer","Kor","Gus","Sht","Tet","Nën","Dhj"];
+  var MONTHS_LONG = ["janar","shkurt","mars","prill","maj","qershor","korrik","gusht","shtator","tetor","nëntor","dhjetor"];
+  var DAY_SQ = ["e diel","e hënë","e martë","e mërkurë","e enjte","e premte","e shtunë"];
+  var today = new Date();
+  document.getElementById("todayLine").textContent = today.getDate() + " " + MONTHS_LONG[today.getMonth()] + " " + today.getFullYear();
+  var btn = document.getElementById("menuBtn"), menu = document.getElementById("menu");
+  btn.addEventListener("click", function () { var o = menu.classList.toggle("open"); btn.setAttribute("aria-expanded", o ? "true" : "false"); });
+
+  var newsMeta = document.getElementById("newsMeta"), tabs = document.getElementById("newsTabs"), list = document.getElementById("allList");
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function when(iso) { var t = new Date(iso); return t.getDate() + " " + MONTHS[t.getMonth()] + " · " + ("0" + t.getHours()).slice(-2) + ":" + ("0" + t.getMinutes()).slice(-2); }
+  function render(data, cat) {
+    var items = data.items.filter(function (it) { return cat === "all" || it.cat === cat; });
+    if (!items.length) { list.innerHTML = '<li class="news-empty">Ende asnjë lajm në këtë kategori.</li>'; return; }
+    list.innerHTML = items.map(function (it) {
+      return '<li><a class="' + (it.image ? "" : "noimage") + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+        (it.image ? '<span class="img"><img src="' + esc(it.image) + '" alt="" loading="lazy"></span>' : "") +
+        '<span><span class="kicker">' + esc(it.kicker || data.categories[it.cat]) + '</span><h3>' + esc(it.title) + '</h3><p>' + esc(it.summary) + '</p></span>' +
+        '<span class="side"><span class="cat">' + esc(data.categories[it.cat]) + '</span><b>' + esc(it.source) + '</b><span>' + when(it.published) + '</span></span></a></li>';
+    }).join("");
+  }
+  fetch("data/news.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
+    var u = new Date(data.updated);
+    newsMeta.textContent = "Përditësuar " + DAY_SQ[u.getDay()] + ", " + u.getDate() + " " + MONTHS_LONG[u.getMonth()] + " · " + ("0" + u.getHours()).slice(-2) + ":" + ("0" + u.getMinutes()).slice(-2) + " · " + data.items.length + " lajme";
+    document.getElementById("sampleNote").hidden = !data.sample;
+    var cats = [["all", "Të gjitha"]].concat(Object.keys(data.categories).map(function (k) { return [k, data.categories[k]]; }));
+    var start = (location.hash || "#all").slice(1); if (!cats.some(function (c) { return c[0] === start; })) start = "all";
+    tabs.innerHTML = cats.map(function (c) { return '<button type="button" data-cat="' + c[0] + '" aria-pressed="' + (c[0] === start) + '">' + esc(c[1]) + '</button>'; }).join("");
+    tabs.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button"); if (!b) return;
+      tabs.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      render(data, b.getAttribute("data-cat"));
+    });
+    render(data, start);
+  }).catch(function () { newsMeta.textContent = ""; list.innerHTML = '<li class="news-empty">Lajmet nuk u ngarkuan dot. Provo sërish pas pak.</li>'; });
+})();
+</script>
+
+
+</body>
+</html>

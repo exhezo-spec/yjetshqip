@@ -1,0 +1,86 @@
+{
+  "updated": "2026-10-13T20:00:00+00:00",
+  "sample": true,
+  "categories": {
+    "vendi": "Vendi",
+    "bota": "Bota",
+    "showbiz": "Showbiz",
+    "sport": "Sport",
+    "tech": "Teknologji",
+    "jeta": "Jeta & Shëndeti"
+  },
+  "items": [
+    {
+      "id": "s01", "cat": "vendi", "kicker": "Tiranë",
+      "title": "Nis sezoni i ri kulturor me ekspozita dhe koncerte në kryeqytet",
+      "summary": "Bashkia njofton programin e vjeshtës me ekspozita, shfaqje teatrore dhe koncerte në sheshe të hapura. Hyrja për shumicën e aktiviteteve do të jetë falas, ndërsa kalendari i plotë publikohet javën e ardhshme. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T19:40:00+00:00"
+    },
+    {
+      "id": "s02", "cat": "showbiz", "kicker": "Hollywood",
+      "title": "Festivali i filmit mbyll edicionin me rekord spektatorësh",
+      "summary": "Edicioni i këtij viti regjistroi numrin më të lartë të biletave të shitura në historinë e festivalit. Çmimi kryesor shkoi për një dramë të pavarur, ndërsa publiku vlerësoi më shumë një komedi romantike. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T18:10:00+00:00"
+    },
+    {
+      "id": "s03", "cat": "sport", "kicker": "Champions League",
+      "title": "Java e tretë e grupeve sjell përmbysje dhe gola në minutat e fundit",
+      "summary": "Tre ndeshje u vendosën pas minutës së 85-të, duke përmbysur renditjen në dy grupe. Skuadrat e mëdha mbeten në garë, por disa favoritë tani varen nga rezultatet e javës së ardhshme. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T21:05:00+00:00"
+    },
+    {
+      "id": "s04", "cat": "tech", "kicker": "AI",
+      "title": "Aplikacionet e përkthimit në kohë reale arrijnë te telefonat e mesëm",
+      "summary": "Funksioni i përkthimit të bisedave pa internet, deri tani i rezervuar për modelet e shtrenjta, po vjen edhe te telefonat me çmim mesatar. Shqipja është mes gjuhëve të para të mbështetura. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T16:30:00+00:00"
+    },
+    {
+      "id": "s05", "cat": "jeta", "kicker": "Gjumi",
+      "title": "Studim: 20 minuta ecje pas darke përmirëson cilësinë e gjumit",
+      "summary": "Një studim me 400 pjesëmarrës gjeti se një shëtitje e lehtë pas darke lidhet me gjumë më të thellë dhe më pak zgjime gjatë natës. Efekti ishte më i dukshëm te personat që punojnë ulur gjatë ditës. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T14:00:00+00:00"
+    },
+    {
+      "id": "s06", "cat": "bota", "kicker": "Klima",
+      "title": "Vjeshta më e ngrohtë e dekadës në Evropën Jugore",
+      "summary": "Temperaturat e tetorit tejkaluan mesataren shumëvjeçare me gati tre gradë në disa vende të Mesdheut. Meteorologët presin ftohje nga mesi i muajit, me reshje të shumta në Ballkan. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T12:15:00+00:00"
+    },
+    {
+      "id": "s07", "cat": "showbiz", "kicker": "Muzikë",
+      "title": "Albumi i ri i vjeshtës kryeson listat në 14 vende",
+      "summary": "Albumi debutoi në vendin e parë në 14 tregje brenda javës së parë, me dy këngë në top 10 të platformave të streaming. Turneu evropian, me një ndalesë në Ballkan, njoftohet për pranverë. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T11:00:00+00:00"
+    },
+    {
+      "id": "s08", "cat": "sport", "kicker": "Kombëtarja",
+      "title": "Kombëtarja grumbullohet për ndeshjet e nëntorit",
+      "summary": "Trajneri publikoi listën e lojtarëve për dy ndeshjet kualifikuese të nëntorit, me dy debutues nga kampionati vendas. Biletat për ndeshjen në shtëpi dalin në shitje javën e ardhshme. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T09:45:00+00:00"
+    },
+    {
+      "id": "s09", "cat": "tech", "kicker": "Telefona",
+      "title": "Përditësimi i ri i sistemit sjell kursim baterie deri në 15%",
+      "summary": "Versioni i ri i sistemit operativ optimizon aplikacionet në sfond dhe premton deri në 15% më shumë autonomi. Përditësimi po shpërndahet gradualisht gjatë dy javëve të ardhshme. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-13T08:20:00+00:00"
+    },
+    {
+      "id": "s10", "cat": "vendi", "kicker": "Ekonomi",
+      "title": "Çmimet e qirave në bregdet bien pas sezonit turistik",
+      "summary": "Pas një vere me kërkesë rekord, qiratë mujore në qytetet bregdetare kanë rënë mesatarisht 20% krahasuar me gushtin. Agjencitë presin stabilizim deri në fund të vitit. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T17:30:00+00:00"
+    },
+    {
+      "id": "s11", "cat": "jeta", "kicker": "Ushqim",
+      "title": "Perimet e stinës: çfarë të gatuash në tetor",
+      "summary": "Kungulli, lakra dhe panxhari janë në pikun e tyre këtë muaj dhe kushtojnë më pak se në çdo stinë tjetër. Kuzhinierët sugjerojnë receta të thjeshta në furrë që ruajnë vlerat ushqyese. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T15:00:00+00:00"
+    },
+    {
+      "id": "s12", "cat": "bota", "kicker": "Shkencë",
+      "title": "Teleskopi i ri regjistron galaktikën më të largët të fotografuar ndonjëherë",
+      "summary": "Astronomët publikuan imazhin e një galaktike që ekzistonte vetëm 300 milionë vjet pas Big Bang-ut. Zbulimi hap pyetje të reja për shpejtësinë me të cilën u formuan yjet e parë. (Lajm shembull për dizajnin.)",
+      "source": "Shembull", "url": "#", "image": null, "published": "2026-10-12T10:00:00+00:00"
+    }
+  ]
+}

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Horoskopi shqip ditor, mujor dhe vjetor. Numerologjia, Zodiaku Kinez dhe Përshtatshmëria e çifteve. Falas.">
-<meta name="keywords" content="horoskop shqip,numerologji shqip,zodiak shqip,horoscope albanian,yjet shqip">
-<title>Yjet Shqip — Horoskopi &amp; Numerologjia</title>
+<title>Yjet Shqip — Lajmet e ditës, Horoskopi & Numerologjia</title>
+<meta name="description" content="Lajmet e ditës në shqip: vendi, bota, showbiz, sport, teknologji. Plus horoskopi ditor, numerologjia dhe mjete falas.">
+<meta name="keywords" content="lajme shqip,lajmet e fundit,showbiz shqip,horoskop shqip,numerologji shqip,yjet shqip">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1VVEM1S6"></script>
 <script>
@@ -14,100 +14,546 @@
   gtag('js', new Date());
   gtag('config', 'G-XD1VVEM1S6');
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/assets/site.css">
-<script defer src="/assets/site.js"></script>
 <link rel="canonical" href="https://yjetshqip.site/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sq_AL">
 <meta property="og:site_name" content="Yjet Shqip">
-<meta property="og:title" content="Yjet Shqip — Horoskopi &amp; Numerologjia">
-<meta property="og:description" content="Horoskopi shqip ditor, mujor dhe vjetor. Numerologjia, Zodiaku Kinez dhe Përshtatshmëria e çifteve. Falas.">
+<meta property="og:title" content="Yjet Shqip — Lajmet e ditës, Horoskopi & Numerologjia">
+<meta property="og:description" content="Lajmet e ditës në shqip: vendi, bota, showbiz, sport, teknologji. Plus horoskopi ditor, numerologjia dhe mjete falas.">
 <meta property="og:url" content="https://yjetshqip.site/">
 <meta property="og:image" content="https://yjetshqip.site/assets/social-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-
-<link rel="stylesheet" href="/assets/celestial.css">
 </head>
-<body class="celestial-theme celestial-home">
-<a class="skip-link" href="#main-content">Kalo te përmbajtja</a>
-<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
-  <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
-  <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 20S3 14.5 3 8.5C3 3 10 2.5 12 7c2-4.5 9-4 9 1.5C21 14.5 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
-  <symbol id="icon-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6ZM14 3v5h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
-  <symbol id="icon-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m10 9 5 3-5 3Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
-  <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="icon-lightning" viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 9-13h-7Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
-</svg>
-<header class="topnav">
-  <a class="topnav-brand" href="/" aria-label="Yjet Shqip — Kryefaqja"><span class="topnav-icon" aria-hidden="true">✦</span><span class="topnav-name">yjet shqip</span></a>
-  <button class="mobile-menu" type="button" aria-controls="site-menu" aria-expanded="false">Menu ☰</button>
-  <div class="topnav-links" id="site-menu">
-    <a href="/horoskopi.html">Horoskopi</a><a href="/emra.html">Emra për bebe</a><a href="#toolsSection">Mjetet</a><a href="/about.html">Rreth nesh</a>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout concept: a printed almanac page. Left-ragged editorial columns, a hairline ephemeris
+     table for the twelve signs, and one bold object: a canvas-drawn zodiac wheel with the Sun's
+     real position for today. No centered hero, no cards-with-shadows. */
+  :root {
+    --bg: #eef0f3;        /* moonstone paper, cool-biased */
+    --bg-2: #e3e6ec;      /* table stripe / inset */
+    --ink: #171a2c;       /* navy ink */
+    --ink-2: #4a4f63;     /* secondary text */
+    --rule: #c6cad6;      /* hairlines */
+    --brass: #a3762a;     /* star accent */
+    --brass-soft: #d9c08a;
+    --font-display: "Newsreader", "Iowan Old Style", "Palatino", Georgia, serif;
+    --font-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1120; --bg-2: #171a2c; --ink: #e9e8e1; --ink-2: #a5a7b8;
+      --rule: #2f3350; --brass: #d2a85a; --brass-soft: #6b5426; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1120; --bg-2: #171a2c; --ink: #e9e8e1; --ink-2: #a5a7b8;
+    --rule: #2f3350; --brass: #d2a85a; --brass-soft: #6b5426; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 16px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  /* ---------- header ---------- */
+  .top { border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+  .brand { text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: .01em; display: flex; align-items: baseline; gap: 8px; }
+  .brand small { font-family: var(--font-mono); font-size: 11px; color: var(--ink-2); letter-spacing: .08em; text-transform: uppercase; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+  nav a:hover { color: var(--ink); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--rule); color: var(--ink); font: inherit; padding: 6px 12px; cursor: pointer; }
+  .today { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .04em; white-space: nowrap; }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 5vw, 72px); align-items: center; padding-block: clamp(40px, 7vw, 96px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 20px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(42px, 6.4vw, 84px); line-height: .98; letter-spacing: -.01em; margin: 0 0 24px; text-wrap: balance; }
+  h1 em { font-style: italic; font-weight: 500; }
+  .lede { font-size: 19px; color: var(--ink-2); max-width: 34em; margin: 0 0 32px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
+  .btn { display: inline-block; text-decoration: none; background: var(--ink); color: var(--bg); padding: 13px 22px; font-weight: 500; font-size: 15px; }
+  .btn:hover { background: var(--brass); color: #fff; }
+  .link { font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+  .link:hover { border-color: var(--ink); }
+  .fine { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); margin: 28px 0 0; letter-spacing: .03em; }
+
+  .wheel { position: relative; width: 100%; max-width: 440px; justify-self: end; aspect-ratio: 1; }
+  .wheel canvas { width: 100%; height: 100%; display: block; }
+  .wheel figcaption { position: absolute; left: 0; right: 0; bottom: -34px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); text-align: center; letter-spacing: .04em; }
+
+  /* ---------- news portal ---------- */
+  .news-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+  .news-head h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); margin: 0; line-height: 1.05; }
+  .news-head .meta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .04em; }
+  .news-tabs { display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); margin-bottom: 32px; }
+  .news-tabs button { background: none; border: 0; border-right: 1px solid var(--rule); font: 500 14px var(--font-body); color: var(--ink-2); padding: 12px 18px; cursor: pointer; }
+  .news-tabs button:last-child { border-right: 0; }
+  .news-tabs button[aria-pressed="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--brass); }
+  .news-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0 48px; }
+  .lead { text-decoration: none; display: grid; gap: 14px; padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
+  .lead .img { aspect-ratio: 16/9; max-width: 100%; background: var(--bg-2); overflow: hidden; }
+  .lead .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lead h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.08; margin: 0; text-wrap: balance; }
+  .lead p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 40em; }
+  .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); }
+  .byline { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+  .byline b { font-weight: 500; color: var(--ink); }
+  .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .news-list li { border-bottom: 1px solid var(--rule); }
+  .news-list a { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 16px; padding: 16px 0; text-decoration: none; }
+  .news-list a:hover h4 { text-decoration: underline; text-decoration-color: var(--brass); text-underline-offset: 3px; }
+  .news-list .img { width: 88px; aspect-ratio: 4/3; background: var(--bg-2); overflow: hidden; }
+  .news-list .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .news-list .noimg { display: none; }
+  .news-list a.noimage { grid-template-columns: 1fr; }
+  .news-list h4 { font-family: var(--font-display); font-weight: 600; font-size: 20px; line-height: 1.2; margin: 6px 0 6px; }
+  .news-list p { margin: 0; font-size: 14.5px; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .news-more { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+  .news-more a { text-decoration: none; display: grid; gap: 6px; align-content: start; border-top: 1px solid var(--rule); padding-top: 14px; }
+  .news-more h4 { font-family: var(--font-display); font-weight: 600; font-size: 19px; line-height: 1.2; margin: 0; }
+  .news-more h4 a:hover { text-decoration: underline; }
+  .news-all { margin-top: 36px; display: flex; justify-content: flex-end; }
+  .news-empty { color: var(--ink-2); padding: 24px 0; border-top: 1px solid var(--ink); }
+  .sample-note { font-family: var(--font-mono); font-size: 12px; color: var(--brass); margin: 0 0 16px; }
+
+  section.first { border-top: 0; padding-top: clamp(28px, 4vw, 48px); }
+  .horo-strip { background: var(--bg-2); }
+  .horo-row { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px 56px; align-items: center; }
+  .horo-intro h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 3vw, 40px); line-height: 1.05; margin: 10px 0 18px; text-wrap: balance; }
+  .horo-intro h2 em { font-weight: 500; }
+  .horo-signs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .horo-signs a { display: grid; justify-items: center; gap: 4px; padding: 14px 6px; text-decoration: none; border: 1px solid var(--rule); background: var(--bg); min-width: 0; }
+  .horo-signs a:hover { border-color: var(--ink); }
+  .horo-signs .g { font-family: var(--font-display); font-size: 26px; line-height: 1; color: var(--brass); }
+  .horo-signs .n { font-family: var(--font-display); font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .horo-signs .d { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-2); white-space: nowrap; }
+  .horo-signs li.now a { border-color: var(--brass); box-shadow: inset 0 0 0 1px var(--brass); }
+  @media (max-width: 900px) { .horo-row { grid-template-columns: 1fr; } .horo-signs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .horo-signs { grid-template-columns: repeat(3, minmax(0, 1fr)); } .horo-signs .d { display: none; } }
+
+  /* ---------- section headers ---------- */
+  section { border-top: 1px solid var(--rule); padding-block: clamp(40px, 6vw, 80px); }
+  .sec-head { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: end; margin-bottom: 36px; }
+  .sec-head h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .sec-head p { margin: 0; color: var(--ink-2); max-width: 36em; }
+  .count { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); letter-spacing: .08em; text-transform: uppercase; }
+
+  /* ---------- sign table ---------- */
+  .signs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .signs li { border-bottom: 1px solid var(--rule); }
+  .signs a {
+    display: grid; grid-template-columns: 36px 1.6fr 1.3fr 1fr 1fr 24px; gap: 16px; align-items: baseline;
+    padding: 14px 0; text-decoration: none; min-width: 0;
+  }
+  .signs a:hover { background: var(--bg-2); }
+  .signs .glyph { font-family: var(--font-display); font-size: 22px; line-height: 1; color: var(--brass); }
+  .signs .name { font-family: var(--font-display); font-size: 24px; font-weight: 600; }
+  .signs .dates, .signs .deg { font-family: var(--font-mono); font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .signs .el { font-size: 14px; color: var(--ink-2); }
+  .signs .arrow { font-family: var(--font-mono); color: var(--ink-2); text-align: right; }
+  .signs li.now a { background: var(--bg-2); box-shadow: inset 3px 0 0 var(--brass); padding-left: 12px; }
+  .signs li.now .name::after { content: "Dielli sot"; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--brass); margin-left: 12px; vertical-align: middle; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+
+  /* ---------- tools ---------- */
+  .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--rule); }
+  .tool { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 28px 24px 32px; text-decoration: none; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .tool:hover { background: var(--bg-2); }
+  .tool .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); }
+  .tool h3 { font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 1.1; margin: 0; }
+  .tool p { margin: 0; color: var(--ink-2); font-size: 15.5px; flex: 1; }
+  .tool .go { font-family: var(--font-mono); font-size: 12px; margin-top: 8px; }
+  .tool.wide { grid-column: span 2; }
+  .tool.wide h3 { font-size: 36px; }
+
+  /* ---------- principles ---------- */
+  .why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  .why h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; margin: 0 0 8px; }
+  .why p { margin: 0; color: var(--ink-2); }
+  .why .n { font-family: var(--font-mono); font-size: 12px; color: var(--brass); letter-spacing: .1em; display: block; margin-bottom: 14px; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--ink); padding-block: 40px 56px; }
+  footer .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+  footer .brand { font-size: 26px; }
+  footer p { color: var(--ink-2); font-size: 15px; margin: 10px 0 0; max-width: 30em; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  footer li a { text-decoration: none; font-size: 15px; color: var(--ink-2); }
+  footer li a:hover { color: var(--ink); }
+  footer .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 14px; }
+  .disclaimer { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); margin-top: 32px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .wheel { justify-self: start; max-width: 360px; margin-top: 12px; }
+    .sec-head { grid-template-columns: 1fr; }
+    .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tool.wide { grid-column: span 2; }
+    .why { grid-template-columns: 1fr; gap: 28px; }
+    .news-grid { grid-template-columns: 1fr; }
+    .lead { margin-bottom: 28px; }
+    .news-more { grid-template-columns: 1fr 1fr; }
+    footer .wrap { grid-template-columns: 1fr 1fr; }
+    .today { display: none; }
+  }
+  @media (max-width: 640px) {
+    nav ul { display: none; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 64px; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 8px 16px 16px; z-index: 5; }
+    nav ul.open { display: flex; }
+    nav li a { display: block; padding: 10px 0; border-top: 1px solid var(--rule); }
+    .menu-btn { display: inline-block; }
+    .top { position: relative; }
+    .signs a { grid-template-columns: 28px 1fr auto; grid-template-areas: "g n d" "g e e"; row-gap: 4px; }
+    .signs .glyph { grid-area: g; } .signs .name { grid-area: n; font-size: 20px; } .signs .dates { grid-area: d; }
+    .signs .deg, .signs .arrow { display: none; }
+    .signs .el { grid-area: e; }
+    .signs li.now .name::after { display: block; margin: 4px 0 0; }
+    .tools { grid-template-columns: 1fr; }
+    .tool.wide { grid-column: span 1; }
+    .tool.wide h3 { font-size: 28px; }
+    footer .wrap { grid-template-columns: 1fr; }
+    .news-more { grid-template-columns: 1fr; gap: 20px; }
+    .news-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    .news-tabs button { white-space: nowrap; }
+    .wheel figcaption { position: static; margin-top: 10px; text-align: left; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .signs a, .tool, .btn { transition: background .15s ease; }
+  }
+</style>
+
+<a class="skip" href="#main">Kalo te përmbajtja</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://yjetshqip.site/">Yjet Shqip <small>horoskop · numerologji</small></a>
+    <nav aria-label="Kryesore">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#lajmet">Lajmet</a></li>
+        <li><a href="https://yjetshqip.site/horoskopi.html">Horoskopi</a></li>
+        <li><a href="https://yjetshqip.site/emra.html">Emra për bebe</a></li>
+        <li><a href="#mjetet">Mjetet</a></li>
+        <li><a href="https://yjetshqip.site/about.html">Rreth nesh</a></li>
+      </ul>
+    </nav>
+    <span class="today" id="todayLine">—</span>
   </div>
-  <a class="topnav-btn" href="#choose-sign">Gjej shenjën tënde ↗</a>
 </header>
-<main id="main-content">
-  <section class="celestial-hero" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <svg class="constellation" viewBox="0 0 120 140" fill="none" aria-hidden="true"><path d="m15 90 30-60 35 25 25-40M45 30l12 88 23-63" stroke="#c5b6f6" stroke-opacity=".3"/><g fill="#e8cd99"><circle cx="15" cy="90" r="2"/><circle cx="45" cy="30" r="3"/><circle cx="80" cy="55" r="2.5"/><circle cx="105" cy="15" r="2"/><circle cx="57" cy="118" r="2"/></g></svg>
-      <div class="eyebrow">Horoskopi shqip · Një moment për ty</div>
-      <h1 id="hero-title">Dita jote,<br> nën një<br><em>qiell të ri.</em></h1>
-      <p>Pak kureshtje, pak frymëzim. Zbulo horoskopin tënd dhe gjej një mendim të ri për ditën që të pret.</p>
-      <div class="hero-buttons"><a class="primary-link" href="#choose-sign">Zgjidh shenjën <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#toolsSection">Eksploro mjetet <span aria-hidden="true">↓</span></a></div>
-      <div class="hero-footnote"><svg aria-hidden="true"><use href="#icon-check"/></svg> Në shqip. Gjithmonë falas. Pa regjistrim.</div>
-    </div>
-    <div class="zodiac-panel" id="choose-sign">
-      <div class="panel-top"><h2>Cila është shenja jote?</h2><span>12 shenja · 1 qiell</span></div>
-      <!-- SIGN_PICKER -->
-<div class="sign-picker"><a class="sign-choice" data-sign-link="dash" data-sign-name="Dashi" href="/horoskopi/dashi/"><span aria-hidden="true">♈︎</span><strong>Dashi</strong><small>21 Mar – 19 Apr</small></a>
-<a class="sign-choice" data-sign-link="dem" data-sign-name="Demi" href="/horoskopi/demi/"><span aria-hidden="true">♉︎</span><strong>Demi</strong><small>20 Apr – 20 Maj</small></a>
-<a class="sign-choice" data-sign-link="bin" data-sign-name="Binjakët" href="/horoskopi/binjaket/"><span aria-hidden="true">♊︎</span><strong>Binjakët</strong><small>21 Maj – 20 Qer</small></a>
-<a class="sign-choice" data-sign-link="gaf" data-sign-name="Gaforrja" href="/horoskopi/gaforrja/"><span aria-hidden="true">♋︎</span><strong>Gaforrja</strong><small>21 Qer – 22 Kor</small></a>
-<a class="sign-choice" data-sign-link="luan" data-sign-name="Luani" href="/horoskopi/luani/"><span aria-hidden="true">♌︎</span><strong>Luani</strong><small>23 Kor – 22 Gus</small></a>
-<a class="sign-choice" data-sign-link="vir" data-sign-name="Virgjëresha" href="/horoskopi/virgjeresha/"><span aria-hidden="true">♍︎</span><strong>Virgjëresha</strong><small>23 Gus – 22 Sht</small></a>
-<a class="sign-choice" data-sign-link="pel" data-sign-name="Peshorja" href="/horoskopi/peshorja/"><span aria-hidden="true">♎︎</span><strong>Peshorja</strong><small>23 Sht – 22 Tet</small></a>
-<a class="sign-choice" data-sign-link="akr" data-sign-name="Akrepi" href="/horoskopi/akrepi/"><span aria-hidden="true">♏︎</span><strong>Akrepi</strong><small>23 Tet – 21 Nën</small></a>
-<a class="sign-choice" data-sign-link="she" data-sign-name="Shigjetari" href="/horoskopi/shigjetari/"><span aria-hidden="true">♐︎</span><strong>Shigjetari</strong><small>22 Nën – 21 Dhj</small></a>
-<a class="sign-choice" data-sign-link="bri" data-sign-name="Bricjapi" href="/horoskopi/bricjapi/"><span aria-hidden="true">♑︎</span><strong>Bricjapi</strong><small>22 Dhj – 19 Jan</small></a>
-<a class="sign-choice" data-sign-link="uju" data-sign-name="Ujori" href="/horoskopi/ujori/"><span aria-hidden="true">♒︎</span><strong>Ujori</strong><small>20 Jan – 18 Shk</small></a>
-<a class="sign-choice" data-sign-link="pesh" data-sign-name="Peshqit" href="/horoskopi/peshqit/"><span aria-hidden="true">♓︎</span><strong>Peshqit</strong><small>19 Shk – 20 Mar</small></a></div>
-<a class="return-sign" id="returnSign" hidden></a>
-<!-- END_SIGN_PICKER -->
-      <p class="panel-bottom"><svg aria-hidden="true"><use href="#icon-star"/></svg> Zgjidh një shenjë për horoskopin e sotëm</p>
+
+<main id="main">
+  <section id="lajmet" class="first">
+    <div class="wrap">
+      <div class="news-head">
+        <h2>Lajmet e ditës</h2>
+        <span class="meta" id="newsMeta">Duke ngarkuar…</span>
+      </div>
+      <p class="sample-note" id="sampleNote" hidden>Lajme shembull për dizajnin — zëvendësohen automatikisht sapo të aktivizohet marrja e lajmeve.</p>
+      <div class="news-tabs" id="newsTabs" role="group" aria-label="Kategoritë"></div>
+      <div class="news-grid">
+        <div id="newsLead"></div>
+        <ul class="news-list" id="newsList"></ul>
+      </div>
+      <div class="news-more" id="newsMore"></div>
+      <div class="news-all"><a class="link" href="https://yjetshqip.site/lajme.html">Të gjitha lajmet →</a></div>
     </div>
   </section>
-  <div class="day-strip"><time id="todayDate"></time><span><svg aria-hidden="true"><use href="#icon-moon"/></svg> Një këndvështrim i ri, çdo ditë.</span></div>
-  <section class="discover-section" id="toolsSection" aria-labelledby="discover-title">
-    <div class="section-heading"><div><div class="eyebrow">Përtej horoskopit</div><h2>Diçka për çdo kureshtje.</h2></div><p>Mjete të vogla për ide të reja<br>dhe gjëra që kanë rëndësi për ty.</p></div>
-    <div class="discovery-grid">
-      <a class="discovery-card featured" href="/mjete.html"><span class="card-icon"><svg aria-hidden="true"><use href="#icon-moon"/></svg></span><span class="card-arrow" aria-hidden="true">↗</span><h3>Numrat kanë historinë e tyre.</h3><p>Eksploro numerologjinë, zodiakun kinez dhe përputhshmërinë mes shenjave.</p><svg class="card-art" viewBox="0 0 150 150" fill="none" aria-hidden="true"><circle cx="75" cy="75" r="60" stroke="currentColor"/><circle cx="75" cy="75" r="42" stroke="currentColor"/><path d="M15 75h120M75 15v120M32 32l86 86M32 118l86-86" stroke="currentColor"/><circle cx="75" cy="75" r="17" fill="currentColor"/></svg></a>
-      <a class="discovery-card featured family" href="/emra.html"><span class="card-icon"><svg aria-hidden="true"><use href="#icon-heart"/></svg></span><span class="card-arrow" aria-hidden="true">↗</span><h3>Një emër. Një fillim i bukur.</h3><p>Gjej emra për bebe, me kuptimin dhe origjinën që e bëjnë çdo zgjedhje të veçantë.</p><svg class="card-art" viewBox="0 0 150 150" fill="none" aria-hidden="true"><path d="M75 130C60 110 18 85 18 50c0-37 44-41 57-12 13-29 57-25 57 12 0 35-42 60-57 80Z" stroke="currentColor"/><path d="M75 112C60 96 35 78 35 55c0-22 29-25 40-3 11-22 40-19 40 3 0 23-25 41-40 57Z" stroke="currentColor"/></svg></a>
-      <a class="discovery-card" href="/cv.html"><span class="card-icon"><svg aria-hidden="true"><use href="#icon-doc"/></svg></span><span class="card-arrow" aria-hidden="true">↗</span><h3>Hapi yt i ardhshëm.</h3><p>Krijo një CV profesionale dhe ruaje si PDF. Thjesht, shpejt, pa llogari.</p></a>
-      <a class="discovery-card" href="/prompt.html"><span class="card-icon"><svg aria-hidden="true"><use href="#icon-star"/></svg></span><span class="card-arrow" aria-hidden="true">↗</span><h3>Jepi formë idesë.</h3><p>Ktheje mendimin tënd në një prompt të detajuar për imazhe me AI.</p></a>
-      <a class="discovery-card" href="/creator-tools.html"><span class="card-icon"><svg aria-hidden="true"><use href="#icon-play"/></svg></span><span class="card-arrow" aria-hidden="true">↗</span><h3>Krijo diçka tënden.</h3><p>Ide për hyrje videosh, përshkrime dhe bio për përmbajtjen tënde.</p></a>
+
+  <section id="horoskopi" class="horo-strip">
+    <div class="wrap">
+      <div class="horo-row">
+        <div class="horo-intro">
+          <span class="count" id="horoToday">Horoskopi i sotëm</span>
+          <h2>Dita jote, nën një <em>qiell të ri.</em></h2>
+          <a class="link" href="https://yjetshqip.site/horoskopi.html">Hap horoskopin e plotë →</a>
+        </div>
+        <ul class="horo-signs" id="horoSigns"></ul>
+      </div>
     </div>
   </section>
-  <section class="trust-band" aria-label="Pse Yjet Shqip">
-    <div class="trust-item"><svg aria-hidden="true"><use href="#icon-heart"/></svg><div><h3>Në gjuhën tënde</h3><p>Përmbajtje dhe mjete tërësisht në shqip.</p></div></div>
-    <div class="trust-item"><svg aria-hidden="true"><use href="#icon-lightning"/></svg><div><h3>Drejt te rezultati</h3><p>Pa llogari. Pa hapa të panevojshëm.</p></div></div>
-    <div class="trust-item"><svg aria-hidden="true"><use href="#icon-star"/></svg><div><h3>Kureshtja është falas</h3><p>Eksploro të gjitha mjetet pa pagesë.</p></div></div>
+
+  <section id="mjetet">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="count">Përtej horoskopit</span>
+          <h2>Diçka për çdo kureshtje.</h2>
+        </div>
+        <p>Mjete të vogla për ide të reja dhe gjëra që kanë rëndësi për ty. Hapi, përdori, mbylli. Pa llogari.</p>
+      </div>
+      <div class="tools">
+        <a class="tool wide" href="https://yjetshqip.site/mjete.html">
+          <span class="kicker">Numerologji · Zodiaku kinez · Përputhshmëri</span>
+          <h3>Numrat kanë historinë e tyre.</h3>
+          <p>Llogarit numrin e rrugës së jetës, gjej kafshën tënde në zodiakun kinez dhe shiko sa përputhen dy shenja.</p>
+          <span class="go">Hap mjetet →</span>
+        </a>
+        <a class="tool" href="https://yjetshqip.site/emra.html">
+          <span class="kicker">Emra për bebe</span>
+          <h3>Një emër. Një fillim i bukur.</h3>
+          <p>Emra shqip dhe ndërkombëtarë, me kuptimin dhe origjinën e secilit.</p>
+          <span class="go">Kërko emra →</span>
+        </a>
+        <a class="tool" href="https://yjetshqip.site/cv.html">
+          <span class="kicker">CV</span>
+          <h3>Hapi yt i ardhshëm.</h3>
+          <p>Krijo një CV profesionale dhe ruaje si PDF. Thjesht, shpejt, pa llogari.</p>
+          <span class="go">Krijo CV →</span>
+        </a>
+        <a class="tool" href="https://yjetshqip.site/prompt.html">
+          <span class="kicker">Prompt për imazhe</span>
+          <h3>Jepi formë idesë.</h3>
+          <p>Ktheje mendimin tënd në një prompt të detajuar për imazhe me AI.</p>
+          <span class="go">Ndërto promptin →</span>
+        </a>
+        <a class="tool" href="https://yjetshqip.site/creator-tools.html">
+          <span class="kicker">Për krijuesit</span>
+          <h3>Krijo diçka tënden.</h3>
+          <p>Ide për hyrje videosh, përshkrime dhe bio për përmbajtjen tënde.</p>
+          <span class="go">Shiko idetë →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap why">
+      <div><span class="n">Në gjuhën tënde</span><h3>Shqip, deri në fund.</h3><p>Përmbajtje dhe mjete tërësisht në shqip, jo përkthime të ngutura.</p></div>
+      <div><span class="n">Drejt te rezultati</span><h3>Pa llogari, pa hapa.</h3><p>Hap faqen, merr atë që të duhet, vazhdo ditën.</p></div>
+      <div><span class="n">Kureshtja është falas</span><h3>Asnjë pagesë.</h3><p>Të gjitha mjetet janë falas, sot dhe nesër.</p></div>
+    </div>
   </section>
 </main>
+
 <footer>
-  <div class="footer-top"><a class="topnav-brand" href="/"><span class="topnav-icon" aria-hidden="true">✦</span><span class="topnav-name">yjet shqip</span></a><div class="footer-links"><a href="/horoskopi.html">Horoskopi</a><a href="/about.html">Rreth nesh</a><a href="/privacy.html">Privatësia</a><a href="/contact.html">Kontakt</a></div></div>
-  <div class="footer-bottom"><p>Një hapësirë për kureshtjen tënde.</p><p>Horoskopi është për argëtim dhe reflektim. Zgjedhjet mbeten të tuat.</p></div>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="https://yjetshqip.site/">Yjet Shqip</a>
+      <p>Një hapësirë për kureshtjen tënde. Horoskop, numerologji dhe mjete të vogla, në shqip.</p>
+      <p class="disclaimer">Horoskopi është për argëtim dhe reflektim. Zgjedhjet mbeten të tuat.</p>
+    </div>
+    <div>
+      <div class="h">Faqet</div>
+      <ul>
+        <li><a href="https://yjetshqip.site/horoskopi.html">Horoskopi</a></li>
+        <li><a href="https://yjetshqip.site/emra.html">Emra për bebe</a></li>
+        <li><a href="https://yjetshqip.site/mjete.html">Mjetet</a></li>
+        <li><a href="https://yjetshqip.site/about.html">Rreth nesh</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="h">Të tjera</div>
+      <ul>
+        <li><a href="https://yjetshqip.site/privacy.html">Privatësia</a></li>
+        <li><a href="https://yjetshqip.site/contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
+
 <script>
-const date = new Date();
-const time = document.getElementById('todayDate');
-time.textContent = date.toLocaleDateString('sq-AL', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
-time.dateTime = [date.getFullYear(), String(date.getMonth()+1).padStart(2,'0'), String(date.getDate()).padStart(2,'0')].join('-');
+(function () {
+  // Tropical zodiac: each sign spans 30° of ecliptic longitude. Dates are the site's own ranges.
+  var SIGNS = [
+    { slug:"dashi",       name:"Dashi",       g:"♈", start:[3,21],  el:"Zjarr", es:"△", pl:"Marsi" },
+    { slug:"demi",        name:"Demi",        g:"♉", start:[4,20],  el:"Tokë",  es:"□", pl:"Venusi" },
+    { slug:"binjaket",    name:"Binjakët",    g:"♊", start:[5,21],  el:"Ajër",  es:"◇", pl:"Mërkuri" },
+    { slug:"gaforrja",    name:"Gaforrja",    g:"♋", start:[6,21],  el:"Ujë",   es:"▽", pl:"Hëna" },
+    { slug:"luani",       name:"Luani",       g:"♌", start:[7,23],  el:"Zjarr", es:"△", pl:"Dielli" },
+    { slug:"virgjeresha", name:"Virgjëresha", g:"♍", start:[8,23],  el:"Tokë",  es:"□", pl:"Mërkuri" },
+    { slug:"peshorja",    name:"Peshorja",    g:"♎", start:[9,23],  el:"Ajër",  es:"◇", pl:"Venusi" },
+    { slug:"akrepi",      name:"Akrepi",      g:"♏", start:[10,23], el:"Ujë",   es:"▽", pl:"Plutoni" },
+    { slug:"shigjetari",  name:"Shigjetari",  g:"♐", start:[11,22], el:"Zjarr", es:"△", pl:"Jupiteri" },
+    { slug:"bricjapi",    name:"Bricjapi",    g:"♑", start:[12,22], el:"Tokë",  es:"□", pl:"Saturni" },
+    { slug:"ujori",       name:"Ujori",       g:"♒", start:[1,20],  el:"Ajër",  es:"◇", pl:"Urani" },
+    { slug:"peshqit",     name:"Peshqit",     g:"♓", start:[2,19],  el:"Ujë",   es:"▽", pl:"Neptuni" }
+  ];
+  var MONTHS = ["Jan","Shk","Mar","Pri","Maj","Qer","Kor","Gus","Sht","Tet","Nën","Dhj"];
+  var MONTHS_LONG = ["janar","shkurt","mars","prill","maj","qershor","korrik","gusht","shtator","tetor","nëntor","dhjetor"];
+
+  function dayOfYear(m, d, y) { return (Date.UTC(y, m - 1, d) - Date.UTC(y, 0, 1)) / 864e5; }
+
+  // Sun's sign index and approximate degree within it for a date.
+  function sunPosition(date) {
+    var y = date.getFullYear(), doy = dayOfYear(date.getMonth() + 1, date.getDate(), y);
+    for (var i = 0; i < 12; i++) {
+      var s = SIGNS[i], n = SIGNS[(i + 1) % 12];
+      var a = dayOfYear(s.start[0], s.start[1], y), b = dayOfYear(n.start[0], n.start[1], y);
+      if (b <= a) b += 365;
+      var x = doy; if (x < a) x += 365;
+      if (x >= a && x < b) return { idx: i, deg: Math.min(29, Math.floor((x - a) / (b - a) * 30)) };
+    }
+    return { idx: 0, deg: 0 };
+  }
+
+  var today = new Date(), sun = sunPosition(today);
+
+  // Header date line
+  document.getElementById("todayLine").textContent =
+    today.getDate() + " " + MONTHS_LONG[today.getMonth()] + " " + today.getFullYear() + " · Dielli në " + SIGNS[sun.idx].name + " " + sun.deg + "°";
+  var wc = document.getElementById("wheelCap"); if (wc) wc.textContent = "Dielli sot: " + SIGNS[sun.idx].name + " " + sun.deg + "° · " + SIGNS[sun.idx].pl;
+
+  // Horoscope strip
+  var strip = document.getElementById("horoSigns");
+  if (strip) {
+    strip.innerHTML = SIGNS.map(function (s, i) {
+      var n = SIGNS[(i + 1) % 12], endM = n.start[0], endD = n.start[1] - 1;
+      if (endD === 0) { endM = endM === 1 ? 12 : endM - 1; endD = new Date(2025, endM, 0).getDate(); }
+      return '<li' + (i === sun.idx ? ' class="now"' : '') + '><a href="https://yjetshqip.site/horoskopi/' + s.slug + '/">' +
+        '<span class="g">' + s.g + '</span><span class="n">' + s.name + '</span>' +
+        '<span class="d">' + s.start[1] + ' ' + MONTHS[s.start[0]-1] + ' – ' + endD + ' ' + MONTHS[endM-1] + '</span></a></li>';
+    }).join("");
+    document.getElementById("horoToday").textContent = "Horoskopi i sotëm · Dielli në " + SIGNS[sun.idx].name + " " + sun.deg + "°";
+  }
+
+  // Sign list
+  var list = document.getElementById("signList"), html = "";
+  for (var i = 0; list && i < 12; i++) {
+    var s = SIGNS[i], n = SIGNS[(i + 1) % 12];
+    var endM = n.start[0], endD = n.start[1] - 1;
+    if (endD === 0) { endM = endM === 1 ? 12 : endM - 1; endD = new Date(2025, endM, 0).getDate(); }
+    var dates = s.start[1] + " " + MONTHS[s.start[0]-1] + " – " + endD + " " + MONTHS[endM-1];
+    var deg = (i * 30) + "°–" + ((i + 1) * 30) + "°";
+    html += '<li' + (i === sun.idx ? ' class="now"' : '') + '><a href="https://yjetshqip.site/horoskopi/' + s.slug + '/">' +
+      '<span class="glyph">' + s.g + '</span><span class="name">' + s.name + '</span>' +
+      '<span class="dates">' + dates + '</span><span class="el">' + s.es + ' ' + s.el + ' · ' + s.pl + '</span>' +
+      '<span class="deg">' + deg + '</span><span class="arrow">→</span></a></li>';
+  }
+  if (list) list.innerHTML = html;
+
+  // Menu
+  var btn = document.getElementById("menuBtn"), menu = document.getElementById("menu");
+  btn.addEventListener("click", function () {
+    var open = menu.classList.toggle("open"); btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  // Zodiac wheel
+  var cv = document.getElementById("wheel"), ctx = cv ? cv.getContext("2d") : null;
+  function tok(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function draw() {
+    if (!ctx) return;
+    var W = cv.width, c = W / 2, R = W * 0.46, R2 = W * 0.36, R3 = W * 0.30;
+    var ink = tok("--ink"), ink2 = tok("--ink-2"), rule = tok("--rule"), brass = tok("--brass"), bg2 = tok("--bg-2");
+    ctx.clearRect(0, 0, W, W);
+    ctx.lineWidth = 1.5;
+    // 0° Aries at left (9 o'clock), counter-clockwise, as on a natal chart
+    function ang(deg) { return Math.PI - deg * Math.PI / 180; }
+    // current sign sector
+    ctx.beginPath(); ctx.moveTo(c, c);
+    ctx.arc(c, c, R, ang(sun.idx * 30), ang(sun.idx * 30 + 30), true); ctx.closePath();
+    ctx.fillStyle = bg2; ctx.fill();
+    // rings
+    [R, R2, R3].forEach(function (r, k) { ctx.beginPath(); ctx.arc(c, c, r, 0, Math.PI * 2); ctx.strokeStyle = k === 0 ? ink : rule; ctx.stroke(); });
+    // ticks every 5°, longer every 10°, sign cusps every 30°
+    for (var d = 0; d < 360; d += 5) {
+      var a = ang(d), len = d % 30 === 0 ? R - R3 : (d % 10 === 0 ? 14 : 7);
+      ctx.beginPath();
+      ctx.moveTo(c + Math.cos(a) * R, c + Math.sin(a) * R);
+      ctx.lineTo(c + Math.cos(a) * (R - len), c + Math.sin(a) * (R - len));
+      ctx.strokeStyle = d % 30 === 0 ? ink : rule; ctx.stroke();
+    }
+    // glyphs
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    for (var i = 0; i < 12; i++) {
+      var a = ang(i * 30 + 15), r = (R + R2) / 2;
+      ctx.font = "600 " + (W * 0.045) + "px " + tok("--font-display");
+      ctx.fillStyle = i === sun.idx ? brass : ink;
+      ctx.fillText(SIGNS[i].g, c + Math.cos(a) * r, c + Math.sin(a) * r);
+    }
+    // degree labels at 0/90/180/270
+    ctx.font = (W * 0.02) + "px " + tok("--font-mono"); ctx.fillStyle = ink2;
+    [[0,"0°"],[90,"90°"],[180,"180°"],[270,"270°"]].forEach(function (p) {
+      var a = ang(p[0]), r = R3 - W * 0.04;
+      ctx.fillText(p[1], c + Math.cos(a) * r, c + Math.sin(a) * r);
+    });
+    // Sun marker
+    var sa = ang(sun.idx * 30 + sun.deg), sr = (R2 + R3) / 2;
+    ctx.beginPath(); ctx.moveTo(c, c); ctx.lineTo(c + Math.cos(sa) * R, c + Math.sin(sa) * R);
+    ctx.strokeStyle = brass; ctx.lineWidth = 1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(c + Math.cos(sa) * sr, c + Math.sin(sa) * sr, W * 0.016, 0, Math.PI * 2);
+    ctx.fillStyle = brass; ctx.fill();
+    ctx.beginPath(); ctx.arc(c + Math.cos(sa) * sr, c + Math.sin(sa) * sr, W * 0.006, 0, Math.PI * 2);
+    ctx.fillStyle = tok("--bg"); ctx.fill();
+    // centre text
+    ctx.fillStyle = ink; ctx.font = "600 " + (W * 0.07) + "px " + tok("--font-display");
+    ctx.fillText(SIGNS[sun.idx].name, c, c - W * 0.01);
+    ctx.fillStyle = ink2; ctx.font = (W * 0.022) + "px " + tok("--font-mono");
+    ctx.fillText(sun.deg + "°  ·  " + today.getDate() + " " + MONTHS[today.getMonth()], c, c + W * 0.05);
+  }
+  draw();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  try {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+    new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  } catch (e) {}
+
+  // ---------- Lajmet (nga data/news.json, i përditësuar automatikisht) ----------
+  var NEWS_URL = "data/news.json";
+  var newsMeta = document.getElementById("newsMeta"), tabs = document.getElementById("newsTabs");
+  var leadEl = document.getElementById("newsLead"), listEl = document.getElementById("newsList"), moreEl = document.getElementById("newsMore");
+  var DAY_SQ = ["e diel","e hënë","e martë","e mërkurë","e enjte","e premte","e shtunë"];
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function ago(iso) {
+    var t = new Date(iso), diff = (Date.now() - t.getTime()) / 6e4;
+    if (diff < 60) return Math.max(1, Math.round(diff)) + " min";
+    if (diff < 60 * 24) return Math.round(diff / 60) + " orë";
+    return t.getDate() + " " + MONTHS[t.getMonth()];
+  }
+  function img(it, cls) {
+    return it.image ? '<span class="img ' + cls + '"><img src="' + esc(it.image) + '" alt="" loading="lazy"></span>' : "";
+  }
+  function byline(it) { return '<span class="byline"><b>' + esc(it.source) + '</b> · ' + ago(it.published) + '</span>'; }
+
+  function renderNews(data, cat) {
+    var items = data.items.filter(function (it) { return cat === "all" || it.cat === cat; });
+    if (!items.length) { leadEl.innerHTML = '<p class="news-empty">Ende asnjë lajm në këtë kategori.</p>'; listEl.innerHTML = ""; moreEl.innerHTML = ""; return; }
+    var lead = items[0], side = items.slice(1, 6), more = items.slice(6, 12);
+    leadEl.innerHTML = '<a class="lead" href="' + esc(lead.url) + '" target="_blank" rel="noopener">' +
+      img(lead, "") + '<span class="kicker">' + esc(lead.kicker || data.categories[lead.cat]) + '</span>' +
+      '<h3>' + esc(lead.title) + '</h3><p>' + esc(lead.summary) + '</p>' + byline(lead) + '</a>';
+    listEl.innerHTML = side.map(function (it) {
+      return '<li><a class="' + (it.image ? "" : "noimage") + '" href="' + esc(it.url) + '" target="_blank" rel="noopener"><span>' +
+        '<span class="kicker">' + esc(it.kicker || data.categories[it.cat]) + '</span>' +
+        '<h4>' + esc(it.title) + '</h4><p>' + esc(it.summary) + '</p>' + byline(it) + '</span>' + img(it, "") + '</a></li>';
+    }).join("");
+    moreEl.innerHTML = more.map(function (it) {
+      return '<a href="' + esc(it.url) + '" target="_blank" rel="noopener"><span class="kicker">' + esc(data.categories[it.cat]) + '</span>' +
+        '<h4>' + esc(it.title) + '</h4>' + byline(it) + '</a>';
+    }).join("");
+  }
+
+  fetch(NEWS_URL, { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
+    var u = new Date(data.updated);
+    newsMeta.textContent = "Përditësuar " + DAY_SQ[u.getDay()] + ", " + u.getDate() + " " + MONTHS_LONG[u.getMonth()] + " · " +
+      ("0" + u.getHours()).slice(-2) + ":" + ("0" + u.getMinutes()).slice(-2);
+    document.getElementById("sampleNote").hidden = !data.sample;
+    var cats = [["all", "Të gjitha"]].concat(Object.keys(data.categories).map(function (k) { return [k, data.categories[k]]; }));
+    tabs.innerHTML = cats.map(function (c) { return '<button type="button" data-cat="' + c[0] + '" aria-pressed="' + (c[0] === "all") + '">' + esc(c[1]) + '</button>'; }).join("");
+    tabs.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button"); if (!b) return;
+      tabs.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      renderNews(data, b.getAttribute("data-cat"));
+    });
+    renderNews(data, "all");
+  }).catch(function () {
+    newsMeta.textContent = "";
+    leadEl.innerHTML = '<p class="news-empty">Lajmet nuk u ngarkuan dot. Provo sërish pas pak.</p>';
+  });
+})();
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 </html>
