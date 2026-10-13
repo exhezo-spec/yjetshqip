@@ -91,15 +91,25 @@ def main():
             log("! Mungon ANTHROPIC_API_KEY; ndërtoj vetëm faqet që kanë tekst."); missing_pairs, missing_nums = [], []
         else:
             import anthropic
-            client = anthropic.Anthropic(api_key=key)
+            client = anthropic.Anthropic(api_key=key, timeout=120.0, max_retries=2)
+            import subprocess
+            def checkpoint(n):
+                """Ruaj progresin në repo çdo 10 tekste, që një ndërprerje të mos humbasë punën."""
+                DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+                if n % 10 == 0 and os.environ.get("GITHUB_ACTIONS"):
+                    subprocess.run("git add data/evergreen.json && git -c user.name=yjetshqip-bot -c user.email=bot@yjetshqip.site "
+                                   "commit -qm 'evergreen: progres' && git push -q", shell=True, cwd=ROOT)
+            done = 0
+            t0 = time.time()
             for a, b in missing_pairs:
                 r = ask(client, PAIR_PROMPT.format(a=a[1], b=b[1], ea=a[3], eb=b[3]))
-                if r: data["pairs"][f"{a[0]}-{b[0]}"] = r; log(f"  ✓ {a[1]} + {b[1]}")
-                DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+                if r: data["pairs"][f"{a[0]}-{b[0]}"] = r; log(f"  ✓ {a[1]} + {b[1]}  ({int(time.time()-t0)}s)")
+                done += 1; checkpoint(done)
             for n in missing_nums:
                 r = ask(client, NUM_PROMPT.format(n=n))
-                if r: data["numbers"][str(n)] = r; log(f"  ✓ numri {n}")
-                DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+                if r: data["numbers"][str(n)] = r; log(f"  ✓ numri {n}  ({int(time.time()-t0)}s)")
+                done += 1; checkpoint(done)
+            DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # ---- faqet e përputhshmërisë ----
     urls = []
