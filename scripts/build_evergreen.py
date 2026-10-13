@@ -46,18 +46,24 @@ Fushat: "intro" (çfarë përfaqëson numri), "personaliteti", "dashuria", "karr
 "fjalet" (listë me 5 fjalë kyçe në shqip)."""
 
 
-def log(m): print(m, file=sys.stderr, flush=True)
+LOGF = ROOT / "data" / "evergreen-log.txt"
+def log(m):
+    print(m, file=sys.stderr, flush=True)
+    try:
+        LOGF.parent.mkdir(exist_ok=True)
+        with LOGF.open("a", encoding="utf-8") as f: f.write(time.strftime("%H:%M:%S ") + str(m) + "\n")
+    except Exception: pass
 def esc(x): return str(x or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
 def ask(client, prompt):
     for i in range(3):
         try:
-            r = client.messages.create(model=MODEL, max_tokens=1600, system=SYS, messages=[{"role": "user", "content": prompt}])
+            r = client.messages.create(model=MODEL, max_tokens=1300, system=SYS, messages=[{"role": "user", "content": prompt}])
             t = "".join(b.text for b in r.content if getattr(b, "type", "") == "text")
             return json.loads(re.search(r"\{.*\}", t, re.S).group(0))
         except Exception as ex:
-            log(f"  retry {i+1}: {ex}"); time.sleep(2 * (i + 1))
+            log(f"  retry {i+1}: {type(ex).__name__}: {str(ex)[:300]}"); time.sleep(5 * (i + 1))
     return None
 
 
@@ -91,13 +97,14 @@ def main():
             log("! Mungon ANTHROPIC_API_KEY; ndërtoj vetëm faqet që kanë tekst."); missing_pairs, missing_nums = [], []
         else:
             import anthropic
-            client = anthropic.Anthropic(api_key=key, timeout=120.0, max_retries=2)
+            log(f"start: model={MODEL} key_len={len(key)} pairs={len(missing_pairs)} nums={len(missing_nums)}")
+            client = anthropic.Anthropic(api_key=key, timeout=90.0, max_retries=0)
             import subprocess
             def checkpoint(n):
                 """Ruaj progresin në repo çdo 10 tekste, që një ndërprerje të mos humbasë punën."""
                 DATA.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-                if n % 10 == 0 and os.environ.get("GITHUB_ACTIONS"):
-                    subprocess.run("git add data/evergreen.json && git -c user.name=yjetshqip-bot -c user.email=bot@yjetshqip.site "
+                if n % 2 == 0 and os.environ.get("GITHUB_ACTIONS"):
+                    subprocess.run("git add data/evergreen.json data/evergreen-log.txt && git -c user.name=yjetshqip-bot -c user.email=bot@yjetshqip.site "
                                    "commit -qm 'evergreen: progres' && git push -q", shell=True, cwd=ROOT)
             done = 0
             t0 = time.time()

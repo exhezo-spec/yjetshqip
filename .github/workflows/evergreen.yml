@@ -23,7 +23,7 @@ jobs:
         run: |
           git config user.name "yjetshqip-bot"
           git config user.email "bot@yjetshqip.site"
-          git add data/evergreen.json perputhshmeria numerologjia sitemap-evergreen.xml
+          git add data/evergreen.json data/evergreen-log.txt perputhshmeria numerologjia sitemap-evergreen.xml
           git diff --cached --quiet && exit 0
           git commit -m "evergreen: përputhshmëria + numerologjia"
           git push
