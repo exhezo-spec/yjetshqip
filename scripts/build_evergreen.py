@@ -33,7 +33,7 @@ NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33]
 
 SYS = """Ti je autor për një faqe shqiptare horoskopi dhe numerologjie. Shkruan shqipe standarde, të ngrohtë,
 konkrete, pa clickbait dhe pa premtime absolute ("do të", "gjithmonë"). Ton: argëtim dhe reflektim.
-Kthe VETËM JSON me fushat e kërkuara. Çdo fushë teksti: 60–110 fjalë, një paragraf, pa titull brenda."""
+Kthe VETËM JSON me fushat e kërkuara, pa tekst para ose pas. Çdo fushë teksti: 50–80 fjalë, një paragraf, pa titull brenda."""
 
 PAIR_PROMPT = """Shkruaj faqen "Përputhshmëria {a} dhe {b}" (elementet: {ea} + {eb}).
 Fushat: "intro" (si funksionon kjo lidhje në përgjithësi), "dashuria", "miqesia", "puna",
@@ -59,9 +59,14 @@ def esc(x): return str(x or "").replace("&", "&amp;").replace("<", "&lt;").repla
 def ask(client, prompt):
     for i in range(3):
         try:
-            r = client.messages.create(model=MODEL, max_tokens=1300, system=SYS, messages=[{"role": "user", "content": prompt}])
+            r = client.messages.create(model=MODEL, max_tokens=3000, system=SYS, messages=[{"role": "user", "content": prompt}])
             t = "".join(b.text for b in r.content if getattr(b, "type", "") == "text")
-            return json.loads(re.search(r"\{.*\}", t, re.S).group(0))
+            if r.stop_reason == "max_tokens":
+                log("  ! përgjigja u pre (max_tokens)"); continue
+            m = re.search(r"\{.*\}", t, re.S)
+            if not m:
+                log("  ! pa JSON në përgjigje: " + t[:120].replace("\n", " ")); continue
+            return json.loads(m.group(0))
         except Exception as ex:
             log(f"  retry {i+1}: {type(ex).__name__}: {str(ex)[:300]}"); time.sleep(5 * (i + 1))
     return None
